@@ -1,0 +1,10 @@
+{
+  "name": "pager-payload-library",
+  "version": "1.0.0",
+  "description": "WiFi Pineapple Pager Payload Library Website",
+  "scripts": {
+    "fetch": "node fetch_data.js",
+    "serve": "npx -y serve ."
+  },
+  "type": "module"
+}
