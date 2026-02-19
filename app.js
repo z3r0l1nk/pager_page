@@ -14,6 +14,8 @@
     let activeCategory = null;
     let activeSubcategory = null; // null = "All"
     let searchQuery = '';
+    let activeView = 'payloads'; // 'payloads' or 'pullrequests'
+    let prFilter = 'all'; // 'all', 'open', 'merged', 'closed'
 
     // DOM refs
     const categoryTabs = document.getElementById('categoryTabs');
@@ -44,6 +46,9 @@
             if (cats.length > 0) {
                 selectCategory(cats[0]);
             }
+
+            // Add Pull Requests tab
+            renderPRTab();
         } catch (err) {
             loadingState.innerHTML = `
         <div class="empty-state">
@@ -81,6 +86,7 @@
     }
 
     function selectCategory(catKey) {
+        activeView = 'payloads';
         activeCategory = catKey;
         activeSubcategory = null;
 
@@ -88,6 +94,9 @@
         document.querySelectorAll('.cat-tab').forEach(tab => {
             tab.classList.toggle('active', tab.dataset.cat === catKey);
         });
+
+        const sidebarHeader = document.querySelector('.sidebar-header h3');
+        if (sidebarHeader) sidebarHeader.textContent = 'Subcategories';
 
         renderSubcategories();
         renderPayloads();
@@ -407,11 +416,204 @@
     }
 
     // ================================================================
+    // Pull Requests
+    // ================================================================
+    function renderPRTab() {
+        const prCount = payloadData.pullRequests ? payloadData.pullRequests.length : 0;
+        const tab = document.createElement('button');
+        tab.className = 'cat-tab';
+        tab.dataset.cat = '__pullrequests__';
+        tab.innerHTML = `
+        <span>🔀</span>
+        <span>Pull Requests</span>
+        <span class="tab-count">${prCount}</span>
+      `;
+        tab.addEventListener('click', () => selectPRView());
+        categoryTabs.appendChild(tab);
+    }
+
+    function selectPRView() {
+        activeView = 'pullrequests';
+        activeCategory = null;
+        activeSubcategory = null;
+        prFilter = 'all';
+
+        document.querySelectorAll('.cat-tab').forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.cat === '__pullrequests__');
+        });
+
+        renderPRSidebar();
+        renderPullRequests();
+    }
+
+    function renderPRSidebar() {
+        subcategoryList.innerHTML = '';
+        if (!payloadData || !payloadData.pullRequests) return;
+
+        const prs = payloadData.pullRequests;
+        const counts = {
+            all: prs.length,
+            open: prs.filter(p => p.state === 'open').length,
+            merged: prs.filter(p => p.merged).length,
+            closed: prs.filter(p => p.state === 'closed' && !p.merged).length
+        };
+
+        const filters = [
+            { key: 'all', label: 'All', icon: '' },
+            { key: 'open', label: 'Open', icon: '' },
+            { key: 'merged', label: 'Merged', icon: '' },
+            { key: 'closed', label: 'Closed', icon: '' }
+        ];
+
+        const sidebarHeader = document.querySelector('.sidebar-header h3');
+        if (sidebarHeader) sidebarHeader.textContent = 'Filter';
+
+        for (const f of filters) {
+            const li = document.createElement('li');
+            li.className = 'subcategory-item' + (prFilter === f.key ? ' active' : '');
+            if (f.key === 'all') li.classList.add('sub-all-item');
+            li.innerHTML = `<span>${f.label}</span><span class="sub-count">${counts[f.key]}</span>`;
+            li.addEventListener('click', () => {
+                prFilter = f.key;
+                document.querySelectorAll('.subcategory-item').forEach(el => el.classList.remove('active'));
+                li.classList.add('active');
+                renderPullRequests();
+            });
+            subcategoryList.appendChild(li);
+        }
+    }
+
+    function getFilteredPRs() {
+        if (!payloadData || !payloadData.pullRequests) return [];
+        let prs = payloadData.pullRequests;
+
+        if (prFilter === 'open') prs = prs.filter(p => p.state === 'open');
+        else if (prFilter === 'merged') prs = prs.filter(p => p.merged);
+        else if (prFilter === 'closed') prs = prs.filter(p => p.state === 'closed' && !p.merged);
+
+        if (searchQuery) {
+            const q = searchQuery.toLowerCase();
+            prs = prs.filter(p =>
+                p.title.toLowerCase().includes(q) ||
+                p.author.toLowerCase().includes(q) ||
+                p.body.toLowerCase().includes(q) ||
+                String(p.number).includes(q) ||
+                p.labels.some(l => l.name.toLowerCase().includes(q))
+            );
+        }
+
+        return prs;
+    }
+
+    function renderPullRequests() {
+        const prs = getFilteredPRs();
+
+        gridHeader.textContent = 'Pull Requests';
+        gridCount.textContent = `${prs.length} PR${prs.length !== 1 ? 's' : ''}`;
+
+        payloadGrid.innerHTML = '';
+
+        if (prs.length === 0) {
+            payloadGrid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🔀</div>
+          <p>${searchQuery ? 'No pull requests match your search.' : 'No pull requests found.'}</p>
+        </div>`;
+            return;
+        }
+
+        for (const pr of prs) {
+            payloadGrid.appendChild(createPRCard(pr));
+        }
+    }
+
+    function getPRStateInfo(pr) {
+        if (pr.merged) return { label: 'Merged', cssClass: 'pr-merged', icon: '🟣' };
+        if (pr.state === 'open') return { label: 'Open', cssClass: 'pr-open', icon: '🟢' };
+        return { label: 'Closed', cssClass: 'pr-closed', icon: '🔴' };
+    }
+
+    function formatDate(dateStr) {
+        if (!dateStr) return '';
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function createPRCard(pr) {
+        const card = document.createElement('div');
+        card.className = 'payload-card pr-card';
+        card.dataset.cat = '__pullrequests__';
+
+        const stateInfo = getPRStateInfo(pr);
+        const labelsHtml = pr.labels.map(l =>
+            `<span class="pr-label" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44">${escapeHtml(l.name)}</span>`
+        ).join('');
+
+        card.innerHTML = `
+      <div class="card-header">
+        <span class="card-title">${escapeHtml(pr.title)}</span>
+        <span class="pr-state-badge ${stateInfo.cssClass}">${stateInfo.icon} ${stateInfo.label}</span>
+      </div>
+      <p class="card-description">#${pr.number} · opened ${formatDate(pr.createdAt)}${pr.mergedAt ? ' · merged ' + formatDate(pr.mergedAt) : ''}${pr.closedAt && !pr.merged ? ' · closed ' + formatDate(pr.closedAt) : ''}</p>
+      <div class="pr-labels-row">${labelsHtml}</div>
+      <div class="card-footer">
+        <div class="card-author">
+          ${pr.authorAvatar ? `<img class="pr-avatar" src="${pr.authorAvatar}" alt="${escapeHtml(pr.author)}" width="16" height="16">` : `<span class="card-author-icon">${pr.author.charAt(0).toUpperCase()}</span>`}
+          <span>${escapeHtml(pr.author)}</span>
+        </div>
+        <div class="card-tags">
+          ${pr.comments > 0 ? `<span class="card-tag tag-has-readme">💬 ${pr.comments}</span>` : ''}
+          ${pr.draft ? '<span class="card-tag tag-draft">DRAFT</span>' : ''}
+        </div>
+      </div>
+    `;
+
+        card.addEventListener('click', () => openPRModal(pr));
+        return card;
+    }
+
+    function openPRModal(pr) {
+        const stateInfo = getPRStateInfo(pr);
+
+        modalContent.innerHTML = `
+        <div class="modal-header">
+          <h2 class="modal-title">${escapeHtml(pr.title)}</h2>
+          <div class="modal-meta">
+            <span class="modal-meta-item"><span class="pr-state-badge ${stateInfo.cssClass}">${stateInfo.icon} ${stateInfo.label}</span></span>
+            <span class="modal-meta-item">👤 <strong>${escapeHtml(pr.author)}</strong></span>
+            <span class="modal-meta-item">#${pr.number}</span>
+            <span class="modal-meta-item">
+              <a href="${pr.htmlUrl}" target="_blank" rel="noopener">View on GitHub →</a>
+            </span>
+          </div>
+          <div class="pr-meta-dates" style="margin-top:10px;font-size:12px;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap">
+            <span>Created: ${formatDate(pr.createdAt)}</span>
+            ${pr.mergedAt ? `<span>Merged: ${formatDate(pr.mergedAt)}</span>` : ''}
+            ${pr.closedAt && !pr.merged ? `<span>Closed: ${formatDate(pr.closedAt)}</span>` : ''}
+            ${pr.comments > 0 ? `<span>💬 ${pr.comments} comment${pr.comments !== 1 ? 's' : ''}</span>` : ''}
+          </div>
+          ${pr.labels.length > 0 ? `<div class="pr-labels-row" style="margin-top:10px">${pr.labels.map(l => `<span class="pr-label" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44">${escapeHtml(l.name)}</span>`).join('')}</div>` : ''}
+        </div>
+
+        <div class="modal-body">
+          ${pr.body ? simpleMarkdown(pr.body) : '<p style="color:var(--text-muted)">No description provided.</p>'}
+        </div>
+      `;
+
+        modalOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // ================================================================
     // Search
     // ================================================================
     function handleSearch() {
         searchQuery = searchInput.value.trim();
-        renderPayloads();
+        if (activeView === 'pullrequests') {
+            renderPullRequests();
+        } else {
+            renderPayloads();
+        }
     }
 
     // ================================================================

@@ -86,7 +86,7 @@ function walkPayloadDirs(dirPath, results = [], depth = 0) {
     return results;
 }
 
-function main() {
+async function main() {
     console.log('🍍 WiFi Pineapple Pager Payload Library — Data Fetcher');
     console.log('======================================================\n');
 
@@ -186,6 +186,77 @@ function main() {
         };
     }
 
+    // ================================================================
+    // Fetch Pull Requests from GitHub API
+    // ================================================================
+    console.log(`\n📡 Fetching pull requests from GitHub API...`);
+
+    const pullRequests = [];
+    const prStates = ['open', 'closed'];
+
+    for (const state of prStates) {
+        let page = 1;
+        let hasMore = true;
+        while (hasMore) {
+            const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/pulls?state=${state}&per_page=100&page=${page}`;
+            try {
+                const res = await fetch(apiUrl, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'User-Agent': 'pager-payload-library'
+                    }
+                });
+                if (!res.ok) {
+                    console.error(`  ⚠️  GitHub API error (${res.status}) for ${state} PRs page ${page}`);
+                    break;
+                }
+                const prs = await res.json();
+                if (prs.length === 0) {
+                    hasMore = false;
+                } else {
+                    for (const pr of prs) {
+                        pullRequests.push({
+                            number: pr.number,
+                            title: pr.title,
+                            state: pr.state,
+                            merged: pr.merged_at !== null,
+                            author: pr.user?.login || 'Unknown',
+                            authorAvatar: pr.user?.avatar_url || null,
+                            authorUrl: pr.user?.html_url || null,
+                            body: pr.body || '',
+                            createdAt: pr.created_at,
+                            updatedAt: pr.updated_at,
+                            closedAt: pr.closed_at,
+                            mergedAt: pr.merged_at,
+                            htmlUrl: pr.html_url,
+                            labels: (pr.labels || []).map(l => ({
+                                name: l.name,
+                                color: l.color,
+                                description: l.description
+                            })),
+                            comments: pr.comments || 0,
+                            additions: pr.additions || null,
+                            deletions: pr.deletions || null,
+                            changedFiles: pr.changed_files || null,
+                            draft: pr.draft || false
+                        });
+                    }
+                    console.log(`  📄 Fetched ${prs.length} ${state} PRs (page ${page})`);
+                    page++;
+                }
+            } catch (err) {
+                console.error(`  ❌ Failed to fetch ${state} PRs: ${err.message}`);
+                hasMore = false;
+            }
+        }
+    }
+
+    // Sort PRs by number descending (newest first)
+    pullRequests.sort((a, b) => b.number - a.number);
+    data.pullRequests = pullRequests;
+
+    console.log(`  ✅ Total PRs fetched: ${pullRequests.length}`);
+
     // Summary
     let totalSubs = 0;
     for (const cat of Object.values(data.categories)) {
@@ -193,7 +264,7 @@ function main() {
     }
 
     console.log(`\n======================================================`);
-    console.log(`✅ ${Object.keys(data.categories).length} categories, ${totalSubs} subcategories, ${data.totalPayloads} payloads`);
+    console.log(`✅ ${Object.keys(data.categories).length} categories, ${totalSubs} subcategories, ${data.totalPayloads} payloads, ${pullRequests.length} PRs`);
 
     writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2));
     console.log(`📄 ${OUTPUT_FILE} written successfully!`);
