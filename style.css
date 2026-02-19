@@ -1122,6 +1122,12 @@ body {
 }
 
 @media (max-width: 768px) {
+/* Mobile header adjustments (forgot about this earlier) */
+  .site-header {
+    height: auto; 
+    padding-bottom: 8px; /* Adds a little breathing room at the bottom */
+  }
+
   .header-inner {
     flex-wrap: wrap;
     height: auto;
