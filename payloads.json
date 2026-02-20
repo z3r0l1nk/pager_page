@@ -1851,7 +1851,7 @@
       }
     }
   },
-  "fetchedAt": "2026-02-19T10:20:28.760Z",
+  "fetchedAt": "2026-02-20T03:00:27.362Z",
   "totalPayloads": 157,
   "pullRequests": [
     {
@@ -2044,7 +2044,7 @@
       "authorUrl": "https://github.com/curthayman",
       "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet! Enjoy!",
       "createdAt": "2026-02-12T01:01:52Z",
-      "updatedAt": "2026-02-19T05:37:40Z",
+      "updatedAt": "2026-02-19T18:01:31Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/274",
@@ -2302,7 +2302,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "fix Pager keystroke payload and Quack payload and added a Ringtone_tester, Description: Perform a ringtone test by playing each ringtone individually",
       "createdAt": "2026-02-07T09:37:50Z",
-      "updatedAt": "2026-02-17T00:03:06Z",
+      "updatedAt": "2026-02-19T19:54:50Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/262",
@@ -2344,7 +2344,7 @@
       "authorUrl": "https://github.com/JesseCHale",
       "body": "## **🌶️🔥 Caution Spicy 🔥🌶️**.  \n\n**_⚠️ Known Limitation                                                                 \nThe Pager's single radio cannot run all four interfaces simultaneously                   (Client Mode).  ****\n****Management AP + Open AP + Evil WPA).****_**                                                                                                                           \nRecommended Setup:                                                                 \n1. USB-C for management instead of Management AP                                \n2. Or use USB/Ethernet for WAN instead of Client Mode This ensures stable operation with GARMR.        \n\n\n\n**GARMR combines SKOLL (KARMA SSID luring) with LOKI (Evil Portal credential harvesting) into a single automated payload.** Targets connect to a familiar SSID, get redirected to a convincing login portal, and credentials are captured with optional NTFY push notifications to your phone.\n\n---\n\n### ⚠️ IMPORTANT - SSID and Portal MUST Match\n\n**If you choose Option 0 (Keep Current SSID), your existing Open AP SSID will be used.** This means the portal shown to the target may NOT match the network name — for example, a \"Microsoft\" login page on a network called \"MyHomeWiFi\" looks suspicious and will reduce success rates.\n\n**For best results:** Choose a matching SSID + Portal combination (e.g., Option 1 \"Microsoft Guest\" with the Microsoft portal, or Option 5 \"Starbucks WiFi\" with the Starbucks portal).\n\nYour broadcast SSID is configured in **PineAP → Open AP Settings** on the Pager.\n\n---\n\n### Features\n\n- **9 Portal Options** — Microsoft, Google, WiFi Captive + Starbucks, McDonald's, Airport, Hotel, Xfinity, AT&T\n- **10 SSID Options** — Including \"Keep Current SSID\" and 9 pre-configured options\n- **NTFY Push Notifications** — Real-time credential alerts to your phone (optional)\n- **Captive Portal Detection** — Automatic redirect for Android (`generate_204`) and iOS (`hotspot-detect`)\n- **nftables Traffic Redirection** — DNS + HTTP DNAT with tagged rules for clean teardown\n- **Clean Deactivation** — Removes only GARMR rules, restores DNS, stops portal cleanly\n\n### Prerequisites\n\n1. **Evil Portal module** must be installed on the Pager\n2. **PineAP** must be enabled with **Open AP** active\n3. **NTFY app** (optional) — Install from App Store/Play Store, subscribe to your topic before launching\n\n### Usage\n\n1. Install payload to `library/user/evil_portal/garmr/`\n2. Launch from Payloads menu\n3. Select portal type → Select SSID → Configure NTFY (optional)\n4. GARMR activates portal, sets SSID, redirects traffic\n5. Credentials saved to `/root/loot/garmr/credentials.txt`\n6. Deactivate cleanly through the payload menu\n\n**Full documentation including step-by-step activation/deactivation instructions available in the [README](library/user/evil_portal/garmr/README.md).**\n\n---\n\n*Payload by HaleHound — v4.7.10*",
       "createdAt": "2026-02-04T21:29:03Z",
-      "updatedAt": "2026-02-14T05:48:06Z",
+      "updatedAt": "2026-02-20T00:55:44Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/260",
