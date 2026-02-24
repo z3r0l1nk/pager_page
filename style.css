@@ -1055,6 +1055,43 @@ body {
   color: #ff9500;
 }
 
+.card-tag.tag-pr-number {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.pr-info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pr-info-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+  color: var(--text-secondary);
+  vertical-align: middle;
+}
+
+.pr-info-table td:first-child {
+  width: 120px;
+  color: var(--text-muted);
+}
+
+.pr-info-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pr-info-table a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pr-info-table a:hover {
+  text-decoration: underline;
+}
+
 /* ================================================================
    Animations
    ================================================================ */

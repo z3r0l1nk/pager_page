@@ -348,6 +348,9 @@
         html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
 
+        // Images
+        html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%;border-radius:8px;margin:8px 0">');
+
         // Links
         html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
@@ -539,12 +542,28 @@
         return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
 
+    function extractPlainText(md) {
+        if (!md) return '';
+        return md
+            .replace(/```[\s\S]*?```/g, '')
+            .replace(/#{1,6}\s+/g, '')
+            .replace(/\*\*(.+?)\*\*/g, '$1')
+            .replace(/\*(.+?)\*/g, '$1')
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+            .replace(/[|`>-]/g, ' ')
+            .replace(/\n+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .substring(0, 200);
+    }
+
     function createPRCard(pr) {
         const card = document.createElement('div');
         card.className = 'payload-card pr-card';
         card.dataset.cat = '__pullrequests__';
 
         const stateInfo = getPRStateInfo(pr);
+        const description = extractPlainText(pr.body) || 'No description provided.';
         const labelsHtml = pr.labels.map(l =>
             `<span class="pr-label" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44">${escapeHtml(l.name)}</span>`
         ).join('');
@@ -554,15 +573,16 @@
         <span class="card-title">${escapeHtml(pr.title)}</span>
         <span class="pr-state-badge ${stateInfo.cssClass}">${stateInfo.icon} ${stateInfo.label}</span>
       </div>
-      <p class="card-description">#${pr.number} · opened ${formatDate(pr.createdAt)}${pr.mergedAt ? ' · merged ' + formatDate(pr.mergedAt) : ''}${pr.closedAt && !pr.merged ? ' · closed ' + formatDate(pr.closedAt) : ''}</p>
-      <div class="pr-labels-row">${labelsHtml}</div>
+      <p class="card-description">${escapeHtml(description)}</p>
+      ${labelsHtml ? `<div class="pr-labels-row">${labelsHtml}</div>` : ''}
       <div class="card-footer">
         <div class="card-author">
           ${pr.authorAvatar ? `<img class="pr-avatar" src="${pr.authorAvatar}" alt="${escapeHtml(pr.author)}" width="16" height="16">` : `<span class="card-author-icon">${pr.author.charAt(0).toUpperCase()}</span>`}
           <span>${escapeHtml(pr.author)}</span>
         </div>
         <div class="card-tags">
-          ${pr.comments > 0 ? `<span class="card-tag tag-has-readme">💬 ${pr.comments}</span>` : ''}
+          <span class="card-tag tag-pr-number">#${pr.number}</span>
+          ${pr.body ? '<span class="card-tag tag-has-readme">DESC</span>' : ''}
           ${pr.draft ? '<span class="card-tag tag-draft">DRAFT</span>' : ''}
         </div>
       </div>
@@ -574,8 +594,10 @@
 
     function openPRModal(pr) {
         const stateInfo = getPRStateInfo(pr);
+        let activeTab = pr.body ? 'description' : 'info';
 
-        modalContent.innerHTML = `
+        function renderPRModalContent() {
+            modalContent.innerHTML = `
         <div class="modal-header">
           <h2 class="modal-title">${escapeHtml(pr.title)}</h2>
           <div class="modal-meta">
@@ -586,22 +608,65 @@
               <a href="${pr.htmlUrl}" target="_blank" rel="noopener">View on GitHub →</a>
             </span>
           </div>
-          <div class="pr-meta-dates" style="margin-top:10px;font-size:12px;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap">
-            <span>Created: ${formatDate(pr.createdAt)}</span>
-            ${pr.mergedAt ? `<span>Merged: ${formatDate(pr.mergedAt)}</span>` : ''}
-            ${pr.closedAt && !pr.merged ? `<span>Closed: ${formatDate(pr.closedAt)}</span>` : ''}
-            ${pr.comments > 0 ? `<span>💬 ${pr.comments} comment${pr.comments !== 1 ? 's' : ''}</span>` : ''}
-          </div>
-          ${pr.labels.length > 0 ? `<div class="pr-labels-row" style="margin-top:10px">${pr.labels.map(l => `<span class="pr-label" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44">${escapeHtml(l.name)}</span>`).join('')}</div>` : ''}
         </div>
 
-        <div class="modal-body">
-          ${pr.body ? simpleMarkdown(pr.body) : '<p style="color:var(--text-muted)">No description provided.</p>'}
+        <div class="modal-tabs">
+          ${pr.body ? `<button class="modal-tab ${activeTab === 'description' ? 'active' : ''}" data-tab="description">📖 Description</button>` : ''}
+          <button class="modal-tab ${activeTab === 'info' ? 'active' : ''}" data-tab="info">📝 Info</button>
+        </div>
+
+        <div class="modal-body" id="modalBody">
+          ${activeTab === 'description' ? renderPRDescription(pr) : ''}
+          ${activeTab === 'info' ? renderPRInfo(pr) : ''}
         </div>
       `;
 
+            modalContent.querySelectorAll('.modal-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activeTab = tab.dataset.tab;
+                    renderPRModalContent();
+                });
+            });
+        }
+
+        renderPRModalContent();
         modalOverlay.classList.add('open');
         document.body.style.overflow = 'hidden';
+    }
+
+    function renderPRDescription(pr) {
+        return `<div>${simpleMarkdown(pr.body)}</div>`;
+    }
+
+    function renderPRInfo(pr) {
+        const stateInfo = getPRStateInfo(pr);
+        return `
+      <div class="pr-info-grid">
+        <div class="pr-info-section">
+          <h3 style="color:var(--text-primary);margin-bottom:12px">Details</h3>
+          <table class="pr-info-table">
+            <tr><td><strong>Number</strong></td><td>#${pr.number}</td></tr>
+            <tr><td><strong>State</strong></td><td><span class="pr-state-badge ${stateInfo.cssClass}">${stateInfo.icon} ${stateInfo.label}</span></td></tr>
+            <tr><td><strong>Author</strong></td><td>
+              <span style="display:inline-flex;align-items:center;gap:6px">
+                ${pr.authorAvatar ? `<img class="pr-avatar" src="${pr.authorAvatar}" width="20" height="20">` : ''}
+                ${pr.authorUrl ? `<a href="${pr.authorUrl}" target="_blank" rel="noopener">${escapeHtml(pr.author)}</a>` : escapeHtml(pr.author)}
+              </span>
+            </td></tr>
+            <tr><td><strong>Created</strong></td><td>${formatDate(pr.createdAt)}</td></tr>
+            ${pr.updatedAt ? `<tr><td><strong>Updated</strong></td><td>${formatDate(pr.updatedAt)}</td></tr>` : ''}
+            ${pr.mergedAt ? `<tr><td><strong>Merged</strong></td><td>${formatDate(pr.mergedAt)}</td></tr>` : ''}
+            ${pr.closedAt && !pr.merged ? `<tr><td><strong>Closed</strong></td><td>${formatDate(pr.closedAt)}</td></tr>` : ''}
+            ${pr.draft ? '<tr><td><strong>Draft</strong></td><td>Yes</td></tr>' : ''}
+          </table>
+        </div>
+        ${pr.labels.length > 0 ? `
+        <div class="pr-info-section" style="margin-top:20px">
+          <h3 style="color:var(--text-primary);margin-bottom:12px">Labels</h3>
+          <div class="pr-labels-row">${pr.labels.map(l => `<span class="pr-label" style="background:#${l.color}22;color:#${l.color};border:1px solid #${l.color}44">${escapeHtml(l.name)}</span>`).join('')}</div>
+        </div>` : ''}
+      </div>
+    `;
     }
 
     // ================================================================
