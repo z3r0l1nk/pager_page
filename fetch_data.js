@@ -69,6 +69,47 @@ function readFileSafe(p) {
     try { return readFileSync(p, 'utf-8'); } catch { return null; }
 }
 
+function resolveReadmeImages(readme, themePath) {
+    if (!readme) return readme;
+
+    // Build a map of lowercase relative path -> actual relative path
+    const fileMap = new Map();
+    function walkDir(dir, rel) {
+        try {
+            for (const entry of readdirSync(dir)) {
+                if (entry.startsWith('.')) continue;
+                const full = join(dir, entry);
+                const relPath = rel ? `${rel}/${entry}` : entry;
+                try {
+                    if (statSync(full).isDirectory()) {
+                        walkDir(full, relPath);
+                    } else {
+                        fileMap.set(relPath.toLowerCase(), relPath);
+                    }
+                } catch { /* skip */ }
+            }
+        } catch { /* skip */ }
+    }
+    walkDir(themePath, '');
+
+    // Replace image paths in both HTML img tags and markdown images
+    // HTML: <img src="path" ...>
+    readme = readme.replace(/(<img\s+[^>]*src=["'])([^"']+)(["'])/gi, (match, pre, url, post) => {
+        if (url.startsWith('http://') || url.startsWith('https://')) return match;
+        const actual = fileMap.get(url.toLowerCase());
+        return actual ? `${pre}${actual}${post}` : match;
+    });
+
+    // Markdown: ![alt](path)
+    readme = readme.replace(/(!\[[^\]]*\]\()([^)]+)(\))/g, (match, pre, url, post) => {
+        if (url.startsWith('http://') || url.startsWith('https://')) return match;
+        const actual = fileMap.get(url.toLowerCase());
+        return actual ? `${pre}${actual}${post}` : match;
+    });
+
+    return readme;
+}
+
 function findReadme(dirPath) {
     try {
         const entries = readdirSync(dirPath);
@@ -216,7 +257,7 @@ function processThemes(repoPath) {
     const themes = [];
     for (const dirName of themeDirs) {
         const themePath = join(themesPath, dirName);
-        const readme = findReadme(themePath);
+        const readme = resolveReadmeImages(findReadme(themePath), themePath);
 
         // Try to read theme.json for metadata
         let themeMeta = {};
