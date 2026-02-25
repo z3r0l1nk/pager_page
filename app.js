@@ -396,7 +396,6 @@
     function renderThemeImages(images, theme) {
         return `<div class="theme-images-grid">${images.map(img =>
             `<figure class="theme-image-item">
-                // <img src="${img.url}" alt="${escapeHtml(img.alt)}" loading="lazy">
                 <img src="${img.url}" alt="${escapeHtml(img.alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.style.display='none';this.parentElement.style.display='none'">
                 ${img.alt ? `<figcaption>${escapeHtml(img.alt)}</figcaption>` : ''}
             </figure>`
@@ -783,7 +782,7 @@
             prs = prs.filter(p =>
                 p.title.toLowerCase().includes(q) ||
                 p.author.toLowerCase().includes(q) ||
-                p.body.toLowerCase().includes(q) ||
+                (p.body || '').toLowerCase().includes(q) ||
                 String(p.number).includes(q) ||
                 p.labels.some(l => l.name.toLowerCase().includes(q))
             );
@@ -842,6 +841,7 @@
     function createPRCard(pr) {
         const card = document.createElement('div');
         card.className = 'payload-card pr-card';
+        card.dataset.cat = '__pullrequests__';
         const stateInfo = getPRStateInfo(pr);
         const description = extractPlainText(pr.body) || 'No description provided.';
         const labelsHtml = pr.labels.map(l =>
@@ -1067,6 +1067,10 @@
         html = html.replace(/^[-*] (.+)$/gm, '<li>$1</li>');
         html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, '<ul>$1</ul>');
         html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+        html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, (m) => {
+            if (m.includes('<ul>')) return m;
+            return '<ol>' + m + '</ol>';
+        });
         html = html.replace(/^(?!<[a-z]|$)(.+)$/gm, '<p>$1</p>');
         html = html.replace(/<p>\s*<\/p>/g, '');
 
