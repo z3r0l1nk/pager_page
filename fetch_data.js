@@ -1,25 +1,38 @@
 #!/usr/bin/env node
 /**
  * fetch_data.js
- * Clones the hak5/wifipineapplepager-payloads repo (or uses an existing clone),
- * processes local files, and writes payloads.json.
+ * Clones the hak5 WiFi Pineapple Pager repos (payloads, themes, ringtones),
+ * processes local files, fetches PRs, and writes payloads.json.
  * 
  * Usage:
- *   node fetch_data.js                          # Uses /tmp/wifipineapplepager-payloads
- *   node fetch_data.js /path/to/local/clone     # Uses a custom local path
+ *   node fetch_data.js
  */
 
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
 import { join, basename, relative } from 'path';
 import { execSync } from 'child_process';
 
-const REPO_URL = 'https://github.com/hak5/wifipineapplepager-payloads.git';
-const DEFAULT_CLONE_PATH = '/tmp/wifipineapplepager-payloads';
 const OUTPUT_FILE = 'payloads.json';
-
 const REPO_OWNER = 'hak5';
-const REPO_NAME = 'wifipineapplepager-payloads';
 const BRANCH = 'master';
+
+const REPOS = {
+    payloads: {
+        name: 'wifipineapplepager-payloads',
+        url: 'https://github.com/hak5/wifipineapplepager-payloads.git',
+        clonePath: '/tmp/wifipineapplepager-payloads'
+    },
+    themes: {
+        name: 'wifipineapplepager-themes',
+        url: 'https://github.com/hak5/wifipineapplepager-themes.git',
+        clonePath: '/tmp/wifipineapplepager-themes'
+    },
+    ringtones: {
+        name: 'wifipineapplepager-ringtones',
+        url: 'https://github.com/hak5/wifipineapplepager-ringtones.git',
+        clonePath: '/tmp/wifipineapplepager-ringtones'
+    }
+};
 
 function parsePayloadHeader(source) {
     const lines = source.split('\n').slice(0, 30);
@@ -59,8 +72,13 @@ function readFileSafe(p) {
 function findReadme(dirPath) {
     try {
         const entries = readdirSync(dirPath);
-        const readme = entries.find(e => e.toLowerCase() === 'readme.md');
-        return readme ? readFileSafe(join(dirPath, readme)) : null;
+        // Prefer .md, then .txt, then bare README
+        const md = entries.find(e => /^readme\.md$/i.test(e));
+        if (md) return readFileSafe(join(dirPath, md));
+        const txt = entries.find(e => /^readme\.txt$/i.test(e));
+        if (txt) return readFileSafe(join(dirPath, txt));
+        const bare = entries.find(e => /^readme$/i.test(e));
+        return bare ? readFileSafe(join(dirPath, bare)) : null;
     } catch { return null; }
 }
 
@@ -86,40 +104,39 @@ function walkPayloadDirs(dirPath, results = [], depth = 0) {
     return results;
 }
 
-async function main() {
-    console.log('🍍 WiFi Pineapple Pager Payload Library — Data Fetcher');
-    console.log('======================================================\n');
-
-    // Determine repo path
-    let repoPath = process.argv[2] || DEFAULT_CLONE_PATH;
-
-    if (!existsSync(join(repoPath, 'library'))) {
-        console.log(`📡 Cloning repo to ${repoPath}...`);
+function cloneOrUpdateRepo(repo) {
+    const checkDir = repo.name.includes('payloads') ? 'library' :
+        repo.name.includes('themes') ? 'themes' : 'ringtones';
+    if (!existsSync(join(repo.clonePath, checkDir))) {
+        console.log(`📡 Cloning ${repo.name} to ${repo.clonePath}...`);
         try {
-            execSync(`git clone --depth 1 ${REPO_URL} ${repoPath}`, { stdio: 'inherit' });
+            execSync(`git clone --depth 1 ${repo.url} ${repo.clonePath}`, { stdio: 'inherit' });
         } catch (err) {
-            console.error('❌ Failed to clone repo. Please clone it manually or pass the path.');
-            process.exit(1);
+            console.error(`❌ Failed to clone ${repo.name}.`);
+            return false;
         }
     } else {
-        console.log(`📂 Using existing repo at ${repoPath}`);
+        console.log(`📂 Using existing ${repo.name} at ${repo.clonePath}`);
     }
+    return true;
+}
 
+function processPayloads(repoPath) {
     const libraryPath = join(repoPath, 'library');
     if (!existsSync(libraryPath)) {
         console.error('❌ library/ directory not found!');
-        process.exit(1);
+        return { categories: {}, totalPayloads: 0 };
     }
 
-    // Get categories
-    const categories = readdirSync(libraryPath)
+    const categoryDirs = readdirSync(libraryPath)
         .filter(e => isDirectory(join(libraryPath, e)) && !e.startsWith('.'));
 
-    console.log(`\n📂 Found categories: ${categories.join(', ')}\n`);
+    console.log(`\n📂 Found payload categories: ${categoryDirs.join(', ')}\n`);
 
-    const data = { categories: {}, fetchedAt: new Date().toISOString(), totalPayloads: 0 };
+    const categories = {};
+    let totalPayloads = 0;
 
-    for (const catName of categories) {
+    for (const catName of categoryDirs) {
         const catPath = join(libraryPath, catName);
         const catReadme = findReadme(catPath);
 
@@ -132,8 +149,6 @@ async function main() {
         for (const subName of subDirs) {
             const subPath = join(catPath, subName);
             const subReadme = findReadme(subPath);
-
-            // Find all payload directories under this subcategory
             const payloadDirs = walkPayloadDirs(subPath);
 
             if (payloadDirs.length === 0) {
@@ -148,10 +163,7 @@ async function main() {
 
                 const meta = parsePayloadHeader(payloadSh);
                 const dirName = basename(payloadDir);
-
-                // Look for README at payload level, subcategory level, or category level
                 const payloadReadme = findReadme(payloadDir) || subReadme || catReadme;
-
                 const relPath = relative(repoPath, payloadDir);
 
                 payloads.push({
@@ -163,7 +175,7 @@ async function main() {
                     payloadCategory: meta.category || null,
                     readme: payloadReadme,
                     payloadSource: payloadSh,
-                    githubUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}/tree/${BRANCH}/${relPath}`
+                    githubUrl: `https://github.com/${REPO_OWNER}/${REPOS.payloads.name}/tree/${BRANCH}/${relPath}`
                 });
             }
 
@@ -173,12 +185,12 @@ async function main() {
                     displayName: subName.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
                     payloads
                 };
-                data.totalPayloads += payloads.length;
+                totalPayloads += payloads.length;
                 console.log(`  📁 ${subName} — ${payloads.length} payload(s) ✅`);
             }
         }
 
-        data.categories[catName] = {
+        categories[catName] = {
             name: catName,
             displayName: catName.charAt(0).toUpperCase() + catName.slice(1),
             readme: catReadme,
@@ -186,10 +198,138 @@ async function main() {
         };
     }
 
-    // ================================================================
-    // Fetch Pull Requests from GitHub API
-    // ================================================================
-    console.log(`\n📡 Fetching pull requests from GitHub API...`);
+    return { categories, totalPayloads };
+}
+
+function processThemes(repoPath) {
+    const themesPath = join(repoPath, 'themes');
+    if (!existsSync(themesPath)) {
+        console.error('❌ themes/ directory not found!');
+        return [];
+    }
+
+    const themeDirs = readdirSync(themesPath)
+        .filter(e => isDirectory(join(themesPath, e)) && !e.startsWith('.'));
+
+    console.log(`\n🎨 Found ${themeDirs.length} themes\n`);
+
+    const themes = [];
+    for (const dirName of themeDirs) {
+        const themePath = join(themesPath, dirName);
+        const readme = findReadme(themePath);
+
+        // Try to read theme.json for metadata
+        let themeMeta = {};
+        const themeJsonPath = join(themePath, 'theme.json');
+        if (isFile(themeJsonPath)) {
+            try {
+                themeMeta = JSON.parse(readFileSafe(themeJsonPath));
+            } catch { /* ignore */ }
+        }
+
+        // List files in theme dir
+        let fileList = [];
+        try {
+            fileList = readdirSync(themePath).filter(e => !e.startsWith('.'));
+        } catch { /* ignore */ }
+
+        const displayName = dirName.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+        // Extract author from theme.json or README
+        let author = themeMeta.author || '';
+        // Filter garbage values
+        if (author && /^[-=_.*]+$/.test(author.trim())) author = '';
+
+        if (!author && readme) {
+            // Pattern: "Author: Name" or "**Author:** Name" or "AUTHOR : Name" on same line
+            const inlineMatch = readme.match(/(?:\*{0,2})Author(?:\*{0,2})\s*[:\-]\s*@?(.+)/i);
+            if (inlineMatch) {
+                author = inlineMatch[1];
+            }
+            // Pattern: "## Author\nName" on next line
+            if (!author) {
+                const blockMatch = readme.match(/^#+\s*Author\s*\n+([^\n#]+)/im);
+                if (blockMatch) author = blockMatch[1];
+            }
+            // Pattern: "Theme by Name" or "Created by Name" or "by @Name"
+            if (!author) {
+                const byMatch = readme.match(/(?:theme|created|made)\s+by\s+@?([^\n,.(]+)/i);
+                if (byMatch) author = byMatch[1];
+            }
+        }
+
+        // Clean up: strip markdown links [Name](url) -> Name, strip bold/italic markers
+        if (author) {
+            author = author
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+                .replace(/\*+/g, '')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+        }
+
+        themes.push({
+            name: dirName,
+            title: themeMeta.name || themeMeta.theme_name || displayName,
+            author: author || 'Unknown',
+            description: themeMeta.description || readme ? (readme || '').split('\n').filter(l => l && !l.startsWith('#')).slice(0, 3).join(' ').substring(0, 300) || 'No description available.' : 'No description available.',
+            readme: readme,
+            themeJson: themeMeta,
+            files: fileList,
+            githubUrl: `https://github.com/${REPO_OWNER}/${REPOS.themes.name}/tree/${BRANCH}/themes/${dirName}`
+        });
+
+        console.log(`  🎨 ${dirName} ✅`);
+    }
+
+    return themes;
+}
+
+function processRingtones(repoPath) {
+    const ringtonesPath = join(repoPath, 'ringtones');
+    if (!existsSync(ringtonesPath)) {
+        console.error('❌ ringtones/ directory not found!');
+        return [];
+    }
+
+    const rtttlFiles = readdirSync(ringtonesPath)
+        .filter(e => e.endsWith('.rtttl') && isFile(join(ringtonesPath, e)));
+
+    console.log(`\n� Found ${rtttlFiles.length} ringtones\n`);
+
+    const ringtones = [];
+    for (const fileName of rtttlFiles) {
+        const filePath = join(ringtonesPath, fileName);
+        const content = readFileSafe(filePath);
+        if (!content) continue;
+
+        // RTTTL format: name:settings:notes
+        const parts = content.trim().split(':');
+        const rtttlName = parts[0] || fileName.replace('.rtttl', '');
+        const settings = parts[1] || '';
+        const notes = parts[2] || '';
+
+        const displayName = fileName.replace('.rtttl', '').replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+        ringtones.push({
+            name: fileName.replace('.rtttl', ''),
+            fileName: fileName,
+            title: displayName,
+            rtttlName: rtttlName.trim(),
+            settings: settings.trim(),
+            notes: notes.trim(),
+            source: content.trim(),
+            size: content.length,
+            githubUrl: `https://github.com/${REPO_OWNER}/${REPOS.ringtones.name}/blob/${BRANCH}/ringtones/${fileName}`
+        });
+
+        console.log(`  🔔 ${fileName} ✅`);
+    }
+
+    return ringtones;
+}
+
+async function fetchPullRequests(repoName) {
+    console.log(`\n📡 Fetching PRs from ${repoName}...`);
 
     const pullRequests = [];
     const prStates = ['open', 'closed'];
@@ -198,7 +338,7 @@ async function main() {
         let page = 1;
         let hasMore = true;
         while (hasMore) {
-            const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/pulls?state=${state}&per_page=100&page=${page}`;
+            const apiUrl = `https://api.github.com/repos/${REPO_OWNER}/${repoName}/pulls?state=${state}&per_page=100&page=${page}`;
             try {
                 const res = await fetch(apiUrl, {
                     headers: {
@@ -229,33 +369,74 @@ async function main() {
                             closedAt: pr.closed_at,
                             mergedAt: pr.merged_at,
                             htmlUrl: pr.html_url,
+                            repo: repoName,
                             labels: (pr.labels || []).map(l => ({
                                 name: l.name,
                                 color: l.color,
                                 description: l.description
                             })),
                             comments: pr.comments || 0,
-                            additions: pr.additions || null,
-                            deletions: pr.deletions || null,
-                            changedFiles: pr.changed_files || null,
                             draft: pr.draft || false
                         });
                     }
-                    console.log(`  📄 Fetched ${prs.length} ${state} PRs (page ${page})`);
+                    console.log(`  📄 ${repoName}: ${prs.length} ${state} PRs (page ${page})`);
                     page++;
                 }
             } catch (err) {
-                console.error(`  ❌ Failed to fetch ${state} PRs: ${err.message}`);
+                console.error(`  ❌ Failed to fetch ${state} PRs from ${repoName}: ${err.message}`);
                 hasMore = false;
             }
         }
     }
 
-    // Sort PRs by number descending (newest first)
-    pullRequests.sort((a, b) => b.number - a.number);
-    data.pullRequests = pullRequests;
+    return pullRequests;
+}
 
-    console.log(`  ✅ Total PRs fetched: ${pullRequests.length}`);
+async function main() {
+    console.log('🍍 WiFi Pineapple Pager — Unified Data Fetcher');
+    console.log('======================================================\n');
+
+    // Clone all repos
+    for (const repo of Object.values(REPOS)) {
+        cloneOrUpdateRepo(repo);
+    }
+
+    // Process payloads
+    console.log('\n══════════════════════════════════════════════════════');
+    console.log('📦 Processing Payloads...');
+    const { categories, totalPayloads } = processPayloads(REPOS.payloads.clonePath);
+
+    // Process themes
+    console.log('\n══════════════════════════════════════════════════════');
+    console.log('🎨 Processing Themes...');
+    const themes = processThemes(REPOS.themes.clonePath);
+
+    // Process ringtones
+    console.log('\n══════════════════════════════════════════════════════');
+    console.log('🔔 Processing Ringtones...');
+    const ringtones = processRingtones(REPOS.ringtones.clonePath);
+
+    // Fetch PRs from all repos
+    console.log('\n══════════════════════════════════════════════════════');
+    console.log('🔀 Fetching Pull Requests...');
+    let allPRs = [];
+    for (const repo of Object.values(REPOS)) {
+        const prs = await fetchPullRequests(repo.name);
+        allPRs.push(...prs);
+    }
+    allPRs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    // Build output
+    const data = {
+        fetchedAt: new Date().toISOString(),
+        categories,
+        totalPayloads,
+        themes,
+        totalThemes: themes.length,
+        ringtones,
+        totalRingtones: ringtones.length,
+        pullRequests: allPRs
+    };
 
     // Summary
     let totalSubs = 0;
@@ -264,7 +445,9 @@ async function main() {
     }
 
     console.log(`\n======================================================`);
-    console.log(`✅ ${Object.keys(data.categories).length} categories, ${totalSubs} subcategories, ${data.totalPayloads} payloads, ${pullRequests.length} PRs`);
+    console.log(`✅ ${Object.keys(data.categories).length} categories, ${totalSubs} subcategories, ${data.totalPayloads} payloads`);
+    console.log(`✅ ${data.totalThemes} themes, ${data.totalRingtones} ringtones`);
+    console.log(`✅ ${allPRs.length} pull requests`);
 
     writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2));
     console.log(`📄 ${OUTPUT_FILE} written successfully!`);

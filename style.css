@@ -279,14 +279,73 @@ body {
 }
 
 /* ================================================================
-   Category Tabs
+   Main Tabs (Payloads / Themes / Ringtones / PRs)
+   ================================================================ */
+
+.main-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 24px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.main-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-tab:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.main-tab.active {
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #fff));
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+
+.main-tab.active .tab-count {
+  background: rgba(0,0,0,0.2);
+  color: #000;
+}
+
+.main-tab .tab-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+}
+
+/* ================================================================
+   Category Sub-Tabs (for payloads)
    ================================================================ */
 
 .category-tabs {
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 20px 24px 0;
+  padding: 12px 24px 0;
   max-width: 1600px;
   margin: 0 auto;
   position: relative;
@@ -557,6 +616,7 @@ body {
   margin-bottom: 14px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1061,6 +1121,151 @@ body {
   font-family: var(--font-mono);
 }
 
+.card-tag.tag-pr-repo {
+  background: rgba(0,150,255,0.12);
+  color: #5ba3d9;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-tag.tag-theme-json {
+  background: rgba(255,200,0,0.12);
+  color: #d4a520;
+}
+
+.card-tag.tag-has-images {
+  background: rgba(100,180,255,0.12);
+  color: #6ab4ff;
+}
+
+.card-tag.tag-ringtone-size {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+/* ================================================================
+   RTTTL Play Buttons
+   ================================================================ */
+
+.rtttl-play-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.rtttl-play-btn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.3);
+}
+
+.rtttl-play-btn.playing {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  animation: pulse-glow 1.2s ease-in-out infinite;
+}
+
+.rtttl-play-btn-lg {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.rtttl-player-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(0, 255, 136, 0.04);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.rtttl-player-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* ================================================================
+   Theme Images Grid
+   ================================================================ */
+
+.theme-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.theme-image-item {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-image-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-image-item img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.theme-image-item figcaption {
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 255, 136, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.6); }
+}
+
+.sidebar-section-label {
+  pointer-events: none;
+  padding: 12px 16px 4px !important;
+  border-bottom: none !important;
+}
+
+.sidebar-section-label:hover {
+  background: transparent !important;
+}
+
+.sidebar-info-item {
+  pointer-events: none;
+  padding: 12px 16px !important;
+  border-bottom: none !important;
+}
+
+.sidebar-info-item:hover {
+  background: transparent !important;
+}
+
 .pr-info-table {
   width: 100%;
   border-collapse: collapse;
@@ -1176,16 +1381,40 @@ body {
   .header-meta { order: 2; margin-left: auto; }
   .search-wrapper { order: 3; max-width: 100%; flex-basis: 100%; }
 
-  .category-tabs {
+  .main-tabs {
     padding: 12px 16px 0;
-    gap: 6px;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
   }
 
+  .main-tabs::-webkit-scrollbar { display: none; }
+
+  .main-tab {
+    padding: 8px 14px;
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .category-tabs {
+    padding: 8px 16px 0;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    justify-content: flex-start;
+  }
+
+  .category-tabs::-webkit-scrollbar { display: none; }
+
   .cat-tab {
-    padding: 10px 16px;
-    font-size: 12px;
-    flex: 1;
-    justify-content: center;
+    padding: 8px 14px;
+    font-size: 11px;
+    flex-shrink: 0;
+    white-space: nowrap;
   }
 
   .content-layout {
@@ -1209,6 +1438,7 @@ body {
 @media (max-width: 480px) {
   .gh-link span { display: none; }
 
+  .main-tab .tab-count { display: none; }
   .cat-tab .tab-count { display: none; }
 
   .modal-meta {
