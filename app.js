@@ -378,7 +378,7 @@
         </div>
         <div class="modal-body">
           ${activeTab === 'images' ? renderThemeImages(images, theme) : ''}
-          ${activeTab === 'readme' ? `<div>${simpleMarkdown(theme.readme)}</div>` : ''}
+          ${activeTab === 'readme' ? `<div>${simpleMarkdown(theme.readme, `https://raw.githubusercontent.com/hak5/wifipineapplepager-themes/master/themes/${theme.name}/`, true)}</div>` : ''}
           ${activeTab === 'info' ? renderThemeInfo(theme) : ''}
           ${activeTab === 'json' ? renderThemeJson(theme) : ''}
         </div>`;
@@ -396,7 +396,8 @@
     function renderThemeImages(images, theme) {
         return `<div class="theme-images-grid">${images.map(img =>
             `<figure class="theme-image-item">
-                <img src="${img.url}" alt="${escapeHtml(img.alt)}" loading="lazy">
+                // <img src="${img.url}" alt="${escapeHtml(img.alt)}" loading="lazy">
+                <img src="${img.url}" alt="${escapeHtml(img.alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.style.display='none';this.parentElement.style.display='none'">
                 ${img.alt ? `<figcaption>${escapeHtml(img.alt)}</figcaption>` : ''}
             </figure>`
         ).join('')}</div>`;
@@ -979,9 +980,46 @@
     // ================================================================
     // Simple Markdown Renderer
     // ================================================================
-    function simpleMarkdown(md) {
+    function simpleMarkdown(md, baseUrl, stripImages) {
         if (!md) return '';
-        let html = escapeHtml(md);
+
+        // Preserve safe HTML tags and entities through escaping
+        const preserved = [];
+        const safeTags = /^\/?(img|br|hr|p|h[1-6]|em|strong|b|i|a|div|span|pre|code|ul|ol|li|table|thead|tbody|tr|td|th|blockquote|details|summary|sub|sup)$/i;
+        let raw = md.replace(/<\/?[a-z][a-z0-9]*\b[^>]*\/?>/gi, (match) => {
+            // Extract tag name
+            const tagMatch = match.match(/^<\/?([a-z][a-z0-9]*)/i);
+            if (!tagMatch || !safeTags.test(tagMatch[1])) return match;
+            // Strip img tags entirely if requested (images shown in separate tab)
+            if (stripImages && /^<img/i.test(match)) return '';
+            // Resolve relative src/href URLs if baseUrl provided
+            if (baseUrl) {
+                match = match.replace(/(src|href)=["']([^"']+)["']/gi, (s, attr, url) => {
+                    if (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('#') && !url.startsWith('mailto:')) {
+                        return `${attr}="${baseUrl}${url}"`;
+                    }
+                    return s;
+                });
+            }
+            // Add styling to img tags
+            if (/^<img/i.test(match) && !match.includes('style=')) {
+                match = match.replace(/<img/i, '<img style="max-width:100%;border-radius:8px;margin:8px 0"');
+            }
+            const idx = preserved.length;
+            preserved.push(match);
+            return `\x00SAFE${idx}\x00`;
+        });
+        // Preserve HTML entities
+        raw = raw.replace(/&(nbsp|amp|lt|gt|quot|#\d+|#x[0-9a-f]+);/gi, (match) => {
+            const idx = preserved.length;
+            preserved.push(match);
+            return `\x00SAFE${idx}\x00`;
+        });
+
+        let html = escapeHtml(raw);
+
+        // Restore preserved HTML
+        html = html.replace(/\x00SAFE(\d+)\x00/g, (_, idx) => preserved[parseInt(idx)]);
 
         html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code>${code.trim()}</code></pre>`);
         html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
@@ -991,7 +1029,11 @@
         html = html.replace(/^# (.+)$/gm, '<h1>$1</h1>');
         html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-        html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-width:100%;border-radius:8px;margin:8px 0">');
+        html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, url) => {
+            if (stripImages) return '';
+            if (baseUrl && !url.startsWith('http://') && !url.startsWith('https://')) url = baseUrl + url;
+            return `<img src="${url}" alt="${alt}" style="max-width:100%;border-radius:8px;margin:8px 0">`;
+        });
         html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
         html = html.replace(/^\|(.+)\|$/gm, (match) => {
