@@ -173,10 +173,17 @@ body {
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.2;
-  background: linear-gradient(135deg, var(--text-primary), var(--accent));
+  background: linear-gradient(90deg, var(--accent), #00ccff, #aa66ff, var(--accent), #00ccff);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: text-gradient-flow 6s linear infinite;
+}
+
+@keyframes text-gradient-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 .logo-sub {
