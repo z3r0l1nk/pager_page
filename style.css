@@ -3,6 +3,12 @@
    Dark cyberpunk / hacker terminal aesthetic
    ================================================================ */
 
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 :root {
   /* Colors */
   --bg-primary: #06060b;
@@ -311,10 +317,31 @@ body {
   overflow: hidden;
 }
 
+.main-tab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--border-angle), transparent 60%, var(--accent) 80%, transparent 95%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  animation: border-spin 3s linear infinite;
+}
+
 .main-tab:hover {
   transform: translateY(-1px);
-  border-color: var(--border-hover);
+  border-color: transparent;
   box-shadow: var(--shadow-md);
+}
+
+.main-tab:hover::after {
+  opacity: 1;
 }
 
 .main-tab.active {
@@ -380,10 +407,35 @@ body {
   border-radius: inherit;
 }
 
+.cat-tab::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--border-angle), transparent 60%, var(--tab-color, var(--accent)) 80%, transparent 95%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  animation: border-spin 3s linear infinite;
+}
+
 .cat-tab:hover {
   transform: translateY(-2px);
-  border-color: var(--border-hover);
+  border-color: transparent;
   box-shadow: var(--shadow-md);
+}
+
+.cat-tab:hover::after {
+  opacity: 1;
+}
+
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
 }
 
 .cat-tab .tab-count {
@@ -572,14 +624,35 @@ body {
   transition: opacity 0.3s;
 }
 
+.payload-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--border-angle), transparent 60%, var(--card-accent, var(--accent)) 80%, transparent 95%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  animation: border-spin 3s linear infinite;
+}
+
 .payload-card:hover {
   transform: translateY(-3px);
-  border-color: var(--border-hover);
+  border-color: transparent;
   background: var(--bg-card-hover);
   box-shadow: var(--shadow-md), var(--shadow-glow);
 }
 
 .payload-card:hover::before {
+  opacity: 1;
+}
+
+.payload-card:hover::after {
   opacity: 1;
 }
 
