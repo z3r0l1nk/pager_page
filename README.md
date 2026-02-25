@@ -48,6 +48,7 @@ Walks the `payloads/` directory tree looking for `payload.sh` files. For each pa
 Scans the `themes/` directory. For each theme:
 - Reads `theme.json` for metadata (name, author, version)
 - Reads `README.md` (or `README`) for description and author fallback
+- Lists all files in the theme directory
 
 **Step 4 — Process ringtones**
 
