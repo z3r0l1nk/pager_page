@@ -24,7 +24,6 @@
     const subcategoryList = document.getElementById('subcategoryList');
     const payloadGrid = document.getElementById('payloadGrid');
     const gridHeader = document.getElementById('currentSection');
-    const gridCount = document.getElementById('gridCount');
     const searchInput = document.getElementById('searchInput');
     const payloadCount = document.getElementById('payloadCount');
     const loadingState = document.getElementById('loadingState');
@@ -43,7 +42,7 @@
             payloadData = await res.json();
 
             const total = payloadData.totalPayloads + (payloadData.totalThemes || 0) + (payloadData.totalRingtones || 0);
-            payloadCount.textContent = `${total} items`;
+            if (payloadCount) payloadCount.textContent = `${total} items`;
 
             renderMainTabs();
             selectMainTab('payloads');
@@ -215,7 +214,6 @@
         } else {
             gridHeader.textContent = cat.displayName + ' \u2014 All Payloads';
         }
-        gridCount.textContent = `${payloads.length} payload${payloads.length !== 1 ? 's' : ''}`;
 
         payloadGrid.innerHTML = '';
         if (payloads.length === 0) {
@@ -286,7 +284,6 @@
         }
 
         gridHeader.textContent = 'Themes';
-        gridCount.textContent = `${filtered.length} theme${filtered.length !== 1 ? 's' : ''}`;
         payloadGrid.innerHTML = '';
 
         if (filtered.length === 0) {
@@ -593,7 +590,6 @@
         }
 
         gridHeader.textContent = 'Ringtones';
-        gridCount.textContent = `${filtered.length} ringtone${filtered.length !== 1 ? 's' : ''}`;
         payloadGrid.innerHTML = '';
 
         if (filtered.length === 0) {
@@ -794,7 +790,6 @@
     function renderPullRequests() {
         const prs = getFilteredPRs();
         gridHeader.textContent = 'Pull Requests';
-        gridCount.textContent = `${prs.length} PR${prs.length !== 1 ? 's' : ''}`;
         payloadGrid.innerHTML = '';
 
         if (prs.length === 0) {

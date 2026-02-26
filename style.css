@@ -1108,6 +1108,71 @@ body {
 }
 
 /* ================================================================
+   Promo Bar
+   ================================================================ */
+
+.promo-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  background: var(--bg-card);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s;
+  overflow: hidden;
+}
+
+.promo-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(from var(--border-angle), transparent 40%, #00ff88 55%, #aa44ff 70%, #00ffee 85%, transparent 95%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: border-spin 3s linear infinite;
+  opacity: 0.7;
+}
+
+.promo-btn:hover {
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.promo-btn:hover::after {
+  opacity: 1;
+}
+
+.promo-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.promo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.promo-text small {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* ================================================================
    Footer
    ================================================================ */
 
@@ -1524,6 +1589,8 @@ body {
 
 @media (max-width: 480px) {
   .gh-link .gh-label { display: none; }
+  .promo-text { display: none; }
+  .promo-btn { padding: 6px; }
 
   .main-tab .tab-count { display: none; }
   .cat-tab .tab-count { display: none; }

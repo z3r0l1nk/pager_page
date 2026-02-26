@@ -19,6 +19,18 @@ A web-based library for browsing **payloads**, **themes**, and **ringtones** for
 
 ---
 
+## Community
+
+<a href="https://brandonstarkweather.com/PagerRat/">
+  <img src="PagerRat.png" alt="PagerRat" width="120" align="left" style="margin-right:16px">
+</a>
+
+**[PagerRat](https://brandonstarkweather.com/PagerRat/)** — An Android companion app for the WiFi Pineapple Pager. Control your pager directly from your phone.
+
+<br clear="left">
+
+---
+
 ## How It Works
 
 ### Data Pipeline (`fetch_data.js`) --> Big help from Claude AI with this part.

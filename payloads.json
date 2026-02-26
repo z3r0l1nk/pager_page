@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-26T10:17:19.317Z",
+  "fetchedAt": "2026-02-26T20:13:25.381Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20368,7 +20368,7 @@
       "authorUrl": "https://github.com/lukeswitz",
       "body": "**Use Case**: View the AP/SSID of `.pcap` files without cross-referencing MAC \r\n\r\n- Adds a line with `pcap | SSID/AP` \r\n- Unifies loot dir variable",
       "createdAt": "2026-02-04T18:31:34Z",
-      "updatedAt": "2026-02-26T10:10:10Z",
+      "updatedAt": "2026-02-26T11:12:21Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/258",
