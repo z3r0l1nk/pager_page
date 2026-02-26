@@ -592,11 +592,6 @@ body {
   color: var(--text-primary);
 }
 
-.payload-grid-count {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-muted);
-}
 
 .payload-grid {
   display: grid;
