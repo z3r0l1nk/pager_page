@@ -25,7 +25,6 @@
     const payloadGrid = document.getElementById('payloadGrid');
     const gridHeader = document.getElementById('currentSection');
     const searchInput = document.getElementById('searchInput');
-    const payloadCount = document.getElementById('payloadCount');
     const loadingState = document.getElementById('loadingState');
     const modalOverlay = document.getElementById('modalOverlay');
     const modalContent = document.getElementById('modalContent');
@@ -40,9 +39,6 @@
             const res = await fetch('payloads.json');
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             payloadData = await res.json();
-
-            const total = payloadData.totalPayloads + (payloadData.totalThemes || 0) + (payloadData.totalRingtones || 0);
-            if (payloadCount) payloadCount.textContent = `${total} items`;
 
             renderMainTabs();
             selectMainTab('payloads');

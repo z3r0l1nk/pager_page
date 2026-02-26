@@ -281,15 +281,6 @@ body {
   height: 18px;
 }
 
-.payload-count {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--accent);
-  background: var(--accent-dim);
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  white-space: nowrap;
-}
 
 /* ================================================================
    Main Tabs (Payloads / Themes / Ringtones / PRs)
@@ -1103,7 +1094,7 @@ body {
 }
 
 /* ================================================================
-   Promo Bar
+   Promo Button
    ================================================================ */
 
 .promo-btn {
