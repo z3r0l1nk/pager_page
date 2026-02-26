@@ -1,5 +1,9 @@
 # 🍍 Pineapple Pager Library 2.0
 
+<p align="center">
+  <img src="pager.png" alt="Pineapple Pager Library" width="400">
+</p>
+
 A web-based library for browsing **payloads**, **themes**, and **ringtones** for the [Hak5 WiFi Pineapple Pager](https://github.com/hak5/wifipineapplepager). Also aggregates **pull requests** from all three community repositories.
 
 ---
