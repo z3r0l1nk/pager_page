@@ -157,7 +157,13 @@ function cloneOrUpdateRepo(repo) {
             return false;
         }
     } else {
-        console.log(`📂 Using existing ${repo.name} at ${repo.clonePath}`);
+        console.log(`📂 Updating ${repo.name} at ${repo.clonePath}...`);
+        try {
+            execSync(`git -C ${repo.clonePath} fetch --depth 1 origin ${BRANCH}`, { stdio: 'inherit' });
+            execSync(`git -C ${repo.clonePath} reset --hard origin/${BRANCH}`, { stdio: 'inherit' });
+        } catch (err) {
+            console.error(`⚠️  Failed to update ${repo.name}, using existing data.`);
+        }
     }
     return true;
 }
