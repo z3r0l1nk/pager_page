@@ -17,7 +17,7 @@ A web-based library for browsing **payloads**, **themes**, and **ringtones** for
 
 ## How It Works
 
-### Data Pipeline (`fetch_data.js`)
+### Data Pipeline (`fetch_data.js`) --> Big help from Claude AI with this part.
 
 The data fetcher is a Node.js script that runs locally (or in CI) to produce a single `payloads.json` file consumed by the frontend.
 
