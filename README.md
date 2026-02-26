@@ -1,4 +1,4 @@
-# 🍍 Pineapple Pager Library
+# 🍍 Pineapple Pager Library 2.0
 
 A web-based library for browsing **payloads**, **themes**, and **ringtones** for the [Hak5 WiFi Pineapple Pager](https://github.com/hak5/wifipineapplepager). Also aggregates **pull requests** from all three community repositories.
 
@@ -43,11 +43,14 @@ Walks the `payloads/` directory tree looking for `payload.sh` files. For each pa
 - Finds and reads the associated `README.md`
 - Groups payloads into categories → subcategories
 
-**Step 3 — Process themes**
+**Step 3 — Process themes** --> Big help from Claude AI with the image logic, README logic.
 
 Scans the `themes/` directory. For each theme:
 - Reads `theme.json` for metadata (name, author, version)
-- Reads `README.md` (or `README`) for description and author fallback
+- Finds the best README (prioritizes `.md` → `.txt` → bare `README`)
+- Resolves image paths in READMEs case-insensitively (handles mismatched casing between markdown references and actual filenames)
+- Extracts author from `theme.json`, or falls back to README patterns (`Author: Name`, `## Author\nName`, `Theme by Name`)
+- Cleans author values (strips markdown links, bold markers, filters garbage)
 - Lists all files in the theme directory
 
 **Step 4 — Process ringtones**
@@ -91,11 +94,13 @@ A vanilla JavaScript single-page application — no frameworks, no build step.
 
 ## Quick Start
 
-```bash
-# 1. Fetch data (requires Node.js, git, and internet)
-npm run fetch
 
-# 2. Serve locally
+## 1. Fetch data (requires Node.js, git, and internet)
+```bash
+npm run fetch
+```
+## 2. Serve locally
+```
 npm run serve
 ```
 
@@ -126,3 +131,4 @@ Or just open `index.html` directly — it only needs the `payloads.json` file to
 
 *For educational and authorized testing purposes only.*
 *Created by [Z3r0L1nk](https://github.com/Z3r0L1nk)*
+*Assistant: [Claude AI](https://claude.ai) [<img src="https://claude.ai/favicon.ico" width="16" height="16" alt="Claude AI">](https://claude.ai)*

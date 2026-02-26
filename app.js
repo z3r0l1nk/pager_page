@@ -31,6 +31,7 @@
     const modalOverlay = document.getElementById('modalOverlay');
     const modalContent = document.getElementById('modalContent');
     const modalClose = document.getElementById('modalClose');
+    const projectReadmeBtn = document.getElementById('projectReadmeBtn');
 
     // ================================================================
     // Init
@@ -1133,6 +1134,26 @@
 
     modalClose.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+
+    if (projectReadmeBtn) {
+        projectReadmeBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                const res = await fetch('README.md');
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const md = await res.text();
+                modalContent.innerHTML = `
+                    <div class="modal-header">
+                        <h2 class="modal-title">\ud83d\udcd6 Project Readme</h2>
+                    </div>
+                    <div class="modal-body">${simpleMarkdown(md)}</div>`;
+                modalOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            } catch (err) {
+                console.error('Failed to load README.md:', err);
+            }
+        });
+    }
 
     // ================================================================
     // Boot
