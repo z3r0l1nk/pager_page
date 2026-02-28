@@ -1163,6 +1163,31 @@
     }
 
     // ================================================================
+    // Logo Animation
+    // ================================================================
+    (function animateLogo() {
+        const logo = document.getElementById('logoAnim');
+        if (!logo) return;
+        const totalFrames = 10;
+        const frames = [];
+        let loaded = 0;
+        let frame = 0;
+        for (let i = 1; i <= totalFrames; i++) {
+            const img = new Image();
+            img.src = `animation/anim_frame_${i}.png`;
+            frames.push(img);
+            img.onload = () => {
+                if (++loaded === totalFrames) {
+                    setInterval(() => {
+                        frame = (frame + 1) % totalFrames;
+                        logo.src = frames[frame].src;
+                    }, 150);
+                }
+            };
+        }
+    })();
+
+    // ================================================================
     // Boot
     // ================================================================
     init();

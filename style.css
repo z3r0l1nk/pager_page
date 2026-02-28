@@ -158,9 +158,11 @@ body {
 }
 
 .logo-icon {
-  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(0,255,170,0.4));
-  animation: pulse 3s ease-in-out infinite;
+  image-rendering: pixelated;
 }
 
 @keyframes pulse {
