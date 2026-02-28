@@ -1,3 +1,4 @@
 node_modules/
 .DS_Store
 *.log
+.github/workflows/update-payloads.yml
