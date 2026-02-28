@@ -1163,6 +1163,29 @@
     }
 
     // ================================================================
+    // Secret Punk Theme
+    // ================================================================
+    (function initPunkTheme() {
+        if (localStorage.getItem('punkTheme') === 'on') {
+            document.body.classList.add('punk-theme');
+        }
+
+        const logo = document.getElementById('logoAnim');
+        if (!logo) return;
+
+        logo.style.cursor = 'pointer';
+        logo.addEventListener('click', () => {
+            const active = document.body.classList.toggle('punk-theme');
+            localStorage.setItem('punkTheme', active ? 'on' : 'off');
+
+            document.body.classList.add('punk-flash');
+            document.body.addEventListener('animationend', () => {
+                document.body.classList.remove('punk-flash');
+            }, { once: true });
+        });
+    })();
+
+    // ================================================================
     // Logo Animation
     // ================================================================
     (function animateLogo() {

@@ -1606,3 +1606,92 @@ body {
     gap: 8px;
   }
 }
+
+/* ================================================================
+   Secret Punk / Industrial Theme
+   ================================================================ */
+
+body.punk-theme {
+  --bg-primary: #0a0806;
+  --bg-secondary: #12100c;
+  --bg-card: #1a1610;
+  --bg-card-hover: #24201a;
+  --bg-sidebar: #0e0c08;
+  --bg-modal: #14120e;
+  --bg-code: #0c0a06;
+  --bg-input: #14120e;
+
+  --border-color: rgba(255, 60, 20, 0.12);
+  --border-hover: rgba(255, 60, 20, 0.3);
+  --border-active: rgba(255, 60, 20, 0.5);
+
+  --text-primary: #e8dcc8;
+  --text-secondary: #a09080;
+  --text-muted: #6a5a4a;
+  --text-accent: #ff3c14;
+
+  --accent: #ff3c14;
+  --accent-dim: rgba(255, 60, 20, 0.15);
+  --accent-glow: rgba(255, 60, 20, 0.3);
+
+  --cat-alerts: #ff2200;
+  --cat-recon: #ff8800;
+  --cat-user: #cc4400;
+
+  --shadow-glow: 0 0 30px rgba(255, 60, 20, 0.08);
+}
+
+body.punk-theme .bg-glow-1 {
+  background: radial-gradient(ellipse at 20% 50%, rgba(255, 60, 20, 0.08), transparent 60%);
+}
+
+body.punk-theme .bg-glow-2 {
+  background: radial-gradient(ellipse at 80% 50%, rgba(255, 140, 0, 0.05), transparent 60%);
+}
+
+body.punk-theme .logo-icon {
+  filter: drop-shadow(0 0 12px rgba(255, 60, 20, 0.6)) saturate(0.6) hue-rotate(-30deg);
+}
+
+body.punk-theme .logo-text h1 {
+  background: linear-gradient(135deg, #ff3c14, #ff8800, #ff3c14);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s linear infinite;
+}
+
+body.punk-theme .promo-btn::before {
+  background: conic-gradient(from var(--border-angle), #ff3c14, #ff8800, #cc4400, #ff3c14);
+}
+
+/* Scanline overlay */
+body.punk-theme::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Glitch flash on theme toggle */
+@keyframes punk-glitch {
+  0% { opacity: 1; filter: none; }
+  10% { filter: hue-rotate(90deg) brightness(2); }
+  20% { filter: hue-rotate(-90deg) brightness(0.5); transform: translate(2px, -1px); }
+  30% { filter: hue-rotate(45deg) brightness(1.5); transform: translate(-2px, 1px); }
+  40% { filter: none; transform: none; }
+  100% { opacity: 1; filter: none; transform: none; }
+}
+
+body.punk-flash {
+  animation: punk-glitch 0.4s ease-out;
+}
