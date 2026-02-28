@@ -377,6 +377,8 @@
           ${activeTab === 'json' ? renderThemeJson(theme) : ''}
         </div>`;
 
+            highlightCode(modalContent);
+
             modalContent.querySelectorAll('.modal-tab').forEach(tab => {
                 tab.addEventListener('click', () => { activeTab = tab.dataset.tab; render(); });
             });
@@ -407,7 +409,7 @@
 
     function renderThemeJson(theme) {
         if (!theme.themeJson || Object.keys(theme.themeJson).length === 0) return '<p>No theme.json data.</p>';
-        return `<div class="source-code-view"><div class="source-code-header"><span class="source-code-filename">theme.json</span></div><pre><code>${escapeHtml(JSON.stringify(theme.themeJson, null, 2))}</code></pre></div>`;
+        return `<div class="source-code-view"><div class="source-code-header"><span class="source-code-filename">theme.json</span></div><pre><code class="language-json">${escapeHtml(JSON.stringify(theme.themeJson, null, 2))}</code></pre></div>`;
     }
 
     // ================================================================
@@ -645,7 +647,7 @@
             <span class="source-code-filename">${escapeHtml(ringtone.fileName)}</span>
             <button class="copy-btn" id="ringtoneCopyBtn">Copy</button>
           </div>
-          <pre><code>${escapeHtml(ringtone.source)}</code></pre>
+          <pre><code class="language-plaintext">${escapeHtml(ringtone.source)}</code></pre>
         </div>
         <table class="pr-info-table" style="margin-top:20px">
           <tr><td><strong>RTTTL Name</strong></td><td>${escapeHtml(ringtone.rtttlName)}</td></tr>
@@ -653,6 +655,8 @@
           <tr><td><strong>Notes</strong></td><td style="word-break:break-all"><code>${escapeHtml(ringtone.notes)}</code></td></tr>
         </table>
       </div>`;
+
+        highlightCode(modalContent);
 
         modalContent.querySelector('.rtttl-play-btn').addEventListener('click', (e) => handlePlayClick(e, ringtone));
 
@@ -888,6 +892,8 @@
           ${activeTab === 'info' ? renderPRInfo(pr) : ''}
         </div>`;
 
+            highlightCode(modalContent);
+
             modalContent.querySelectorAll('.modal-tab').forEach(tab => {
                 tab.addEventListener('click', () => { activeTab = tab.dataset.tab; render(); });
             });
@@ -944,13 +950,15 @@
         </div>
         <div class="modal-body">
           ${activeTab === 'readme' ? `<div>${simpleMarkdown(payload.readme)}</div>` : ''}
-          ${activeTab === 'source' ? `<div class="source-code-view"><div class="source-code-header"><span class="source-code-filename">payload.sh</span><button class="copy-btn">Copy</button></div><pre><code>${escapeHtml(payload.payloadSource)}</code></pre></div>` : ''}
+          ${activeTab === 'source' ? `<div class="source-code-view"><div class="source-code-header"><span class="source-code-filename">payload.sh</span><button class="copy-btn">Copy</button></div><pre><code class="language-bash">${escapeHtml(payload.payloadSource)}</code></pre></div>` : ''}
           ${activeTab === 'description' ? `<h3 style="color:var(--text-primary);margin-bottom:12px">Description</h3><p>${escapeHtml(payload.description)}</p>${payload.payloadCategory ? `<p style="margin-top:12px"><strong>Category:</strong> ${escapeHtml(payload.payloadCategory)}</p>` : ''}` : ''}
         </div>`;
 
             modalContent.querySelectorAll('.modal-tab').forEach(tab => {
                 tab.addEventListener('click', () => { activeTab = tab.dataset.tab; render(); });
             });
+
+            highlightCode(modalContent);
 
             const copyBtn = modalContent.querySelector('.copy-btn');
             if (copyBtn) {
@@ -1013,7 +1021,7 @@
         // Restore preserved HTML
         html = html.replace(/\x00SAFE(\d+)\x00/g, (_, idx) => preserved[parseInt(idx)]);
 
-        html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code>${code.trim()}</code></pre>`);
+        html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code${lang ? ` class="language-${lang}"` : ''}>${code.trim()}</code></pre>`);
         html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
         html = html.replace(/^#### (.+)$/gm, '<h4>$1</h4>');
         html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
@@ -1083,6 +1091,13 @@
     // ================================================================
     // Helpers
     // ================================================================
+    function highlightCode(container) {
+        if (typeof hljs === 'undefined') return;
+        (container || document).querySelectorAll('pre code:not(.hljs)').forEach(el => {
+            hljs.highlightElement(el);
+        });
+    }
+
     function escapeHtml(str) {
         if (!str) return '';
         const div = document.createElement('div');
@@ -1138,6 +1153,7 @@
                         <h2 class="modal-title">\ud83d\udcd6 Project Readme</h2>
                     </div>
                     <div class="modal-body">${simpleMarkdown(md)}</div>`;
+                highlightCode(modalContent);
                 modalOverlay.classList.add('open');
                 document.body.style.overflow = 'hidden';
             } catch (err) {

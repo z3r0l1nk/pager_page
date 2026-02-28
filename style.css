@@ -1007,6 +1007,18 @@ body {
   color: inherit;
 }
 
+.modal-body pre code.hljs {
+  background: transparent;
+  padding: 0;
+}
+
+.source-code-view pre code.hljs {
+  background: transparent;
+  padding: 16px;
+  font-family: var(--font-mono);
+  line-height: 1.6;
+}
+
 .modal-body table {
   width: 100%;
   border-collapse: collapse;
@@ -1054,7 +1066,7 @@ body {
   margin: 0;
   border-radius: var(--radius-md);
   max-height: 60vh;
-  font-size: 12.5px;
+  font-size: 14px; /* this size was before syntax highlighting */
 }
 
 .source-code-header {
