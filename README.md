@@ -14,6 +14,7 @@ A web-based library for browsing **payloads**, **themes**, and **ringtones** for
 - **Themes** — Explore 40+ community themes with README previews, image galleries, and `theme.json` inspection
 - **Ringtones** — Browse 100+ RTTTL ringtones with an in-browser player (Web Audio API)
 - **Pull Requests** — View open/closed PRs from all three repos, with description rendering and state filtering
+- **Syntax Highlighting** — VS Code-style code coloring for shell scripts, JSON, and markdown code blocks (Highlight.js)
 - **Search** — Full-text search across all tabs
 - **Responsive** — Works on desktop and mobile
 
@@ -104,6 +105,7 @@ A vanilla JavaScript single-page application — no frameworks, no build step.
 - Four main tabs switch between Payloads, Themes, Ringtones, and Pull Requests
 - Payloads have sub-tabs for categories and a sidebar for subcategories
 - Modals display full details (README rendering, source code, theme images, RTTTL playback)
+- Syntax highlighting via [Highlight.js](https://highlightjs.org/) with the VS Code Dark+ (`vs2015`) theme
 - Simple markdown renderer handles headings, bold, italic, links, images, code blocks, and lists
 
 ---
