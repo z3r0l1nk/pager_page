@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-02-28T22:04:56.293Z",
+  "fetchedAt": "2026-03-01T00:26:17.255Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19525,6 +19525,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 292,
+      "title": "FoxHunter ",
+      "state": "open",
+      "merged": false,
+      "author": "FBG0x00",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/128834935?v=4",
+      "authorUrl": "https://github.com/FBG0x00",
+      "body": "Deauth Flood Detection Alert",
+      "createdAt": "2026-02-28T22:46:46Z",
+      "updatedAt": "2026-02-28T22:52:19Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/292",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 290,
       "title": "HEADS or TAILS game",
