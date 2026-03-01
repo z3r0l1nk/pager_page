@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-01T08:07:28.720Z",
+  "fetchedAt": "2026-03-01T10:06:21.679Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19554,7 +19554,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "fun little game of HEADS or TAILS",
       "createdAt": "2026-02-27T14:45:40Z",
-      "updatedAt": "2026-02-27T14:45:40Z",
+      "updatedAt": "2026-03-01T09:39:19Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/290",
@@ -21897,25 +21897,6 @@
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/198",
       "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 26,
-      "title": "nokia cellphone ringtone from trigger happy tv",
-      "state": "open",
-      "merged": false,
-      "author": "mr-pmillz",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/58376398?v=4",
-      "authorUrl": "https://github.com/mr-pmillz",
-      "body": "",
-      "createdAt": "2026-01-18T03:49:03Z",
-      "updatedAt": "2026-01-18T03:49:03Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-ringtones/pull/26",
-      "repo": "wifipineapplepager-ringtones",
       "labels": [],
       "comments": 0,
       "draft": false
@@ -24936,25 +24917,6 @@
       "draft": false
     },
     {
-      "number": 16,
-      "title": "Add Ringtone Previewer",
-      "state": "open",
-      "merged": false,
-      "author": "billyjbryant",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/3013565?v=4",
-      "authorUrl": "https://github.com/billyjbryant",
-      "body": "# Add RTTTL Ringtone Previewer\r\n\r\n## Summary\r\n\r\nAdds an interactive web-based ringtone previewer that allows users to preview RTTTL ringtones directly in their browser before using them on their WiFi Pineapple Pager.\r\n\r\nYou can preview the ringtone previewer at https://billyjbryant.github.io/wifipineapplepager-ringtones/\r\n\r\n## Features\r\n\r\n- **RTTTL Parser & Player**: Full RTTTL format support with Web Audio API playback\r\n- **Dark/Light Mode**: System preference detection with manual toggle\r\n- **Search**: Filter ringtones by name\r\n- **Playback Controls**: Play individual ringtones, play all, stop all\r\n- **Volume Control**: Adjustable volume slider\r\n- **File Support**: Works with both web (GitHub Pages) and local file:// protocol\r\n- **GitHub Integration**: Ringtone titles link to their source files in the repository\r\n\r\n## Changes\r\n\r\n- Added `index.html` - Complete ringtone previewer web application\r\n- Added `assets/pager-16bit.png` - Pager logo for header and favicon\r\n- Updated `README.md` - Added links to the previewer in relevant sections\r\n\r\n## Technical Details\r\n\r\n- Pure HTML/CSS/JavaScript (no dependencies except Material Icons)\r\n- RTTTL parser handles all note formats, durations, octaves, and BPM\r\n- Accessible: Proper ARIA labels and semantic HTML\r\n- Theme: Black/yellow color scheme with red accents matching Hak5 and WiFi Pineapple Pager branding\r\n\r\n## GitHub Pages Configuration\r\n\r\n> [!IMPORTANT]\r\n> After merging this PR, GitHub Pages must be configured to enable the previewer\r\n\r\n1. Go to repository [Settings → Pages](https://github.com/hak5/wifipineapplepager-ringtones/settings/pages)\r\n2. Under \"Source\", select \"Deploy from a branch\"\r\n3. Choose branch: `master`\r\n4. Choose folder: `/ (root)`\r\n5. Click \"Save\"\r\n\r\nOnce configured, the previewer will be available at:\r\n`https://hak5.github.io/wifipineapplepager-ringtones/`\r\n\r\n## Preview\r\n\r\nThe previewer will be available at: `https://hak5.github.io/wifipineapplepager-ringtones/` after GitHub Pages is configured.\r\n\r\n## Preview\r\n\r\nThe previewer is available at: `https://hak5.github.io/wifipineapplepager-ringtones/`\r\n\r\n## Testing\r\n\r\n- Tested in Chrome, Firefox, and Safari\r\n- Works with both `file://` and `http://` protocols\r\n- Dark/light mode switching works correctly\r\n- All ringtones parse and play correctly\r\n- Search and filtering work as expected\r\n",
-      "createdAt": "2026-01-02T19:54:15Z",
-      "updatedAt": "2026-01-03T04:50:14Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-ringtones/pull/16",
-      "repo": "wifipineapplepager-ringtones",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 87,
       "title": "goodportal v1.2",
       "state": "closed",
@@ -25355,25 +25317,6 @@
       "mergedAt": "2026-01-02T06:37:18Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/75",
       "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 11,
-      "title": "ringtone drop",
-      "state": "open",
-      "merged": false,
-      "author": "macr0hack422",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/120472225?v=4",
-      "authorUrl": "https://github.com/macr0hack422",
-      "body": "",
-      "createdAt": "2026-01-01T20:47:13Z",
-      "updatedAt": "2026-01-03T00:08:17Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-ringtones/pull/11",
-      "repo": "wifipineapplepager-ringtones",
       "labels": [],
       "comments": 0,
       "draft": false
