@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-01T20:05:49.472Z",
+  "fetchedAt": "2026-03-01T22:05:20.388Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19535,7 +19535,7 @@
       "authorUrl": "https://github.com/FBG0x00",
       "body": "Deauth Flood Detection Alert",
       "createdAt": "2026-02-28T22:46:46Z",
-      "updatedAt": "2026-03-01T04:36:54Z",
+      "updatedAt": "2026-03-01T21:47:11Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/292",
