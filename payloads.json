@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-01T22:05:20.388Z",
+  "fetchedAt": "2026-03-02T00:23:03.491Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19526,6 +19526,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 293,
+      "title": "Looking Glass smart glasses detector",
+      "state": "open",
+      "merged": false,
+      "author": "Noezsolution",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/249527892?v=4",
+      "authorUrl": "https://github.com/Noezsolution",
+      "body": "Passive BLE scanner payload that detects nearby smart glasses\r\n(Meta Ray-Ban, Snap Spectacles, Bose Frames, etc.) using\r\nBluetooth SIG company IDs. Includes RSSI distance estimation\r\nand real-time LED/haptic feedback.",
+      "createdAt": "2026-03-02T00:00:18Z",
+      "updatedAt": "2026-03-02T00:00:18Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/293",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 292,
       "title": "FoxHunter ",
       "state": "open",
@@ -19535,7 +19554,7 @@
       "authorUrl": "https://github.com/FBG0x00",
       "body": "Deauth Flood Detection Alert",
       "createdAt": "2026-02-28T22:46:46Z",
-      "updatedAt": "2026-03-01T21:47:11Z",
+      "updatedAt": "2026-03-01T22:41:32Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/292",
