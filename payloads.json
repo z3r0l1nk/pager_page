@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-02T18:15:26.402Z",
+  "fetchedAt": "2026-03-02T20:09:59.899Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19535,7 +19535,7 @@
       "authorUrl": "https://github.com/Noezsolution",
       "body": "Passive BLE scanner payload that detects nearby smart glasses\r\n(Meta Ray-Ban, Snap Spectacles, Bose Frames, etc.) using\r\nBluetooth SIG company IDs. Includes RSSI distance estimation\r\nand real-time LED/haptic feedback.",
       "createdAt": "2026-03-02T00:00:18Z",
-      "updatedAt": "2026-03-02T11:23:50Z",
+      "updatedAt": "2026-03-02T19:58:12Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/293",
@@ -19554,7 +19554,7 @@
       "authorUrl": "https://github.com/FBG0x00",
       "body": "Deauth Flood Detection Alert",
       "createdAt": "2026-02-28T22:46:46Z",
-      "updatedAt": "2026-03-02T11:14:06Z",
+      "updatedAt": "2026-03-02T19:04:22Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/292",
