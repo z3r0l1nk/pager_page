@@ -868,11 +868,68 @@
         return card;
     }
 
+    const prFilesCache = {};
+
+    async function fetchPRFiles(pr) {
+        const cacheKey = `${pr.repo}#${pr.number}`;
+        if (prFilesCache[cacheKey]) return prFilesCache[cacheKey];
+
+        try {
+            const url = `https://api.github.com/repos/hak5/${pr.repo}/pulls/${pr.number}/files?per_page=100`;
+            const headers = { Accept: 'application/vnd.github.v3+json' };
+            const res = await fetch(url, { headers });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const files = await res.json();
+            prFilesCache[cacheKey] = files;
+            return files;
+        } catch (err) {
+            console.error('Failed to fetch PR files:', err);
+            return null;
+        }
+    }
+
+    function renderPRFiles(files) {
+        if (!files) return '<p style="color:var(--text-muted)">Failed to load files. GitHub API rate limit may have been reached.</p>';
+        if (files.length === 0) return '<p style="color:var(--text-muted)">No files changed.</p>';
+
+        return files.map(f => {
+            const statusIcon = f.status === 'added' ? '+' : f.status === 'removed' ? '−' : '~';
+            const statusClass = `diff-status-${f.status || 'modified'}`;
+            const patch = f.patch || '';
+            const diffLines = patch ? patch.split('\n').map(line => {
+                const escaped = escapeHtml(line);
+                if (line.startsWith('@@')) return `<span class="diff-hunk">${escaped}</span>`;
+                if (line.startsWith('+')) return `<span class="diff-add">${escaped}</span>`;
+                if (line.startsWith('-')) return `<span class="diff-del">${escaped}</span>`;
+                return `<span class="diff-ctx">${escaped}</span>`;
+            }).join('\n') : '<span class="diff-ctx">  (binary file or no diff available)</span>';
+
+            return `
+            <div class="diff-file">
+              <div class="diff-file-header" onclick="this.parentElement.classList.toggle('expanded')">
+                <span class="diff-chevron">&#9654;</span>
+                <span class="diff-file-status ${statusClass}">${statusIcon}</span>
+                <span class="diff-file-name">${escapeHtml(f.filename)}</span>
+                <span class="diff-file-stats">
+                  <span class="diff-stat-add">+${f.additions || 0}</span>
+                  <span class="diff-stat-del">-${f.deletions || 0}</span>
+                </span>
+              </div>
+              <pre class="diff-content"><code>${diffLines}</code></pre>
+            </div>`;
+        }).join('');
+    }
+
     function openPRModal(pr) {
         const stateInfo = getPRStateInfo(pr);
         let activeTab = pr.body ? 'description' : 'info';
+        let prFiles = null;
+        let filesLoading = false;
 
         function render() {
+            const filesTabContent = filesLoading ? '<div class="empty-state"><p>Loading files...</p></div>'
+                : activeTab === 'files' ? renderPRFiles(prFiles) : '';
+
             modalContent.innerHTML = `
         <div class="modal-header">
           <h2 class="modal-title">${escapeHtml(pr.title)}</h2>
@@ -885,17 +942,28 @@
         </div>
         <div class="modal-tabs">
           ${pr.body ? `<button class="modal-tab ${activeTab === 'description' ? 'active' : ''}" data-tab="description">\ud83d\udcd6 Description</button>` : ''}
+          <button class="modal-tab ${activeTab === 'files' ? 'active' : ''}" data-tab="files">\ud83d\udcbb Files Changed</button>
           <button class="modal-tab ${activeTab === 'info' ? 'active' : ''}" data-tab="info">\ud83d\udcdd Info</button>
         </div>
         <div class="modal-body">
           ${activeTab === 'description' ? `<div>${simpleMarkdown(pr.body)}</div>` : ''}
+          ${activeTab === 'files' ? filesTabContent : ''}
           ${activeTab === 'info' ? renderPRInfo(pr) : ''}
         </div>`;
 
             highlightCode(modalContent);
 
             modalContent.querySelectorAll('.modal-tab').forEach(tab => {
-                tab.addEventListener('click', () => { activeTab = tab.dataset.tab; render(); });
+                tab.addEventListener('click', async () => {
+                    activeTab = tab.dataset.tab;
+                    if (activeTab === 'files' && !prFiles && !filesLoading) {
+                        filesLoading = true;
+                        render();
+                        prFiles = await fetchPRFiles(pr);
+                        filesLoading = false;
+                    }
+                    render();
+                });
             });
         }
 
