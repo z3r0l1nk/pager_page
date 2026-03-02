@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-02T06:20:33.768Z",
+  "fetchedAt": "2026-03-02T08:14:26.985Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21922,7 +21922,7 @@
     },
     {
       "number": 26,
-      "title": "nokia cellphone ringtone from trigger happy tv",
+      "title": "nokia cellphone ringtone",
       "state": "open",
       "merged": false,
       "author": "mr-pmillz",
@@ -21930,7 +21930,7 @@
       "authorUrl": "https://github.com/mr-pmillz",
       "body": "",
       "createdAt": "2026-01-18T03:49:03Z",
-      "updatedAt": "2026-01-18T03:49:03Z",
+      "updatedAt": "2026-03-02T06:38:37Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-ringtones/pull/26",
