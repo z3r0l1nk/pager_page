@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-02T14:18:17.706Z",
+  "fetchedAt": "2026-03-02T16:14:18.346Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19573,7 +19573,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "fun little game of HEADS or TAILS",
       "createdAt": "2026-02-27T14:45:40Z",
-      "updatedAt": "2026-03-01T16:40:42Z",
+      "updatedAt": "2026-03-02T14:21:10Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/290",
