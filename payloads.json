@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-02T22:09:16.082Z",
+  "fetchedAt": "2026-03-03T00:24:37.705Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19547,15 +19547,15 @@
     {
       "number": 292,
       "title": "FoxHunter ",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "FBG0x00",
       "authorAvatar": "https://avatars.githubusercontent.com/u/128834935?v=4",
       "authorUrl": "https://github.com/FBG0x00",
       "body": "Deauth Flood Detection Alert",
       "createdAt": "2026-02-28T22:46:46Z",
-      "updatedAt": "2026-03-02T20:46:41Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-02T22:45:17Z",
+      "closedAt": "2026-03-02T22:45:17Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/292",
       "repo": "wifipineapplepager-payloads",
