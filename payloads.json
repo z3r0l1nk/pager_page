@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-04T20:09:54.133Z",
+  "fetchedAt": "2026-03-04T22:08:40.468Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19525,6 +19525,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 87,
+      "title": "Zombie_Kal v1.0 - New Theme",
+      "state": "open",
+      "merged": false,
+      "author": "Zombie-Joe",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
+      "authorUrl": "https://github.com/Zombie-Joe",
+      "body": "## New Theme Zombie_Kal v1.0\r\nDeveloped for Firmware version 1.0.7\r\nA Valleytech Custom Solutions Theme featuring Kal for the Hak5 WiFi Pineapple Pager!\r\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\r\n\r\n<details>\r\n<summary>⚠️ Click to show screenshots! ⚠️</summary>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Kal1\" src=\"https://github.com/user-attachments/assets/64351870-5900-4800-9b7a-a556e71f2945\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Kal2\" src=\"https://github.com/user-attachments/assets/f2348229-1216-4206-b8a0-14d101a26a12\" /><br>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Kal3\" src=\"https://github.com/user-attachments/assets/b6b48c15-b4ff-456e-8519-8aec108ecd63\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Kal4\" src=\"https://github.com/user-attachments/assets/132c5097-232b-4bd7-8f49-782cbcaa09b0\" />\r\n</details>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+      "createdAt": "2026-03-04T20:52:11Z",
+      "updatedAt": "2026-03-04T20:52:11Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/87",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 293,
       "title": "Looking Glass smart glasses detector",
