@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-05T20:13:24.254Z",
+  "fetchedAt": "2026-03-05T22:08:27.698Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -19526,6 +19526,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 88,
+      "title": "Add PCARS theme — Pineapple Computer Access Retrieval System",
+      "state": "open",
+      "merged": false,
+      "author": "superbasicstudio",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/157256732?v=4",
+      "authorUrl": "https://github.com/superbasicstudio",
+      "body": "## PCARS Theme — Pineapple Computer Access Retrieval System\n\n**Author:** superbasicstudio\n\n<p>\n  <img src=\"https://raw.githubusercontent.com/superbasicstudio/wifipineapplepager-themes/add-pcars-theme/themes/pcars/screenshots/pcars_dashboards.png\" width=\"100%\" alt=\"PCARS Dashboards — All Five Stations\"/>\n</p>\n\n<p>\n  <img src=\"https://raw.githubusercontent.com/superbasicstudio/wifipineapplepager-themes/add-pcars-theme/themes/pcars/screenshots/mockup_dashboard_alerts.png\" width=\"32%\" alt=\"Alerts\"/>\n  <img src=\"https://raw.githubusercontent.com/superbasicstudio/wifipineapplepager-themes/add-pcars-theme/themes/pcars/screenshots/mockup_dashboard_payloads.png\" width=\"32%\" alt=\"Payloads\"/>\n  <img src=\"https://raw.githubusercontent.com/superbasicstudio/wifipineapplepager-themes/add-pcars-theme/themes/pcars/screenshots/mockup_dashboard_recon.png\" width=\"32%\" alt=\"Recon\"/>\n</p>\n\nA dark, utilitarian theme with near-black backgrounds, dark steel-blue structural bars with bright blue edge glow, and section-specific accent colors. Inspired by the bridge consoles of a certain Galaxy-class starship — built for away missions where stealth matters more than style.\n\n### Features\n\n- 187 PNG assets with full depth coverage across all UI components\n- 113 component JSON definitions — every dashboard, submenu, dialog, wizard, keyboard, and option selector is themed\n- Horizontal-arc dashboard layout showing all five stations at a glance\n- Section-specific color coding: red (alerts), amber (payloads), green (recon), purple (PineAP), blue (settings)\n- White selected highlights with section-colored accents on dashboards\n- Custom phaser icon for payloads, plasma ball charging animation\n- All assets programmatically generated via Python + Pillow at 3x resolution with LANCZOS downscaling\n- Includes `generate_pcars_assets.py` for regenerating assets or creating variant themes from source parameters\n\n### Dashboard Layout\n\n| Alerts | Payloads | Recon | PineAP | Settings |\n|--------|----------|-------|--------|----------|\n| Red | Amber | Green | Purple | Blue |\n\nHorizontal scrolling arc — all five stations visible with D-pad navigation.\n\n### Design Specs\n\n- **Background:** Deep navy-black (#040610) — minimal visual noise\n- **Structural bars:** Dark steel-blue with bright blue edge illumination\n- **Selected state:** White highlight on menus, section accent on dashboards\n- **Typography:** Firmware-default (no font customization available)\n- **Rendering:** 3x supersampled, LANCZOS anti-aliased downscaling\n\n### Firmware Version\n\nDeveloped and tested on WiFi Pineapple Pager firmware **1.0.7** (OpenWrt 24.10.1 base, theme framework 0.5).",
+      "createdAt": "2026-03-05T21:17:44Z",
+      "updatedAt": "2026-03-05T21:37:46Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/88",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 87,
       "title": "Zombie_Kal v1.0 - New Theme",
       "state": "open",
@@ -19592,7 +19611,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "fun little game of HEADS or TAILS",
       "createdAt": "2026-02-27T14:45:40Z",
-      "updatedAt": "2026-03-02T14:21:10Z",
+      "updatedAt": "2026-03-05T20:33:36Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/290",
