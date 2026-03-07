@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-07T06:11:00.782Z",
+  "fetchedAt": "2026-03-07T08:07:00.851Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21345,7 +21345,7 @@
       "authorUrl": "https://github.com/TheMadPossum",
       "body": "Detects rogue Wi‑Fi access points and suspicious authentications in real time, logging events and sending instant pager alerts.",
       "createdAt": "2026-01-22T17:49:38Z",
-      "updatedAt": "2026-02-14T15:56:40Z",
+      "updatedAt": "2026-03-07T07:08:35Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/220",
