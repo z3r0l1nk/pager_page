@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-08T16:06:28.756Z",
+  "fetchedAt": "2026-03-08T18:07:22.276Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20292,6 +20292,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 294,
+      "title": "Add payload: Chasing Your Tail NG v4.6 - Counter-Surveillance Recon",
+      "state": "open",
+      "merged": false,
+      "author": "tschakram",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/16965219?v=4",
+      "authorUrl": "https://github.com/tschakram",
+      "body": "## Chasing Your Tail NG v4.6\n\nCounter-surveillance payload for the WiFi Pineapple Pager. Detects whether you are being followed by analysing recurring WiFi Probe Requests across multiple scan rounds at different locations.\n\nBased on the original [Chasing Your Tail NG](https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG) concept, fully rewritten as a native Pineapple Pager Framework payload.\n\n## What it does\n\n- **Persistence scoring** – devices seen across multiple rounds at different locations are flagged as suspicious\n- **Bluetooth scanning** – Classic + BLE with device fingerprinting (microphone/camera detection)\n- **GPS tracking** – coordinates per round, zone detection via GPS Haversine / IP geolocation fallback\n- **OUI vendor lookup** – offline IEEE database (~39k entries, auto-update weekly)\n- **WiGLE API** – MAC, Bluetooth and probe SSID geolocation (optional, requires API key)\n- **Hotel-Scan mode** – BLE camera detection, hidden SSID detection, beacon analysis\n- **Watch-List** – static/dynamic device tracking with GPS zones, managed from display\n- **Quick-Start dialog** – 1=Standard (WiFi+BT, 2 rounds) / 2=Manual full configuration\n- **Auto-cleanup** – configurable retention for old reports/PCAPs/logs\n- **OPSEC** – GPS coordinates, MAC lists and API keys are gitignored, never committed\n\n## Scan Modes\n\n| Mode | Description |\n|------|-------------|\n| 0 | WiFi only |\n| 1 | WiFi + GPS |\n| 2 | WiFi + Bluetooth (default) |\n| 3 | All modules (WiFi + GPS + BT) |\n| 4 | Hotel-Scan (BLE camera detection, beacon analysis) |\n\n## Tested on\n\n- WiFi Pineapple Pager (OpenWrt 24.10.1, mipsel_24kc)\n- Python 3.11.14, BlueZ 5.72\n- u-blox GNSS receiver (USB, gpsd 3.25)\n\n## Installation\n\n```bash\ncd /root/payloads/user/reconnaissance/\ngit clone https://github.com/tschakram/chasing-your-tail-pager.git chasing_your_tail\ncd chasing_your_tail\ncp config.example.json config.json\n```\n\nLaunch from Pager Dashboard: `Payloads → User → Reconnaissance → Chasing Your Tail NG`\n\n## Credits\n\n- Original concept: [azmatt/chasing_your_tail](https://github.com/azmatt/chasing_your_tail)\n- NG version: [ArgeliusLabs/Chasing-Your-Tail-NG](https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG) (MIT)\n- Pineapple Pager port: [tschakram](https://github.com/tschakram/chasing-your-tail-pager)",
+      "createdAt": "2026-03-08T16:34:08Z",
+      "updatedAt": "2026-03-08T16:34:08Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/294",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 88,
       "title": "Add PCARS theme — Pineapple Computer Access Retrieval System",
