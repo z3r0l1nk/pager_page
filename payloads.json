@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-09T10:18:21.285Z",
+  "fetchedAt": "2026-03-09T12:13:08.231Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20292,6 +20292,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 297,
+      "title": "Replaced missing files for Responder.py",
+      "state": "open",
+      "merged": false,
+      "author": "Hackazillarex",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/101348059?v=4",
+      "authorUrl": "https://github.com/Hackazillarex",
+      "body": "Hey Darren, I dont know what happened but I have been getting a lot of reports saying my Responder payload stopped working. After investigating, I noticed it was missing files ( Responder.py  was one of them ) so I just re-uploaded the missing files to fix this issue.\r\n\r\nThank you",
+      "createdAt": "2026-03-09T11:23:44Z",
+      "updatedAt": "2026-03-09T11:23:44Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/297",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 296,
       "title": "The mad possum alert 1",
