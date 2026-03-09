@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-08T22:05:26.029Z",
+  "fetchedAt": "2026-03-09T00:23:39.236Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20293,6 +20293,44 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 296,
+      "title": "The mad possum alert 1",
+      "state": "open",
+      "merged": false,
+      "author": "TheMadPossum",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/83486572?v=4",
+      "authorUrl": "https://github.com/TheMadPossum",
+      "body": "updated files",
+      "createdAt": "2026-03-09T00:07:59Z",
+      "updatedAt": "2026-03-09T00:07:59Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/296",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
+      "number": 295,
+      "title": "In both the Client and AP Hackstats the colons weren't being removed from the BSSID/Mac",
+      "state": "open",
+      "merged": false,
+      "author": "jader242",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/139934223?v=4",
+      "authorUrl": "https://github.com/jader242",
+      "body": "This would cause no handshakes to appear in the payload complete alert, no matter how many were there in /root/loot/handshakes\r\n\r\n(It also seems $_RECON_SELECTED_CLIENT_MAC_ADDRESS also returns the AP BSSID, so idk what's up with that)",
+      "createdAt": "2026-03-08T23:32:30Z",
+      "updatedAt": "2026-03-08T23:33:35Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/295",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 294,
       "title": "Add payload: Chasing Your Tail NG v4.6 - Counter-Surveillance Recon",
       "state": "open",
@@ -22149,7 +22187,7 @@
       "authorUrl": "https://github.com/TheMadPossum",
       "body": "Detects rogue Wi‑Fi access points and suspicious authentications in real time, logging events and sending instant pager alerts.",
       "createdAt": "2026-01-22T17:49:38Z",
-      "updatedAt": "2026-03-07T23:35:01Z",
+      "updatedAt": "2026-03-09T00:01:37Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/220",
