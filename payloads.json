@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-09T22:07:37.128Z",
+  "fetchedAt": "2026-03-10T00:21:16.468Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20292,6 +20292,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 298,
+      "title": "🤝👋🏾Handyshake Alert!👋🏾🤝",
+      "state": "open",
+      "merged": false,
+      "author": "curthayman",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
+      "authorUrl": "https://github.com/curthayman",
+      "body": "Makes when you capture handshakes so much more Nosey and curious. Check the README.md file for all the juicy information. Breaks the handshake way down as far as information! Let me know what you think!",
+      "createdAt": "2026-03-09T23:36:49Z",
+      "updatedAt": "2026-03-09T23:36:49Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/298",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 297,
       "title": "Replaced missing files for Responder.py",
