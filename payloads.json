@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-10T00:21:16.468Z",
+  "fetchedAt": "2026-03-10T02:57:41.305Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20293,6 +20293,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 89,
+      "title": "Add HKRS theme by sinXneo",
+      "state": "open",
+      "merged": false,
+      "author": "sinXne0",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
+      "authorUrl": "https://github.com/sinXne0",
+      "body": "## HKRS Theme\n\n**Author:** sinXneo\n**Framework Version:** 0.5\n\nA high-contrast cyberpunk theme built around a neon green and purple palette, skull motifs, and a terminal-hacker aesthetic.\n\n![HKRS Preview](https://raw.githubusercontent.com/sinXne0/wifipineapplepager-themes/add-HKRS-theme/themes/HKRS/preview.png)\n\n## What's included\n\n- **Full-width dashboard** — 5 skull icons spread evenly across the 480px screen in a staggered row layout (no wasted space on either side)\n- **12-frame custom boot animation** — terminal boot text builds line-by-line on the left while a skull materializes with a purple/green glow on the right; final frame flashes \"SYSTEM ONLINE\"\n- **Skull lock screen** — large centered skull, hex grid background, scanlines, `// SYSTEM LOCKED //` header, `ENTER PIN TO UNLOCK` footer\n- **Color-coded payload log indicators** — each status bar has a skull icon with matching glow: green=Running, cyan=Complete, red=Error, gray=Stopped\n- **Section-specific accent colors** — Settings (purple), PineAP (neon green), Payloads (magenta), Alerts (red), Recon (cyan)\n- **Fixed toggle switches** — ON state: bright green knob on dark green track; OFF state: gray knob on dark track (previously identical in darkpager template)\n- **Skull dashboard icons** — all 5 main menu items use skull pixel art icons\n- **HKRS branding throughout** — logo and sinXneo watermark in the dashboard background; skull watermarks in all section and dialog screens\n\n## Color Palette\n\n| Name | Hex |\n|------|-----|\n| Primary (Neon Green) | `#39FF14` |\n| Secondary (Purple) | `#9600DC` |\n| Accent (Magenta) | `#FF00AA` |\n| Recon (Cyan) | `#00E6B4` |\n| Danger (Red) | `#FF1E3C` |\n\n## Test plan\n\n- [ ] Install: `scp -r HKRS/ root@<pager-ip>:/root/themes/`\n- [ ] Apply via Settings → Display → Theme → HKRS\n- [ ] Verify dashboard icons spread full-width, stagger visible\n- [ ] Verify boot animation plays through all 12 frames\n- [ ] Verify lock screen shows skull + text\n- [ ] Verify toggle ON/OFF states are visually distinct\n- [ ] Verify payload log indicators show correct colors per state\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "createdAt": "2026-03-10T01:22:55Z",
+      "updatedAt": "2026-03-10T01:22:55Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/89",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 298,
       "title": "🤝👋🏾Handyshake Alert!👋🏾🤝",
       "state": "open",
@@ -20441,7 +20460,7 @@
       "authorUrl": "https://github.com/Noezsolution",
       "body": "Passive BLE scanner payload that detects nearby smart glasses\r\n(Meta Ray-Ban, Snap Spectacles, Bose Frames, etc.) using\r\nBluetooth SIG company IDs. Includes RSSI distance estimation\r\nand real-time LED/haptic feedback.",
       "createdAt": "2026-03-02T00:00:18Z",
-      "updatedAt": "2026-03-08T00:03:13Z",
+      "updatedAt": "2026-03-10T02:48:47Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/293",
