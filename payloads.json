@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-10T14:19:13.367Z",
+  "fetchedAt": "2026-03-10T16:24:06.266Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20302,7 +20302,7 @@
       "authorUrl": "https://github.com/sinXne0",
       "body": "## Summary\n\n- Adds **Sherlock**, a username OSINT payload that searches 69 platforms for a given username\n- Results stream live to the pager screen as each platform is checked (green `[+] FOUND` lines)\n- All findings saved to `/root/loot/sherlock/<username>_<timestamp>.txt`\n- Fully sequential execution — no background jobs, no `wait` conflicts with the pager's spinner system\n\n## Platforms\n\nSocial media, gaming, dev/tech, music, forums, security, and messaging — Twitter/X, Instagram, TikTok, GitHub, Steam, HackTheBox, TryHackMe, Telegram, and 61 more.\n\n## Category\n\n`library/user/reconnaissance/sherlock/`\n\n## Test plan\n\n- [ ] Deploy to pager: `scp -r sherlock/ root@<pager-ip>:/root/payloads/user/reconnaissance/`\n- [ ] Run with a known username — confirm `[+] FOUND` lines appear on screen in real time\n- [ ] Run with an unknown username — confirm \"No accounts found\" alert\n- [ ] Verify loot file created at `/root/loot/sherlock/`\n- [ ] Confirm payload exits cleanly after alert is dismissed\n\n## Author\n\nsinXneo\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "createdAt": "2026-03-10T05:35:21Z",
-      "updatedAt": "2026-03-10T05:35:21Z",
+      "updatedAt": "2026-03-10T15:22:06Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/299",
