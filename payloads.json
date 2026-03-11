@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-11T12:13:30.071Z",
+  "fetchedAt": "2026-03-11T14:20:19.149Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20718,15 +20718,15 @@
     {
       "number": 283,
       "title": "Add: VENOM - WPA-Enterprise Credential Harvester",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "sinXne0",
       "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
       "authorUrl": "https://github.com/sinXne0",
       "body": "## VENOM - WPA-Enterprise Credential Harvester\n\n**Category:** Exfiltration\n**Author:** sinX\n**Version:** 1.0\n\n### Summary\n\nFirst WPA-Enterprise (802.1X) attack payload for the WiFi Pineapple Pager. Deploys a rogue enterprise AP to capture:\n\n- **EAP Identities** (usernames) from all connecting clients\n- **Cleartext passwords** via GTC/PAP inner authentication methods\n- **MSCHAPv2 challenge/response hashes** exportable in hashcat mode 5500 format\n\n### How It Works\n\n1. Scans for WPA-Enterprise (802.1X) networks in range\n2. User selects target SSID (scrollable picker or manual entry)\n3. Generates self-signed CA + server certificates\n4. Creates virtual WiFi interface on phy1 (secondary radio)\n5. Runs standalone `hostapd` with built-in EAP server and max debug logging\n6. Parses credentials from hostapd output in real-time\n7. Optional deauth burst via `PINEAPPLE_DEAUTH_CLIENT` to force client reconnection\n8. Exports captured data with full engagement report\n\n### Key Design Decisions\n\n- **Does NOT modify system packages** - Extracts a standalone `hostapd-openssl` binary from the `.ipk` package to `/tmp` without installing. Stock Pager `wpad-basic` stays untouched.\n- **Full cleanup on exit** - Virtual interface, processes, and temp files are all removed via trap handler\n- **No external RADIUS** - Uses hostapd's built-in EAP server (`eap_server=1`)\n- **No hardcoded credentials or URLs** - Certificate CN uses placeholder `radius.corp.local`\n\n### Files\n\n```\nlibrary/user/exfiltration/venom/\n├── payload.sh    # Main payload (~1,200 lines)\n└── README.md     # Documentation\n```\n\n### LED States\n\n| LED | Phase |\n|-----|-------|\n| Cyan | Scanning for enterprise networks |\n| Amber | Generating certs, creating interface |\n| Red | Rogue AP active, capturing |\n| Green | Harvesting results |\n| Magenta | Error |\n\n### Dependencies\n\n- `openssl-util` (auto-installed if missing)\n- `tcpdump` (optional, for raw EAP packet capture)\n- `hostapd-openssl` (auto-downloaded and extracted, NOT installed)\n\n### Testing\n\n- Tested payload syntax (`bash -n payload.sh`)\n- All DuckyScript commands match documented API\n- Cleanup trap handles all exit paths\n- No personal URLs, API keys, or live service references\n\n### Disclaimer\n\nFor authorized security testing and education only.",
       "createdAt": "2026-02-20T15:03:57Z",
-      "updatedAt": "2026-02-21T16:30:47Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-11T12:50:54Z",
+      "closedAt": "2026-03-11T12:50:54Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/283",
       "repo": "wifipineapplepager-payloads",
