@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-11T18:19:37.489Z",
+  "fetchedAt": "2026-03-11T20:10:05.122Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20292,6 +20292,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 301,
+      "title": "Add: VENOM - WPA-Enterprise Credential Harvester (v1.1)",
+      "state": "open",
+      "merged": false,
+      "author": "sinXne0",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
+      "authorUrl": "https://github.com/sinXne0",
+      "body": "### VENOM - WPA-Enterprise Credential Harvester\n\nThis payload deploys a rogue WPA-Enterprise (802.1X) access point to capture EAP identities, cleartext passwords (GTC/PAP), and MSCHAPv2 hashes.\n\n**Author:** sinXneo (v1.1 Update)\n\n### **What was fixed / improved in this version:**\n- **Package Conflict Resolution:** Now uses a safe, **standalone hostapd-openssl** binary fallback extracted to `/tmp`. This prevents conflicts with the Pager's stock `wpad-basic-mbedtls` package and ensures the rogue AP can start even on standard firmware.\n- **Connection Stability:** Added `fragment_size` and other compatibility tweaks to `hostapd.conf` to fix \"Can't connect\" issues on Android/iOS/Windows.\n- **Improved Certificates:** Certificates now include Subject Alternative Names (SAN) and modern extensions to satisfy strict validation on mobile devices.\n- **Stealth & Effectiveness:** Added **BSSID spoofing** (clones the target AP's MAC address), **802.11w (MFP)**, and **SHA256 EAP** support to better mimic modern enterprise environments.\n- **Script Robustness:** Fixed SSID quoting to handle spaces and corrected unsupported EAP types in the configuration.\n- **Virtual Interface Fallback:** Improved the creation of the virtual AP interface with better mode detection.\n\nThis version is significantly more effective and reliable for capturing domain credentials in real-world enterprise environments.",
+      "createdAt": "2026-03-11T19:48:40Z",
+      "updatedAt": "2026-03-11T19:48:40Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/301",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 299,
       "title": "Add: Sherlock — Username OSINT across 69 platforms",
