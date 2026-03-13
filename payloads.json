@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-13T00:23:49.301Z",
+  "fetchedAt": "2026-03-13T02:58:50.150Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20302,7 +20302,7 @@
       "authorUrl": "https://github.com/sinXne0",
       "body": "## Summary\n\n- Adds a browser-based Game Boy Color emulator payload (`library/user/games/zelda_gbc/`)\n- A Python HTTP server runs on the pager (port 8080) and serves a self-contained JS GBC emulator\n- Users open the URL shown on the pager screen to play any `.gb` / `.gbc` ROM at full speed in their browser\n- Pager physical buttons (D-pad, Green=A, Red=B) are polled by the browser and forwarded to the emulator\n- Pager screen displays the game title and controls (not raw frames — keeps it lightweight on MIPS)\n\n## Emulator features\n\n- Full SM83 (LR35902) CPU — all opcodes\n- GBC color palettes (BGP/OBP via $FF68–$FF6B)\n- MBC3 cartridge support\n- PPU with background, window, and sprite rendering\n- Timer and Joypad\n- Touch/mouse on-screen gamepad for mobile browsers\n\n## How to use\n\n1. Place one or more `.gb` / `.gbc` ROM files in `/root/payloads/user/games/zelda_gbc/`\n2. Place `libpagerctl.so` in the same directory (from the Hak5 Pager SDK)\n3. Run the payload — pager screen shows the server URL\n4. Open the URL in a browser, pick a ROM, play\n5. Stop: **Stop Server** button in browser, or hold RED on the pager for 1 second\n\n## Test plan\n\n- [ ] Payload appears in Games section on pager\n- [ ] Server starts and pager displays URL\n- [ ] Browser ROM picker loads and lists ROMs\n- [ ] ROM upload works\n- [ ] GBC game runs in browser\n- [ ] Pager buttons control the game\n- [ ] Stop Server button exits cleanly and restarts pineapplepager\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "createdAt": "2026-03-13T00:19:39Z",
-      "updatedAt": "2026-03-13T00:19:39Z",
+      "updatedAt": "2026-03-13T01:50:23Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/303",
@@ -22534,7 +22534,7 @@
       "authorUrl": "https://github.com/knight-scott",
       "body": "# Summary\r\n\r\nThis PR updates the `payload.sh` for  `evil_portal_install` and `default_portal` to support symlink-based portal switching via `/root/portals/current`, and integrates the `switch_evil_portal` payload.\r\n\r\nThe goal is to provide a simple way to switch between installed captive portals at runtime.\r\n\r\n## What Changed\r\n\r\n### Symlink-Based Portal Selection\r\n\r\n- Portal activation is now controlled by: `/root/portals/current → /root/portals/<portal-name>`\r\n- Evil Portal assets reference `current` instead of a hardcoded portal directory.\r\n- Switching portals is an atomic operation (`ln -sfn`) and does not require restarting Evil Portal or the device.\r\n\r\n### `switch_evil_portal` Payload Integration\r\n\r\n- Adds a user-facing payload that:\r\n\r\n    - Enumerates available portals\r\n    - Uses NUMBER_PICKER for selection\r\n    - Updates the current symlink\r\n    \r\n- No init script patching required.\r\n\r\n### Updated Install Flow\r\n\r\nInstall script now:\r\n- Ensures the current symlink exists\r\n- Sets Default as the initial active portal\r\n- Installs the switch payload alongside existing Evil Portal payloads\r\n\r\n### Default Portal Compatibility\r\n\r\nThe Default Portal payload now activates itself by:\r\n\r\n- Updating the current symlink\r\n- Remaining compatible with both isolated and bridged network configurations\r\n\r\n## Backward Compatibility\r\n\r\n- Existing portals continue to function unchanged\r\n- Users who do not use switch_evil_portal are unaffected\r\n- No breaking changes to Evil Portal behavior\r\n\r\n## Tested On\r\n\r\n- WiFi Pineapple Pager v 1.0.6 (OpenWrt 24.10.1)\r\n- Evil Portal v 1.9\r\n- Multiple community portals in `/root/portals/`\r\n\r\n## Attribution\r\n\r\n- Evil Portal originally by newbi3\r\n- Pager adaptation by PentestPlaybook\r\n- Symlink switch payload & integration by 0x4B",
       "createdAt": "2026-01-21T03:19:15Z",
-      "updatedAt": "2026-02-23T21:22:10Z",
+      "updatedAt": "2026-03-13T01:37:23Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/213",
