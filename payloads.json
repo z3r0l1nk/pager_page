@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-12T22:06:30.262Z",
+  "fetchedAt": "2026-03-13T00:23:49.301Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20292,6 +20292,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 303,
+      "title": "Add GBC Emulator — browser-based Game Boy Color emulator with pager integration",
+      "state": "open",
+      "merged": false,
+      "author": "sinXne0",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
+      "authorUrl": "https://github.com/sinXne0",
+      "body": "## Summary\n\n- Adds a browser-based Game Boy Color emulator payload (`library/user/games/zelda_gbc/`)\n- A Python HTTP server runs on the pager (port 8080) and serves a self-contained JS GBC emulator\n- Users open the URL shown on the pager screen to play any `.gb` / `.gbc` ROM at full speed in their browser\n- Pager physical buttons (D-pad, Green=A, Red=B) are polled by the browser and forwarded to the emulator\n- Pager screen displays the game title and controls (not raw frames — keeps it lightweight on MIPS)\n\n## Emulator features\n\n- Full SM83 (LR35902) CPU — all opcodes\n- GBC color palettes (BGP/OBP via $FF68–$FF6B)\n- MBC3 cartridge support\n- PPU with background, window, and sprite rendering\n- Timer and Joypad\n- Touch/mouse on-screen gamepad for mobile browsers\n\n## How to use\n\n1. Place one or more `.gb` / `.gbc` ROM files in `/root/payloads/user/games/zelda_gbc/`\n2. Place `libpagerctl.so` in the same directory (from the Hak5 Pager SDK)\n3. Run the payload — pager screen shows the server URL\n4. Open the URL in a browser, pick a ROM, play\n5. Stop: **Stop Server** button in browser, or hold RED on the pager for 1 second\n\n## Test plan\n\n- [ ] Payload appears in Games section on pager\n- [ ] Server starts and pager displays URL\n- [ ] Browser ROM picker loads and lists ROMs\n- [ ] ROM upload works\n- [ ] GBC game runs in browser\n- [ ] Pager buttons control the game\n- [ ] Stop Server button exits cleanly and restarts pineapplepager\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "createdAt": "2026-03-13T00:19:39Z",
+      "updatedAt": "2026-03-13T00:19:39Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/303",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 302,
       "title": "Neon_Bikes",
