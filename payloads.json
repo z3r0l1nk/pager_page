@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-17T16:26:09.472Z",
+  "fetchedAt": "2026-03-17T18:23:08.645Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20293,6 +20293,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 304,
+      "title": "🚨First Incident response on the Pager! V3.0! 🚨",
+      "state": "open",
+      "merged": false,
+      "author": "curthayman",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
+      "authorUrl": "https://github.com/curthayman",
+      "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet!\r\n\r\n🔔NEW!!  *** → I made some changes, I saw how @brainphreak Loki Payload was using the scripts so I wanted to add that to give more juicy information. Added some Wireshark filters for .pcap analysis. Also wanted to use the same method that @OSINTI4L used on Paper Pusher, detecing printers with port 9100 open. Enjoy!",
+      "createdAt": "2026-03-17T17:08:32Z",
+      "updatedAt": "2026-03-17T17:23:46Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/304",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 90,
       "title": "Add Frondy theme — high-contrast black and yellow",
       "state": "open",
@@ -20408,7 +20427,7 @@
     },
     {
       "number": 298,
-      "title": "🤝👋🏾Handyshake Alert!👋🏾🤝",
+      "title": "👋🏾 🤝Handyshake Alert!👋🏾🤝",
       "state": "open",
       "merged": false,
       "author": "curthayman",
@@ -20416,7 +20435,7 @@
       "authorUrl": "https://github.com/curthayman",
       "body": "Makes when you capture handshakes so much more Nosey and curious. Check the README.md file for all the juicy information. Breaks the handshake way down as far as information! Let me know what you think!",
       "createdAt": "2026-03-09T23:36:49Z",
-      "updatedAt": "2026-03-12T04:26:06Z",
+      "updatedAt": "2026-03-17T17:24:21Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/298",
@@ -21020,15 +21039,15 @@
     {
       "number": 274,
       "title": "🚨First Incident response on the Pager!",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "curthayman",
       "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
       "authorUrl": "https://github.com/curthayman",
       "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet! Enjoy!",
       "createdAt": "2026-02-12T01:01:52Z",
-      "updatedAt": "2026-02-19T18:01:31Z",
-      "closedAt": null,
+      "updatedAt": "2026-03-17T17:04:46Z",
+      "closedAt": "2026-03-17T17:04:46Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/274",
       "repo": "wifipineapplepager-payloads",
