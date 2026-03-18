@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-18T12:18:20.837Z",
+  "fetchedAt": "2026-03-18T14:31:44.343Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20294,7 +20294,7 @@
   "pullRequests": [
     {
       "number": 304,
-      "title": "🚨First Incident response on the Pager! V3.0! 🚨",
+      "title": "🚨First Incident response Payload on the Pager! V3.0! 🚨",
       "state": "open",
       "merged": false,
       "author": "curthayman",
@@ -20302,7 +20302,7 @@
       "authorUrl": "https://github.com/curthayman",
       "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet!\r\n\r\n🔔NEW!!  *** → I made some changes, I saw how @brainphreak Loki Payload was using the scripts so I wanted to add that to give more juicy information. Added some Wireshark filters for .pcap analysis. Also wanted to use the same method that @OSINTI4L used on Paper Pusher, detecing printers with port 9100 open. Enjoy!",
       "createdAt": "2026-03-17T17:08:32Z",
-      "updatedAt": "2026-03-17T17:23:46Z",
+      "updatedAt": "2026-03-18T14:17:46Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/304",
@@ -20618,7 +20618,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "fun little game of HEADS or TAILS",
       "createdAt": "2026-02-27T14:45:40Z",
-      "updatedAt": "2026-03-16T14:45:14Z",
+      "updatedAt": "2026-03-18T12:48:01Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/290",
