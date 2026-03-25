@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-25T20:13:04.928Z",
+  "fetchedAt": "2026-03-25T22:12:07.034Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20605,7 +20605,7 @@
       "authorUrl": "https://github.com/jader242",
       "body": "This would cause no handshakes to appear in the payload complete alert, no matter how many were there in /root/loot/handshakes\r\n\r\n(It also seems $_RECON_SELECTED_CLIENT_MAC_ADDRESS also returns the AP BSSID, so idk what's up with that)",
       "createdAt": "2026-03-08T23:32:30Z",
-      "updatedAt": "2026-03-20T23:23:46Z",
+      "updatedAt": "2026-03-25T21:55:39Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/295",
