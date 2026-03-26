@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-26T03:05:42.440Z",
+  "fetchedAt": "2026-03-26T04:48:31.503Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 305,
+      "title": "Add FlockAudit — WiFi-based Flock Safety LPR camera detector",
+      "state": "open",
+      "merged": false,
+      "author": "sinXne0",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
+      "authorUrl": "https://github.com/sinXne0",
+      "body": "## FlockAudit\n\nWiFi-based Flock Safety LPR camera detector for the WiFi Pineapple Pager.\n\nScans the airspace in monitor mode for Flock Safety camera management APs by OUI and SSID pattern. Captures probe requests from devices that have previously connected to them. GPS-tags every find and exports a KML file for mapping.\n\nNo internet connection or shared subnet required — works anywhere since Flock cameras connect via cellular LTE, not a local network.\n\n## What it does\n\n- **Beacon scan** — detects camera management APs by OUI (Raspberry Pi, NVIDIA Jetson, Hikvision, Dahua, Axis, etc.) and SSID pattern (`Flock_`, `LPR-`, `PlateReader`, `SafetyCam`, etc.)\n- **Probe request capture** — catches client devices actively searching for Flock SSIDs (previously connected devices)\n- **Watch mode** — loops continuously, good for driving/walking a survey route, deduplicates so you only alert on new finds\n- **Deep probe (optional)** — connects to a discovered camera AP, gets an IP via DHCP, then runs: port scan, HTTP banner, Hikvision ISAPI, Dahua CGI, Axis VAPIX, RTSP check, default credential test\n- **KML export** — GPS-tagged placemarks for every camera found\n\n## Test plan\n\n- [ ] Verify payload launches on Pineapple Pager without errors\n- [ ] Verify monitor mode scan completes and returns to managed mode cleanly\n- [ ] Verify KML file is created at `/root/loot/FlockAudit/`\n- [ ] Verify watch mode loops and deduplicates correctly\n- [ ] Verify deep probe connects/disconnects cleanly without leaving interface in bad state\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "createdAt": "2026-03-26T03:09:50Z",
+      "updatedAt": "2026-03-26T03:09:50Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/305",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 91,
       "title": "Zombie_Ceez New Theme",
