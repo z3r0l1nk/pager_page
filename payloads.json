@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-27T10:18:04.010Z",
+  "fetchedAt": "2026-03-27T12:16:24.206Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20390,7 +20390,7 @@
       "authorUrl": "https://github.com/Hacka-Gotchi",
       "body": "Jelly Sentinel is a native network security assessment payload for the WiFi Pineapple Pager.\r\n\r\nIt combines active reconnaissance, passive traffic analysis, and confidence-based vulnerability detection into a unified workflow.\r\n\r\n* Key Features:\r\n- WiFi audit and device discovery\r\n- CVE banner intelligence with confidence scoring\r\n- Risk scoring aligned with CVSS principles\r\n- Default credential detection across common devices\r\n- Passive traffic analysis (DNS insights, top talkers, anomaly detection)\r\n- Bluetooth device detection\r\n- Delta comparison between scans\r\n- Structured reporting with executive summary and CSV export\r\n\r\nThe payload uses only native Pager tools and requires no external dependencies.\r\n\r\nTested on real-world environments and designed for authorized home and SMB security assessments.\r\n\r\n*This payload enforces user authorization before execution and is intended strictly for authorized security testing.*",
       "createdAt": "2026-03-27T09:07:05Z",
-      "updatedAt": "2026-03-27T09:07:05Z",
+      "updatedAt": "2026-03-27T10:26:51Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/306",
