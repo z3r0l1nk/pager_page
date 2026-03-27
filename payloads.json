@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-27T08:17:20.434Z",
+  "fetchedAt": "2026-03-27T10:18:04.010Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 306,
+      "title": "Jelly Sentinel — Network Assessment Tool for WiFi Pineapple Pager",
+      "state": "open",
+      "merged": false,
+      "author": "Hacka-Gotchi",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/172855544?v=4",
+      "authorUrl": "https://github.com/Hacka-Gotchi",
+      "body": "Jelly Sentinel is a native network security assessment payload for the WiFi Pineapple Pager.\r\n\r\nIt combines active reconnaissance, passive traffic analysis, and confidence-based vulnerability detection into a unified workflow.\r\n\r\n* Key Features:\r\n- WiFi audit and device discovery\r\n- CVE banner intelligence with confidence scoring\r\n- Risk scoring aligned with CVSS principles\r\n- Default credential detection across common devices\r\n- Passive traffic analysis (DNS insights, top talkers, anomaly detection)\r\n- Bluetooth device detection\r\n- Delta comparison between scans\r\n- Structured reporting with executive summary and CSV export\r\n\r\nThe payload uses only native Pager tools and requires no external dependencies.\r\n\r\nTested on real-world environments and designed for authorized home and SMB security assessments.\r\n\r\n*This payload enforces user authorization before execution and is intended strictly for authorized security testing.*",
+      "createdAt": "2026-03-27T09:07:05Z",
+      "updatedAt": "2026-03-27T09:07:05Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/306",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 305,
       "title": "Add FlockAudit — WiFi-based Flock Safety LPR camera detector",
