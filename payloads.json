@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-27T16:19:49.055Z",
+  "fetchedAt": "2026-03-27T18:19:50.181Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 92,
+      "title": "New Theme - Anaglyphs",
+      "state": "open",
+      "merged": false,
+      "author": "cribb-it",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/24548670?v=4",
+      "authorUrl": "https://github.com/cribb-it",
+      "body": "Anaglyphs is a bold visual theme built around the iconic red and cyan 3D aesthetic, it is designed to create a 3D effect. \r\nWhen viewed through classic red/cyan 3D glasses, each eye sees a different layer and the brain merges them into a single image with depth.\r\n\r\n<details>\r\n  <summary>Spoiler warning</summary>\r\n<img src=\"https://github.com/user-attachments/assets/0066bb74-a695-4e8f-a39a-78f1471407bc\">\r\n</details>\r\n",
+      "createdAt": "2026-03-27T17:13:21Z",
+      "updatedAt": "2026-03-27T17:13:21Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/92",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 306,
       "title": "Jelly Sentinel — Network Assessment Tool for WiFi Pineapple Pager",
