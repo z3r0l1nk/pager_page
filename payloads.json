@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-29T18:37:38.667Z",
+  "fetchedAt": "2026-03-29T20:28:01.588Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 307,
+      "title": "🥌 Curly v4.0! 🥌",
+      "state": "open",
+      "merged": false,
+      "author": "curthayman",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
+      "authorUrl": "https://github.com/curthayman",
+      "body": "4.0 is out! This has some cool new features I thought to add to assist in Bug Bounty Hunting. Added some new modules and bug fixes. crt.sh querying now instead of hardcoded subdomains. Slew of other updates, check the README for the rest!\r\n\r\nI personally have found debug logs, usernames and old subdomains containing sensitive information. Check it out!",
+      "createdAt": "2026-03-29T18:56:05Z",
+      "updatedAt": "2026-03-29T19:03:01Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/307",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 92,
       "title": "New Theme - Anaglyphs",
