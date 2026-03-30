@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-03-30T10:58:49.098Z",
+  "fetchedAt": "2026-03-30T13:12:41.604Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 309,
+      "title": "Bash Translator Script",
+      "state": "open",
+      "merged": false,
+      "author": "spywill",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/71735542?v=4",
+      "authorUrl": "https://github.com/spywill",
+      "body": "Bash Translator Script\r\n\r\nA lightweight Bash-based translator that uses Google's unofficial translate API to convert text from English into multiple languages.",
+      "createdAt": "2026-03-30T11:04:30Z",
+      "updatedAt": "2026-03-30T11:04:30Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/309",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 308,
       "title": "Recon DB Report Payload",
