@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-01T16:50:37.694Z",
+  "fetchedAt": "2026-04-01T18:57:28.667Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20380,6 +20380,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 310,
+      "title": "Added Fuzz_Finder",
+      "state": "open",
+      "merged": false,
+      "author": "OSINTI4L",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/207463242?v=4",
+      "authorUrl": "https://github.com/OSINTI4L",
+      "body": "Fuzz Finder performs a BLE scan attempting to locate Axon devices in the area. It then notifies the user if Axon devices were found.",
+      "createdAt": "2026-04-01T18:15:39Z",
+      "updatedAt": "2026-04-01T18:15:40Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/310",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 309,
       "title": "Bash Translator Script",
