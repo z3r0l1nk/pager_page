@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-02T22:28:21.982Z",
+  "fetchedAt": "2026-04-03T02:02:32.332Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23119,7 +23119,7 @@
       "authorUrl": "https://github.com/mr-pmillz",
       "body": "I haven't tested this payload out yet. Am working on setting up some captive portals on separate device to see if this payload works. \r\nFurther testing required.",
       "createdAt": "2026-01-19T02:17:17Z",
-      "updatedAt": "2026-02-16T17:58:26Z",
+      "updatedAt": "2026-04-03T02:02:17Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/202",
