@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-06T14:21:45.691Z",
+  "fetchedAt": "2026-04-06T16:16:56.879Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20402,6 +20402,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 312,
+      "title": "Add SignalFence — RSSI proximity alert that survives MAC randomization via 3-signal fingerprinting",
+      "state": "open",
+      "merged": false,
+      "author": "4cidburnn",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/99287627?v=4",
+      "authorUrl": "https://github.com/4cidburnn",
+      "body": "## SignalFence v1.0\r\n\r\nRSSI-based proximity alert with multi-signal device fingerprinting for the Hak5 WiFi Pineapple Pager.\r\n\r\n### What it does\r\nMonitors the airspace passively and alerts (LED + buzzer + on-screen ALERT + optional webhook) when a target device enters a configurable RSSI threshold.\r\n\r\n---\r\n\r\n> ![SignalFence running](https://github.com/4cidburnn/SignalFence/raw/main/screenshots/running.png)\r\n\r\n---\r\n\r\n### Modes\r\n- **AUTO** — detects target type from MAC address automatically (recommended)\r\n  - Locally administered MAC → FINGERPRINT mode\r\n  - Real hardware MAC + beacons → AP mode  \r\n  - Real hardware MAC + no beacons → CLIENT mode\r\n- **AP** — beacon tracking for routers and access points\r\n- **CLIENT** — exact MAC tracking for non-randomizing devices\r\n- **FINGERPRINT** — 3-signal scoring engine, survives MAC rotation\r\n\r\n### Fingerprinting signals\r\n1. Probe SSID set match (+3 pts)\r\n2. 802.11 sequence number continuity (+3 pts) — works against iOS 14+ and Android 12+\r\n3. IE capability fingerprint (+2 pts)\r\n\r\n### Category\r\nreconnaissance\r\n\r\n## Screenshots\r\n\r\n| MAC Picker | AUTO Detection | Preflight | Alert |\r\n|:-:|:-:|:-:|:-:|\r\n| ![mac_picker](https://github.com/4cidburnn/SignalFence/raw/main/screenshots/mac_picker.png) | ![auto](https://github.com/4cidburnn/SignalFence/raw/main/screenshots/auto_detect.png) | ![scanning](https://github.com/4cidburnn/SignalFence/raw/main/screenshots/preflight.png) | ![alert](https://github.com/4cidburnn/SignalFence/raw/main/screenshots/alert.png) |\r\n\r\n### Checklist\r\n- [x] No hardcoded credentials or live URLs (webhook uses example.com placeholder)\r\n- [x] Works on Pager firmware (ash-compatible, no bash arrays or bashisms)\r\n- [x] All dependencies pre-installed on Pager firmware (tcpdump, iw, md5sum)\r\n- [x] iw fallback if airmon-ng missing\r\n- [x] README.md included\r\n- [x] Tested on iPhone 15 devices and AP's\r\n\r\nPersonal repo: https://github.com/4cidburnn/SignalFence",
+      "createdAt": "2026-04-06T15:26:26Z",
+      "updatedAt": "2026-04-06T15:26:26Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/312",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 311,
       "title": "Adding \"SharkJack Launcher\" & README.md",
