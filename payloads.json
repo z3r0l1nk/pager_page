@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-07T06:33:01.572Z",
+  "fetchedAt": "2026-04-07T08:28:21.764Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20424,7 +20424,7 @@
       "authorUrl": "https://github.com/PentestPlaybook",
       "body": "Updates and expands the evil_portal module with new payloads, updated existing payloads, and an improved README.\r\n\r\nNew Payloads:\r\ninterface_manager — Displays interface status and manages interface activation\r\nset_evil_portal_interface — Configures which network interface Evil Portal applies to (Evil WPA, Open AP, or all interfaces)\r\nswitch_evil_portal — Switches the active captive portal at runtime without restarting the service\r\n\r\nUpdated Payloads:\r\ninstall_evil_portal — Updated installation process\r\ndefault_portal — Updated default portal activation\r\n\r\nREADME Updates:\r\nAdded documentation for all new payloads\r\nExpanded installation order with step-by-step instructions\r\nReplaced isolated subnet section with interface configuration guide\r\nExpanded troubleshooting section covering connectivity issues, portal not loading, and interface debugging\r\n\r\nTesting:\r\nTested on WiFi Pineapple Pager (OpenWrt 24.10.1)\r\n\r\nCredits:\r\nSwitch payload & helper concept by 0x4B",
       "createdAt": "2026-04-07T03:20:39Z",
-      "updatedAt": "2026-04-07T03:28:39Z",
+      "updatedAt": "2026-04-07T06:36:58Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/313",
