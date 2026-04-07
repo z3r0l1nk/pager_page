@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-07T14:35:19.188Z",
+  "fetchedAt": "2026-04-07T16:24:16.880Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20415,6 +20415,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 99,
+      "title": "Nighty-eight Update For 1.0.8",
+      "state": "open",
+      "merged": false,
+      "author": "cribb-it",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/24548670?v=4",
+      "authorUrl": "https://github.com/cribb-it",
+      "body": "",
+      "createdAt": "2026-04-07T15:52:29Z",
+      "updatedAt": "2026-04-07T15:53:26Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/99",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 98,
       "title": "Update Circuitry theme for firmware 1.0.8",
       "state": "open",
@@ -20443,7 +20462,7 @@
       "authorUrl": "https://github.com/PentestPlaybook",
       "body": "Updates and expands the evil_portal module with new payloads, updated existing payloads, and an improved README.\r\n\r\nNew Payloads:\r\ninterface_manager — Displays interface status and manages interface activation\r\nset_evil_portal_interface — Configures which network interface Evil Portal applies to (Evil WPA, Open AP, or all interfaces)\r\nswitch_evil_portal — Switches the active captive portal at runtime without restarting the service\r\n\r\nUpdated Payloads:\r\ninstall_evil_portal — Updated installation process\r\ndefault_portal — Updated default portal activation\r\n\r\nREADME Updates:\r\nAdded documentation for all new payloads\r\nExpanded installation order with step-by-step instructions\r\nReplaced isolated subnet section with interface configuration guide\r\nExpanded troubleshooting section covering connectivity issues, portal not loading, and interface debugging\r\n\r\nTesting:\r\nTested on WiFi Pineapple Pager (OpenWrt 24.10.1)\r\n\r\nCredits:\r\nSwitch payload & helper concept by 0x4B",
       "createdAt": "2026-04-07T03:20:39Z",
-      "updatedAt": "2026-04-07T06:36:58Z",
+      "updatedAt": "2026-04-07T15:25:04Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/313",
@@ -20519,7 +20538,7 @@
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T02:52:49Z",
-      "updatedAt": "2026-04-07T02:52:49Z",
+      "updatedAt": "2026-04-07T15:24:26Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/94",
@@ -20671,7 +20690,7 @@
       "authorUrl": "https://github.com/cribb-it",
       "body": "Anaglyphs is a bold visual theme built around the iconic red and cyan 3D aesthetic, it is designed to create a 3D effect. \r\nWhen viewed through classic red/cyan 3D glasses, each eye sees a different layer and the brain merges them into a single image with depth.\r\n\r\n<details>\r\n  <summary>Spoiler warning</summary>\r\n<img src=\"https://github.com/user-attachments/assets/0066bb74-a695-4e8f-a39a-78f1471407bc\">\r\n</details>\r\n",
       "createdAt": "2026-03-27T17:13:21Z",
-      "updatedAt": "2026-03-27T17:13:21Z",
+      "updatedAt": "2026-04-07T15:46:19Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/92",
@@ -20728,7 +20747,7 @@
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "# Zombie Ceez v1.0\r\n\r\nA colorful Hacker Theme for the Hak5 WiFi Pineapple Pager! \r\nKeep up to date with all my latest themes at: https://github.com/Zombie-Joe/zombie-themes\r\n\r\n## Screenshots\r\n<details>\r\n  <summary>⚠️ Spoiler Alert! - Click here to see the screenshots ⚠️</summary>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez1\" src=\"https://github.com/user-attachments/assets/caf7c2b6-d973-4d19-a914-055708b84e96\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez2\" src=\"https://github.com/user-attachments/assets/331f643c-27eb-44df-b9eb-b583cf8ae85e\" /><br>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez3\" src=\"https://github.com/user-attachments/assets/29e9dd46-3c9a-4bba-b11d-5b9c319c7909\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez4\" src=\"https://github.com/user-attachments/assets/fcf16d5d-9901-4b26-8c01-ea8d038524d6\" />\r\n</details>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
       "createdAt": "2026-03-19T21:55:29Z",
-      "updatedAt": "2026-04-07T02:37:22Z",
+      "updatedAt": "2026-04-07T15:09:32Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/91",
