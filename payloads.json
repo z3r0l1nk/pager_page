@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-07T10:23:35.252Z",
+  "fetchedAt": "2026-04-07T12:20:59.945Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20414,6 +20414,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 98,
+      "title": "Update Circuitry theme for firmware 1.0.8",
+      "state": "open",
+      "merged": false,
+      "author": "brainphreak",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
+      "authorUrl": "https://github.com/brainphreak",
+      "body": "## Summary\n- Updated theme framework version from 0.5 to 0.6\n- Added `duckyscript_list_picker` component for the new `LIST_PICKER` payload command\n- Added `failsafe_duckyscript_list_picker` fallback component\n- Enhanced launch payload dialog to display payload metadata (`$_PAYLOAD_TITLE`, `$_PAYLOAD_VERSION`, `$_PAYLOAD_AUTHOR_NAME`, `$_PAYLOAD_DESCRIPTION`)\n\n## Testing\n- Tested on WiFi Pineapple Pager running firmware 1.0.8\n- All existing screens and components verified working\n- New LIST_PICKER component tested with payload selection\n- Payload metadata variables confirmed displaying correctly in launch dialog\n\n![Payload Dialog](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-themes/update-circuitry-fw108/themes/Circuitry/preview_payload_dialog.png)",
+      "createdAt": "2026-04-07T11:03:48Z",
+      "updatedAt": "2026-04-07T11:03:48Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/98",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 313,
       "title": "evil_portal: add new payloads and update existing payloads and README",
