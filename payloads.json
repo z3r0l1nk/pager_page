@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-06T22:11:19.480Z",
+  "fetchedAt": "2026-04-07T00:28:27.452Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -384,6 +384,17 @@
               "readme": null,
               "payloadSource": "#!/bin/bash\n# Title: IP_PICKER Example\n# Author: Korben\n# Description: Example usage of the IP_PICKER DuckyScript command\n# Version: 1.0\n\nLOG \"Launching IP picker...\"\nresp=$(IP_PICKER \"Home?\" \"127.0.0.1\")\ncase $? in\n    $DUCKYSCRIPT_CANCELLED)\n        LOG \"User cancelled\"\n        exit 1\n        ;;\n    $DUCKYSCRIPT_REJECTED)\n        LOG \"Dialog rejected\"\n        exit 1\n        ;;\n    $DUCKYSCRIPT_ERROR)\n        LOG \"An error occurred\"\n        exit 1\n        ;;\nesac\n\nLOG \"User Picked $resp\"\n\n",
               "githubUrl": "https://github.com/hak5/wifipineapplepager-payloads/tree/master/library/user/examples/IP_PICKER"
+            },
+            {
+              "name": "LIST_PICKER",
+              "title": "Demo LIST_PICKER",
+              "author": "Hak5Darren",
+              "description": "A simple demo of the new LIST_PICKER DuckyScript command for convenient payload navigation.",
+              "version": null,
+              "payloadCategory": null,
+              "readme": null,
+              "payloadSource": "#!/bin/bash\n# Title: Demo LIST_PICKER\n# Author: Hak5Darren\n# Description: A simple demo of the new LIST_PICKER DuckyScript command for convenient payload navigation.\n\nIP_ADDRESS=\"8.8.8.8\"\n\nwhile true; do\n  resp=$(LIST_PICKER \"Main Menu\" \"Ping $IP_ADDRESS\" \"Configure IP\" \"About\" \"Exit\" \"Ping $IP_ADDRESS\")\n\n  case \"$resp\" in\n    \"Configure IP\")\n      IP_ADDRESS=$(IP_PICKER \"IP Address?\" \"$IP_ADDRESS\")\n      ;;\n\n    \"Ping $IP_ADDRESS\")\n      __spinnerid=$(START_SPINNER \"Pinging $IP_ADDRESS\")\n      if ping -c 1 \"$IP_ADDRESS\" > /dev/null 2>&1; then\n        STOP_SPINNER ${__spinnerid}\n        RINGTONE bonus\n        PROMPT \"Ping Successful\"\n      else\n        STOP_SPINNER ${__spinnerid}\n        RINGTONE halt\n        PROMPT \"Ping Unsuccessful\"\n      fi\n      ;;\n\n    \"About\")\n      # Example of a nested list\n      LIST_PICKER \"This is a nested list\" \"Demo by @Hak5Darren\" \"Pager firmware by:\" \"@dragorn and @Korben\" \"<- Back\" \"<- Back\"\n      # Selection is ignored, so all list items are essentially \"<- Back\"\n      ;;\n\n    \"Exit\")\n      resp=$(CONFIRMATION_DIALOG \"Exit Payload?\") || exit 1\n      if [ \"$resp\" = \"$DUCKYSCRIPT_USER_CONFIRMED\" ]; then\n        exit 0\n      fi\n      ;;\n\n    *)\n      LOG \"[!] Unknown selection: $resp\"\n      # User pressed 'B' most likely\n      ;;\n  esac\ndone\n",
+              "githubUrl": "https://github.com/hak5/wifipineapplepager-payloads/tree/master/library/user/examples/LIST_PICKER"
             },
             {
               "name": "LOG",
@@ -2050,7 +2061,7 @@
       }
     }
   },
-  "totalPayloads": 175,
+  "totalPayloads": 176,
   "themes": [
     {
       "name": "Circuitry",
@@ -18979,13 +18990,12 @@
     {
       "name": "wargames",
       "title": "Wargames",
-      "author": "Hak5",
+      "author": "Unknown",
       "description": "Editing these files here within /lib/pager/themes/ will have no effect. Do not place new themes here. If you would like to modify the theme, create a new one by copying this to /root/themes with a new directory name cp -r /lib/pager/themes/wargames /root/themes/mycooltheme",
       "readme": "Editing these files here within /lib/pager/themes/ will have no effect. Do not place new themes here.\n\nIf you would like to modify the theme, create a new one by copying this to /root/themes with a new directory name\n\ncp -r /lib/pager/themes/wargames /root/themes/mycooltheme\n\nFind more information at docs.hak5.org",
       "themeJson": {
-        "author": "Hak5",
-        "theme_version": "1.0.7",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.0.8",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "network": "components/status_bars/status_bar_network.json",
@@ -19032,6 +19042,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -19285,7 +19296,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
