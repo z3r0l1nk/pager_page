@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-07T03:05:21.050Z",
+  "fetchedAt": "2026-04-07T04:49:34.792Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20415,6 +20415,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 313,
+      "title": "evil_portal: add new payloads and update existing payloads and README",
+      "state": "open",
+      "merged": false,
+      "author": "PentestPlaybook",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/123711693?v=4",
+      "authorUrl": "https://github.com/PentestPlaybook",
+      "body": "Updates and expands the evil_portal module with new payloads, updated existing payloads, and an improved README.\r\n\r\nNew Payloads:\r\ninterface_manager — Displays interface status and manages interface activation\r\nset_evil_portal_interface — Configures which network interface Evil Portal applies to (Evil WPA, Open AP, or all interfaces)\r\nswitch_evil_portal — Switches the active captive portal at runtime without restarting the service\r\n\r\nUpdated Payloads:\r\ninstall_evil_portal — Updated installation process\r\ndefault_portal — Updated default portal activation\r\n\r\nREADME Updates:\r\nAdded documentation for all new payloads\r\nExpanded installation order with step-by-step instructions\r\nReplaced isolated subnet section with interface configuration guide\r\nExpanded troubleshooting section covering connectivity issues, portal not loading, and interface debugging\r\n\r\nTesting:\r\nTested on WiFi Pineapple Pager (OpenWrt 24.10.1)\r\n\r\nCredits:\r\nSwitch payload & helper concept by 0x4B",
+      "createdAt": "2026-04-07T03:20:39Z",
+      "updatedAt": "2026-04-07T03:28:39Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/313",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 97,
       "title": "Zombie_Punk v1.0.8 Update Fixes",
       "state": "open",
@@ -22997,7 +23016,7 @@
       "authorUrl": "https://github.com/knight-scott",
       "body": "# Summary\r\n\r\nThis PR updates the `payload.sh` for  `evil_portal_install` and `default_portal` to support symlink-based portal switching via `/root/portals/current`, and integrates the `switch_evil_portal` payload.\r\n\r\nThe goal is to provide a simple way to switch between installed captive portals at runtime.\r\n\r\n## What Changed\r\n\r\n### Symlink-Based Portal Selection\r\n\r\n- Portal activation is now controlled by: `/root/portals/current → /root/portals/<portal-name>`\r\n- Evil Portal assets reference `current` instead of a hardcoded portal directory.\r\n- Switching portals is an atomic operation (`ln -sfn`) and does not require restarting Evil Portal or the device.\r\n\r\n### `switch_evil_portal` Payload Integration\r\n\r\n- Adds a user-facing payload that:\r\n\r\n    - Enumerates available portals\r\n    - Uses NUMBER_PICKER for selection\r\n    - Updates the current symlink\r\n    \r\n- No init script patching required.\r\n\r\n### Updated Install Flow\r\n\r\nInstall script now:\r\n- Ensures the current symlink exists\r\n- Sets Default as the initial active portal\r\n- Installs the switch payload alongside existing Evil Portal payloads\r\n\r\n### Default Portal Compatibility\r\n\r\nThe Default Portal payload now activates itself by:\r\n\r\n- Updating the current symlink\r\n- Remaining compatible with both isolated and bridged network configurations\r\n\r\n## Backward Compatibility\r\n\r\n- Existing portals continue to function unchanged\r\n- Users who do not use switch_evil_portal are unaffected\r\n- No breaking changes to Evil Portal behavior\r\n\r\n## Tested On\r\n\r\n- WiFi Pineapple Pager v 1.0.6 (OpenWrt 24.10.1)\r\n- Evil Portal v 1.9\r\n- Multiple community portals in `/root/portals/`\r\n\r\n## Attribution\r\n\r\n- Evil Portal originally by newbi3\r\n- Pager adaptation by PentestPlaybook\r\n- Symlink switch payload & integration by 0x4B",
       "createdAt": "2026-01-21T03:19:15Z",
-      "updatedAt": "2026-03-27T06:29:04Z",
+      "updatedAt": "2026-04-07T03:24:53Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/213",
