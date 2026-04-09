@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-09T16:31:26.111Z",
+  "fetchedAt": "2026-04-09T18:26:27.594Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20413,6 +20413,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 101,
+      "title": "deleted all .DS_Store files present",
+      "state": "open",
+      "merged": false,
+      "author": "dotknewt",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/22453346?v=4",
+      "authorUrl": "https://github.com/dotknewt",
+      "body": "deleted all .DS_Store files found in theme directories",
+      "createdAt": "2026-04-09T17:47:59Z",
+      "updatedAt": "2026-04-09T17:47:59Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/101",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 315,
       "title": "wifi snatcher toolkit",
