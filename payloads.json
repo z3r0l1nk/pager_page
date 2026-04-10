@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-10T04:59:32.446Z",
+  "fetchedAt": "2026-04-10T06:38:39.122Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20461,7 +20461,7 @@
       "authorUrl": "https://github.com/f3bandit",
       "body": "what's in the box:\r\nwifi_loot_viewer \"wifi pager payload: payload.sh\"\r\ntemp disable  defender \"using run as and hotkeys: omg_payload\"\r\ndump all windows wifi \"magic.ps1\"\r\nexport all windows wifi \"magic.ps1\"\r\nzip windows wifi dumps \"magic.ps1\"\r\nscp wifi dump zip to wifi  pager \"magic.ps1\"\r\ncover tracks \"magic.ps1\"\r\nre-enable defender using \"using run as and hotkeys: omg_payload\"\r\n",
       "createdAt": "2026-04-08T17:46:28Z",
-      "updatedAt": "2026-04-10T04:59:03Z",
+      "updatedAt": "2026-04-10T06:32:50Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/315",
