@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-11T22:08:07.330Z",
+  "fetchedAt": "2026-04-12T00:30:13.806Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20413,6 +20413,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 317,
+      "title": "update mac spoofer to use the new list_picker from 1.0.8",
+      "state": "open",
+      "merged": false,
+      "author": "marcdel",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/693730?v=4",
+      "authorUrl": "https://github.com/marcdel",
+      "body": "cc @StarkweatherNow hope you don't mind! i tried to keep it 1-1 with the original",
+      "createdAt": "2026-04-11T23:01:45Z",
+      "updatedAt": "2026-04-11T23:01:45Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/317",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 316,
       "title": "Favorites manager updated to have LIST_PICKER Function",
