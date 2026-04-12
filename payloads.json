@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-12T03:05:50.431Z",
+  "fetchedAt": "2026-04-12T04:58:59.693Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20414,6 +20414,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 318,
+      "title": "Handshake remover",
+      "state": "open",
+      "merged": false,
+      "author": "jader242",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/139934223?v=4",
+      "authorUrl": "https://github.com/jader242",
+      "body": "Easily remove unwanted handshake files from loot, either from a partial MAC address or full. Asks user for confirmation before deletion. Helpful for those pesky times where your loot folder fills up with handshakes from networks you don't mean to target",
+      "createdAt": "2026-04-12T03:26:36Z",
+      "updatedAt": "2026-04-12T03:26:36Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/318",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 317,
       "title": "update mac spoofer to use the new list_picker from 1.0.8",
       "state": "open",
@@ -20480,7 +20499,7 @@
       "authorUrl": "https://github.com/f3bandit",
       "body": "what's in the box:\r\nwifi_loot_viewer \"wifi pager payload: payload.sh\"\r\ntemp disable  defender \"using run as and hotkeys: omg_payload\"\r\ndump all windows wifi \"magic.ps1\"\r\nexport all windows wifi \"magic.ps1\"\r\nzip windows wifi dumps \"magic.ps1\"\r\nscp wifi dump zip to wifi  pager \"magic.ps1\"\r\ncover tracks \"magic.ps1\"\r\nre-enable defender using \"using run as and hotkeys: omg_payload\"\r\n",
       "createdAt": "2026-04-08T17:46:28Z",
-      "updatedAt": "2026-04-11T00:54:05Z",
+      "updatedAt": "2026-04-12T03:28:24Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/315",
@@ -20556,7 +20575,7 @@
       "authorUrl": "https://github.com/PentestPlaybook",
       "body": "Updates and expands the evil_portal module with new payloads, updated existing payloads, and an improved README.\r\n\r\nNew Payloads:\r\ninterface_manager — Displays interface status and manages interface activation\r\nset_evil_portal_interface — Configures which network interface Evil Portal applies to (Evil WPA, Open AP, or all interfaces)\r\nswitch_evil_portal — Switches the active captive portal at runtime without restarting the service\r\n\r\nUpdated Payloads:\r\ninstall_evil_portal — Updated installation process\r\ndefault_portal — Updated default portal activation\r\n\r\nREADME Updates:\r\nAdded documentation for all new payloads\r\nExpanded installation order with step-by-step instructions\r\nReplaced isolated subnet section with interface configuration guide\r\nExpanded troubleshooting section covering connectivity issues, portal not loading, and interface debugging\r\n\r\nTesting:\r\nTested on WiFi Pineapple Pager (OpenWrt 24.10.1)\r\n\r\nCredits:\r\nSwitch payload & helper concept by 0x4B",
       "createdAt": "2026-04-07T03:20:39Z",
-      "updatedAt": "2026-04-12T03:01:20Z",
+      "updatedAt": "2026-04-12T03:06:01Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/313",
@@ -21056,7 +21075,7 @@
       "authorUrl": "https://github.com/jader242",
       "body": "This would cause no handshakes to appear in the payload complete alert, no matter how many were there in /root/loot/handshakes\r\n\r\n(It also seems $_RECON_SELECTED_CLIENT_MAC_ADDRESS also returns the AP BSSID, so idk what's up with that)",
       "createdAt": "2026-03-08T23:32:30Z",
-      "updatedAt": "2026-04-12T03:00:49Z",
+      "updatedAt": "2026-04-12T03:14:40Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/295",
