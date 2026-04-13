@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-13T14:35:57.176Z",
+  "fetchedAt": "2026-04-13T16:28:49.085Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20898,7 +20898,7 @@
       "authorUrl": "https://github.com/curthayman",
       "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet!\r\n\r\n🔔NEW!!  *** → I made some changes, I saw how @brainphreak Loki Payload was using the scripts so I wanted to add that to give more juicy information. Added some Wireshark filters for .pcap analysis. Also wanted to use the same method that @OSINTI4L used on Paper Pusher, detecing printers with port 9100 open. Enjoy!",
       "createdAt": "2026-03-17T17:08:32Z",
-      "updatedAt": "2026-03-18T14:17:46Z",
+      "updatedAt": "2026-04-13T15:43:56Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/304",
@@ -21050,7 +21050,7 @@
       "authorUrl": "https://github.com/Hackazillarex",
       "body": "Hey Darren, I dont know what happened but I have been getting a lot of reports saying my Responder payload stopped working. After investigating, I noticed it was missing files ( Responder.py  was one of them ) so I just re-uploaded the missing files to fix this issue.\r\n\r\nThank you",
       "createdAt": "2026-03-09T11:23:44Z",
-      "updatedAt": "2026-03-10T19:02:24Z",
+      "updatedAt": "2026-04-13T15:32:57Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/297",
