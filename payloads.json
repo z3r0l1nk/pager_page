@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-14T22:17:05.024Z",
+  "fetchedAt": "2026-04-15T00:33:39.847Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23681,25 +23681,6 @@
       "draft": false
     },
     {
-      "number": 193,
-      "title": "PageCord - Control your Pager though Discord",
-      "state": "closed",
-      "merged": true,
-      "author": "beigeworm",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/93350544?v=4",
-      "authorUrl": "https://github.com/beigeworm",
-      "body": "This payload allows the user to control WiFi Pineapple Pager using a Discord bot/app.\r\nDesigned as a simple reverse shell along with extras such as file transfer, on-device setup and basic security features.\r\n\r\n**Features**\r\n- Upload and download files\r\n- Restart as background task\r\n- Basic session security\r\n- Single user ID access\r\n- Changeable working directory\r\n- Batched messages for large outputs\r\n- On-device setup\r\n\r\nThis is my first payload for WiFi Pineapple Pager!\r\n*Based on a script I created a while ago for remote access to systems using bash and Discord :)*",
-      "createdAt": "2026-01-16T12:09:47Z",
-      "updatedAt": "2026-02-06T18:25:18Z",
-      "closedAt": "2026-02-06T18:25:18Z",
-      "mergedAt": "2026-02-06T18:25:18Z",
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/193",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 192,
       "title": "EXAMINE - Targeted",
       "state": "closed",
@@ -25111,25 +25092,6 @@
       "closedAt": "2026-01-10T02:07:28Z",
       "mergedAt": "2026-01-10T02:07:28Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/36",
-      "repo": "wifipineapplepager-themes",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 35,
-      "title": "VaporHax - Vaporwave Theme",
-      "state": "closed",
-      "merged": true,
-      "author": "beigeworm",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/93350544?v=4",
-      "authorUrl": "https://github.com/beigeworm",
-      "body": "# VaporHax Theme\r\n\r\nThis is a futuristic Vaporwave Theme created for the Pineapple Pager (Firmware version : 1.0.4).  I have tried to tie every inch of the interface into just two colors.  Purple, and Aqua (with a touch of peaks' pink pager) complete with backgrounds and interface elements.\r\n",
-      "createdAt": "2026-01-06T21:09:19Z",
-      "updatedAt": "2026-01-10T02:01:25Z",
-      "closedAt": "2026-01-10T02:01:25Z",
-      "mergedAt": "2026-01-10T02:01:25Z",
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/35",
       "repo": "wifipineapplepager-themes",
       "labels": [],
       "comments": 0,
