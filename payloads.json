@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-19T00:31:42.812Z",
+  "fetchedAt": "2026-04-19T03:06:15.794Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21199,7 +21199,7 @@
       "authorUrl": "https://github.com/Noezsolution",
       "body": "Passive BLE scanner payload that detects nearby smart glasses\r\n(Meta Ray-Ban, Snap Spectacles, Bose Frames, etc.) using\r\nBluetooth SIG company IDs. Includes RSSI distance estimation\r\nand real-time LED/haptic feedback.",
       "createdAt": "2026-03-02T00:00:18Z",
-      "updatedAt": "2026-03-15T03:08:10Z",
+      "updatedAt": "2026-04-19T02:54:05Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/293",
