@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-21T14:36:51.442Z",
+  "fetchedAt": "2026-04-21T16:26:34.028Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20424,6 +20424,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 320,
+      "title": "🥌 Curly 4.1 🥌",
+      "state": "open",
+      "merged": false,
+      "author": "curthayman",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
+      "authorUrl": "https://github.com/curthayman",
+      "body": "Updated to use the new LIST_PICKER features, added a bunch of new features and bug fixes. Check the README.md file for all the changes. You can reach me on Discord at \"curtthecoder\" for any questions or bug reporting.",
+      "createdAt": "2026-04-21T15:03:19Z",
+      "updatedAt": "2026-04-21T15:03:19Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/320",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 319,
       "title": "🥸New Nosey Neighbor 2.0! 🤥",
