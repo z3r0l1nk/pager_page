@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-23T16:35:05.408Z",
+  "fetchedAt": "2026-04-23T18:26:12.858Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -3053,8 +3053,8 @@
       "name": "Ghost_Strategist",
       "title": "Ghost Strategist",
       "author": "GhostStrats",
-      "description": "This is the default theme shipped with the device",
-      "readme": "This is the default theme shipped with the device\n",
+      "description": "Ghost_Stragegist theme developed by Ghoststrats",
+      "readme": "Ghost_Stragegist theme developed by Ghoststrats\n",
       "themeJson": {
         "author": "GhostStrats",
         "theme_version": "1.0",
@@ -4975,8 +4975,8 @@
       "name": "The_Mad_Possum",
       "title": "The Mad Possum",
       "author": "The Mad Possum",
-      "description": "This is the default theme shipped with the device",
-      "readme": "This is the default theme shipped with the device\n",
+      "description": "The_Mad_Possum theme by TheMadPossum",
+      "readme": "The_Mad_Possum theme by TheMadPossum\n",
       "themeJson": {
         "author": "The Mad Possum",
         "theme_version": "1.0",
@@ -11887,8 +11887,8 @@
       "name": "ethernet_wizard",
       "title": "Ethernet Wizard",
       "author": "EthernetWizard",
-      "description": "This is the default theme shipped with the device",
-      "readme": "This is the default theme shipped with the device\n",
+      "description": "ethernet_wizard theme by EthernetWizard",
+      "readme": "ethernet_wizard theme by EthernetWizard\n",
       "themeJson": {
         "author": "EthernetWizard",
         "theme_version": "1.0",
