@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-23T20:21:50.794Z",
+  "fetchedAt": "2026-04-23T22:16:39.019Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21867,7 +21867,7 @@
       "authorUrl": "https://github.com/samxplogs",
       "body": "## Summary\n- New payload: **Proxmark3 Controller** for the WiFi Pineapple Pager\n- Detects Proxmark3 RDV4 via USB (`/dev/ttyACM*`), provides interactive D-pad menu for standalone mode operations\n- Covers LF (125 kHz) and HF (13.56 MHz): card reading, cloning, sniffing, and key recovery attacks\n- Step-by-step on-screen guides for each standalone mode (EM4100, HID Prox, MIFARE Classic, iCLASS, etc.)\n- Session logging to `/root/loot/proxmark/`\n\n## Files\n- `library/user/general/proxmark3-controller/payload.sh`\n- `library/user/general/proxmark3-controller/README.md`\n- `library/user/general/proxmark3-controller/PM3.png`\n\n## Test plan\n- [x] PM3 RDV4 detected on Pager via `/dev/ttyACM0`\n- [ ] Full menu navigation on hardware\n- [ ] Standalone mode guides validated with real card reads\n- [ ] Disconnect/reconnect handling",
       "createdAt": "2026-02-08T18:23:00Z",
-      "updatedAt": "2026-02-08T18:23:00Z",
+      "updatedAt": "2026-04-23T20:43:29Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/265",
