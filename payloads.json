@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-24T20:16:41.522Z",
+  "fetchedAt": "2026-04-24T22:16:23.141Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21007,7 +21007,7 @@
       "authorUrl": "https://github.com/curthayman",
       "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet!\r\n\r\n🔔NEW!!  *** → I made some changes, I saw how @brainphreak Loki Payload was using the scripts so I wanted to add that to give more juicy information. Added some Wireshark filters for .pcap analysis. Also wanted to use the same method that @OSINTI4L used on Paper Pusher, detecing printers with port 9100 open. Enjoy!",
       "createdAt": "2026-03-17T17:08:32Z",
-      "updatedAt": "2026-04-24T20:00:08Z",
+      "updatedAt": "2026-04-24T20:36:25Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/304",
