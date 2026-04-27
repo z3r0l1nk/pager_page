@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-27T03:07:33.180Z",
+  "fetchedAt": "2026-04-27T05:06:46.025Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20480,6 +20480,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 322,
+      "title": "Usb payloads",
+      "state": "open",
+      "merged": false,
+      "author": "rootjunky",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/23104715?v=4",
+      "authorUrl": "https://github.com/rootjunky",
+      "body": "Run payloads from a usb flash drive without installing them onto the device",
+      "createdAt": "2026-04-27T03:33:26Z",
+      "updatedAt": "2026-04-27T03:33:26Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/322",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 321,
       "title": "usb auto backup tool",
       "state": "open",
@@ -20489,7 +20508,7 @@
       "authorUrl": "https://github.com/rootjunky",
       "body": "This tool will mount a usb drive to the pager then let you backup things like themes, ringtones, payloads, or loot. once it has created a archive the selected item it will safely unmount the usb drive.",
       "createdAt": "2026-04-25T14:16:24Z",
-      "updatedAt": "2026-04-25T14:16:24Z",
+      "updatedAt": "2026-04-27T03:38:29Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/321",
