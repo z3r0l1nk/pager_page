@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-04-29T06:52:11.868Z",
+  "fetchedAt": "2026-04-29T08:48:17.689Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20479,6 +20479,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 324,
+      "title": "Set Evil Portal Interface v2.5",
+      "state": "open",
+      "merged": false,
+      "author": "PentestPlaybook",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/123711693?v=4",
+      "authorUrl": "https://github.com/PentestPlaybook",
+      "body": "Improves reliability and connectivity handling across all interface transitions.\r\n\r\nChanges from v2.1:\r\n- Replace immediate exit on internet connectivity failure with indefinite wait loop (Steps 4, 9, 12) — device may temporarily lose connectivity during network reconfiguration\r\n- Add ifup evil + wait_for_internet after restage wifi reload when in isolated mode — wifi reload during SSID/key restage can leave the target interface mastered to br-lan instead of br-evil at the physical layer despite correct UCI network assignment, causing connected clients to bypass evil portal NAT rules entirely\r\n- Add Step 14: wait for both interfaces to reach BROADCAST,MULTICAST,UP,LOWER_UP state UP after isolated mode transitions (15s initial wait, 30s polling window)\r\n- Add master bridge verification in Step 14 — confirms TARGET_IFACE is mastered to br-evil, retrying for up to 30 seconds to account for netifd race conditions\r\n- Add SSID broadcast verification in Step 14 — confirms staged pending SSID values are broadcasting correctly after each transition\r\n- Add iface_ready() and wait_for_internet() helper functions\r\n- Remove final internet connectivity check from Step 13 — superseded by wait_for_internet at end of Step 14\r\n\r\nTested across all 9 combinations of starting state and pending SSID/key changes (3 starting points × 3 pending change combinations), all passing.",
+      "createdAt": "2026-04-29T07:28:26Z",
+      "updatedAt": "2026-04-29T07:28:26Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/324",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 322,
       "title": "Usb payloads",
