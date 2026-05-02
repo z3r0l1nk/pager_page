@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-02T05:03:52.100Z",
+  "fetchedAt": "2026-05-02T06:40:59.222Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20479,6 +20479,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 325,
+      "title": "Jelly Sentinel v1.1 — fix false positives and OUI vendor lookup",
+      "state": "open",
+      "merged": false,
+      "author": "FusedStamen",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/129631594?v=4",
+      "authorUrl": "https://github.com/FusedStamen",
+      "body": "# Jelly Sentinel — Changelog\r\n\r\n## v1.1 (2026-05-02)\r\n\r\n### Bug Fixes\r\n\r\n**Router credential false positive**\r\n- Replaced naive HTTP status code check (`200`/`302` = success) with vendor-specific authentication verification\r\n- TP-Link: POSTs to stok API and validates session token in response\r\n- ASUS: POSTs to `login.cgi` and checks for `asus_token` cookie\r\n- Netgear: Validates response body contains dashboard content, not a login page\r\n- MikroTik: Checks for RouterOS/webfig content in response body\r\n- Generic fallback: Requires body to contain dashboard keywords AND not contain login form keywords\r\n\r\n**PMF (Protected Management Frames) false positive**\r\n- WPA3/SAE networks mandate PMF implicitly — no longer flags PMF as missing when connected to a WPA3 AP\r\n- PMF check now scoped to connected AP's BSSID only, not all APs in scan range\r\n- Eliminates false positives from neighbor WPA2 networks without PMF\r\n\r\n**DNS rebinding false positive**\r\n- Replaced `rebind-test.example.com` (nonexistent domain, always NXDOMAIN) with real external domains (`doubleclick.net`, `google.com`, `example.com`)\r\n- Only fires if a real external domain actually resolves to a private RFC1918 IP\r\n- Renamed finding to \"DNS Rebinding Confirmed\" to distinguish from theoretical risk\r\n\r\n**AP count showing cumulative database total**\r\n- Fixed SQL query to scope AP count to current scan session only using `time` unix epoch column\r\n- Falls back to last 5 minutes if scan window returns zero results\r\n- Eliminates 85,000+ AP counts from cumulative wardriving history in recon DB\r\n\r\n**OUI vendor lookup returning blank**\r\n- `whoismac` outputs a leading newline before `VENDOR:` line, causing `head -1` to return empty\r\n- Fixed to use `grep -m1 \"^VENDOR:\"` to find the vendor line regardless of leading whitespace\r\n- Strips `VENDOR: ` prefix and `(UAA)`/`(MAL)`/`(IAB)` suffixes for clean vendor names\r\n- Worked around `whoismac` TTY detection issue (silent in pipe, works to file) using temp file pattern\r\n\r\n**EasyMesh/AP nodes misclassified as ROUTER**\r\n- Networking vendor OUI match (TP-Link, ASUS, Netgear, etc.) no longer automatically classifies a device as ROUTER\r\n- Vendor-based ROUTER classification now requires open management ports (80/443/8080/8443) to confirm\r\n- Only the actual gateway IP is unconditionally classified as ROUTER\r\n- Eliminates false ROUTER classification of EasyMesh nodes, range extenders, and managed switches\r\n",
+      "createdAt": "2026-05-02T05:58:38Z",
+      "updatedAt": "2026-05-02T06:00:43Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/325",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 324,
       "title": "Set Evil Portal Interface v2.5",
