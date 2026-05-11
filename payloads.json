@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-11T20:35:52.919Z",
+  "fetchedAt": "2026-05-11T22:24:35.970Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20480,6 +20480,25 @@
   "totalRingtones": 100,
   "pullRequests": [
     {
+      "number": 327,
+      "title": "usb payloads",
+      "state": "open",
+      "merged": false,
+      "author": "rootjunky",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/23104715?v=4",
+      "authorUrl": "https://github.com/rootjunky",
+      "body": "the last PR didnt work not sure why just re submitted",
+      "createdAt": "2026-05-11T21:05:40Z",
+      "updatedAt": "2026-05-11T21:05:40Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/327",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 325,
       "title": "Jelly Sentinel v1.1 — fix false positives and OUI vendor lookup",
       "state": "open",
@@ -20533,7 +20552,7 @@
       "authorUrl": "https://github.com/rootjunky",
       "body": "Run payloads from a usb flash drive without installing them onto the device",
       "createdAt": "2026-04-27T03:33:26Z",
-      "updatedAt": "2026-05-09T21:34:35Z",
+      "updatedAt": "2026-05-11T20:56:42Z",
       "closedAt": "2026-05-09T21:34:35Z",
       "mergedAt": "2026-05-09T21:34:35Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/322",
