@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-14T16:41:30.742Z",
+  "fetchedAt": "2026-05-14T18:38:48.236Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -1471,6 +1471,17 @@
               "githubUrl": "https://github.com/hak5/wifipineapplepager-payloads/tree/master/library/user/general/traceroute"
             },
             {
+              "name": "usb-payloads",
+              "title": "USB Payloads",
+              "author": "RootJunky",
+              "description": "Mount/Unmount USB storage and link payloads from USB",
+              "version": "3",
+              "payloadCategory": null,
+              "readme": "<img width=\"735\" height=\"522\" alt=\"1\" src=\"https://github.com/user-attachments/assets/ccace93a-eff3-4d92-b1b8-ac717414dd31\" />\r\n<img width=\"727\" height=\"521\" alt=\"2\" src=\"https://github.com/user-attachments/assets/f4220c68-e90c-419f-9f8f-bd993817a209\" />\r\n<img width=\"727\" height=\"522\" alt=\"3\" src=\"https://github.com/user-attachments/assets/d205bcd3-7c39-418b-811c-2f30a1a748a9\" />\r\n<img width=\"733\" height=\"520\" alt=\"4\" src=\"https://github.com/user-attachments/assets/7931e3bd-056a-4e75-8135-c6b35616e9f0\" />\r\n<img width=\"732\" height=\"525\" alt=\"5\" src=\"https://github.com/user-attachments/assets/07698e7d-bf4b-4fa9-a4dd-0ef4dc54af04\" />\r\n<img width=\"725\" height=\"521\" alt=\"6\" src=\"https://github.com/user-attachments/assets/63d75497-5410-461b-bf76-c78ec100f9d4\" />\r\n",
+              "payloadSource": "#!/bin/bash\n# title: USB Payloads\n# description: Mount/Unmount USB storage and link payloads from USB\n# author: RootJunky\n# version: 3\n\nUSB_MOUNT=\"/usb\"\nUSB_PAYLOADS=\"$USB_MOUNT/payloads\"\nLINK_PATH=\"/root/payloads/user/usb\"\n\nmkdir -p \"$USB_MOUNT\"\n\n# Detect USB block device\nDEVICE=$(blkid | grep -o '/dev/sd[a-z][0-9]\\+' | head -n 1)\n\nif [ -z \"$DEVICE\" ]; then\n    LOG \"No USB storage device detected.\"\n    exit 1\nfi\n\nPROMPT \"This payload will setup the symlink to Run payloads from usb/payloads folder\"\n\nCHOICE=$(LIST_PICKER \"USB Payloads\" \\\n\"Mount USB + Link Payloads\" \\\n\"Unmount USB + Remove Link\" \\\n\"Refresh Link Only\" \\\n\"Exit\" \\\n\"Mount USB + Link Payloads\")\n\ncase \"$CHOICE\" in\n\n\"Mount USB + Link Payloads\")\n    if mount | grep -q \"^$DEVICE \"; then\n        LOG \"USB already mounted.\"\n    else\n        mount \"$DEVICE\" \"$USB_MOUNT\" && LOG \"Mounted $DEVICE at $USB_MOUNT\"\n    fi\n\n    mkdir -p \"$USB_PAYLOADS\"\n\n    [ -e \"$LINK_PATH\" ] && rm -rf \"$LINK_PATH\"\n\n    ln -s \"$USB_PAYLOADS\" \"$LINK_PATH\"\n\n    if [ -L \"$LINK_PATH\" ]; then\n        LOG \"USB payload symlink created.\"\n        LOG \"$LINK_PATH -> $USB_PAYLOADS\"\n    else\n        LOG \"Failed creating symlink.\"\n    fi\n    ;;\n\n\"Unmount USB + Remove Link\")\n    [ -e \"$LINK_PATH\" ] && rm -rf \"$LINK_PATH\"\n\n    if mount | grep -q \"^$DEVICE \"; then\n        umount \"$DEVICE\" && LOG \"USB unmounted.\"\n    else\n        LOG \"USB not mounted.\"\n    fi\n    ;;\n\n\"Refresh Link Only\")\n    if [ ! -d \"$USB_PAYLOADS\" ]; then\n        LOG \"USB payload folder missing. Creating...\"\n        mkdir -p \"$USB_PAYLOADS\"\n    fi\n\n    [ -e \"$LINK_PATH\" ] && rm -rf \"$LINK_PATH\"\n    ln -s \"$USB_PAYLOADS\" \"$LINK_PATH\"\n\n    if [ -L \"$LINK_PATH\" ]; then\n        LOG \"Symlink refreshed.\"\n    else\n        LOG \"Failed refreshing symlink.\"\n    fi\n    ;;\n\n*)\n    LOG \"Cancelled.\"\n    exit 0\n    ;;\nesac\n\nLOG \"Reopen Payload Menu to access USB.\"\nexit 0\n",
+              "githubUrl": "https://github.com/hak5/wifipineapplepager-payloads/tree/master/library/user/general/usb-payloads"
+            },
+            {
               "name": "usb-storage-mounting",
               "title": "USB Storage Mount (blkid)",
               "author": "RootJunky",
@@ -2127,7 +2138,7 @@
       }
     }
   },
-  "totalPayloads": 182,
+  "totalPayloads": 183,
   "themes": [
     {
       "name": "Circuitry",
@@ -5673,6 +5684,18 @@
       "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/VaporHax"
     },
     {
+      "name": "Zombie_Ceez",
+      "title": "Zombie Ceez",
+      "author": "Unknown",
+      "description": "No description available.",
+      "readme": null,
+      "themeJson": {},
+      "files": [
+        "assets"
+      ],
+      "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/Zombie_Ceez"
+    },
+    {
       "name": "Zombie_Industrial",
       "title": "Zombie Industrial",
       "author": "Zombie Joe",
@@ -5680,8 +5703,8 @@
       "readme": "Theme: Zombie Industrial\nAuthors: Zombie Joe\nDeveloped for Firmware version 1.0.7\nAn Industrial theme for the Hak5 WiFi Pineapple Pager!\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\n\n![Zombie Industrial Screenshot #1](Zombie_Industrial_Screenshot_1.png)\n![Zombie Industrial Screenshot #2](Zombie_Industrial_Screenshot_2.png)<br>\n![Zombie Industrial Screenshot #3](Zombie_Industrial_Screenshot_3.png)\n![Zombie Industrial Screenshot #4](Zombie_Industrial_Screenshot_4.png) \n",
       "themeJson": {
         "author": "Zombie Joe",
-        "theme_version": "1.1",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.2",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "cow": "components/status_bars/status_bar2.json",
@@ -5730,6 +5753,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -5983,7 +6007,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
@@ -6006,8 +6031,8 @@
       "readme": "Theme: Zombie Kal\nAuthors: Zombie Joe\nDeveloped for Firmware version 1.0.7\nA ValleyTech Custom Solutions Theme for the Hak5 WiFi Pineapple Pager!\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\n\n![Zombie Kal Screenshot #1](Zombie_Kal1.png)\n![Zombie Kal Screenshot #2](Zombie_Kal2.png)<br>\n![Zombie Kal Screenshot #3](Zombie_Kal3.png)\n![Zombie Kal Screenshot #4](Zombie_Kal4.png) \n",
       "themeJson": {
         "author": "Zombie Joe",
-        "theme_version": "1.0",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.1",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "cow": "components/status_bars/status_bar2.json",
@@ -6056,6 +6081,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -6309,7 +6335,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
@@ -6332,8 +6359,8 @@
       "readme": "Theme: Zombie Pineapple\nAuthors: Zombie Joe\nDeveloped for Firmware version 1.0.7\nI bit the Wargames theme and it turned into a Zombie Pineapple!\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\n\n![Zombie Pineapple Screenshot #1](Zombie_Pineapple_Screenshot1.png)\n![Zombie Pineapple Screenshot #2](Zombie_Pineapple_Screenshot2.png)<br>\n![Zombie Pineapple Screenshot #3](Zombie_Pineapple_Screenshot3.png)\n![Zombie Pineapple Screenshot #4](Zombie_Pineapple_Screenshot4.png)\n",
       "themeJson": {
         "author": "Zombie Joe",
-        "theme_version": "1.2",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.3",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "network": "components/status_bars/status_bar_network.json",
@@ -6381,6 +6408,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -6634,7 +6662,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
@@ -6657,8 +6686,8 @@
       "readme": "Theme: Zombie Punk\nAuthors: Zombie Joe\nDeveloped for Firmware version 1.0.7\nAn Cyber Punk style theme for the Hak5 WiFi Pineapple Pager!\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\n\n![Zombie Punk Screenshot #1](Zombie_Punk1.png)\n![Zombie Punk Screenshot #2](Zombie_Punk2.png)<br>\n![Zombie Punk Screenshot #3](Zombie_Punk3.png)\n![Zombie Punk Screenshot #4](Zombie_Punk4.png)\n",
       "themeJson": {
         "author": "Zombie Joe",
-        "theme_version": "1.1",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.2",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "network": "components/status_bars/status_bar_network.json",
@@ -6706,6 +6735,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -6959,7 +6989,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
@@ -6982,8 +7013,8 @@
       "readme": "Theme: Zombie UFO\nAuthors: Zombie Joe\nDeveloped for Firmware version 1.0.7\nA MiB inspired theme for the Hak5 WiFi Pineapple Pager!\nKeep up to date with my latest themes at: https://github.com/Zombie-Joe/zombie-themes\n\n![Zombie UFO Screenshot #1](Zombie_UFO1.png)\n![Zombie UFO Screenshot #2](Zombie_UFO2.png)<br>\n![Zombie UFO Screenshot #3](Zombie_UFO3.png)\n![Zombie UFO Screenshot #4](Zombie_UFO4.png)",
       "themeJson": {
         "author": "Zombie Joe",
-        "theme_version": "1.1",
-        "theme_framework_version": "0.5",
+        "theme_version": "1.2",
+        "theme_framework_version": "0.6",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "cow": "components/status_bars/status_bar2.json",
@@ -7032,6 +7063,7 @@
           "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
           "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
         },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
         "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
         "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
         "payloads_for_category_list_path": "components/payloads_for_category_list.json",
@@ -7285,7 +7317,8 @@
             "test2": "/root/payloads/user/cat1/test2"
           },
           "simple_images": {}
-        }
+        },
+        "failsafe_duckyscript_list_picker": "components/failsafe/failsafe_duckyscript_list_picker.json"
       },
       "files": [
         "README",
@@ -19374,7 +19407,7 @@
       "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/wargames"
     }
   ],
-  "totalThemes": 45,
+  "totalThemes": 46,
   "ringtones": [
     {
       "name": "Achievement",
@@ -20482,16 +20515,16 @@
     {
       "number": 327,
       "title": "usb payloads",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "rootjunky",
       "authorAvatar": "https://avatars.githubusercontent.com/u/23104715?v=4",
       "authorUrl": "https://github.com/rootjunky",
       "body": "the last PR didnt work not sure why just re submitted",
       "createdAt": "2026-05-11T21:05:40Z",
-      "updatedAt": "2026-05-14T00:38:41Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T18:00:56Z",
+      "closedAt": "2026-05-14T18:00:56Z",
+      "mergedAt": "2026-05-14T18:00:56Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/327",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
@@ -20804,16 +20837,16 @@
     {
       "number": 97,
       "title": "Zombie_Punk v1.0.8 Update Fixes",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T03:04:33Z",
-      "updatedAt": "2026-04-07T03:04:33Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T17:08:20Z",
+      "closedAt": "2026-05-14T17:08:20Z",
+      "mergedAt": "2026-05-14T17:08:19Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/97",
       "repo": "wifipineapplepager-themes",
       "labels": [],
@@ -20823,16 +20856,16 @@
     {
       "number": 96,
       "title": "Zombie_UFO v1.0.8 Update Fixes",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T03:00:59Z",
-      "updatedAt": "2026-04-07T03:00:59Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T17:08:36Z",
+      "closedAt": "2026-05-14T17:08:36Z",
+      "mergedAt": "2026-05-14T17:08:36Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/96",
       "repo": "wifipineapplepager-themes",
       "labels": [],
@@ -20842,16 +20875,16 @@
     {
       "number": 95,
       "title": "Zombie_Industrial v1.0.8 Update Fixes",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T02:57:38Z",
-      "updatedAt": "2026-04-07T02:57:38Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T17:08:53Z",
+      "closedAt": "2026-05-14T17:08:52Z",
+      "mergedAt": "2026-05-14T17:08:52Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/95",
       "repo": "wifipineapplepager-themes",
       "labels": [],
@@ -20861,16 +20894,16 @@
     {
       "number": 94,
       "title": "Zombie_Kal v1.0.8 Update Fixes",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T02:52:49Z",
-      "updatedAt": "2026-04-07T15:24:26Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T17:16:50Z",
+      "closedAt": "2026-05-14T17:16:49Z",
+      "mergedAt": "2026-05-14T17:16:49Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/94",
       "repo": "wifipineapplepager-themes",
       "labels": [],
@@ -20880,16 +20913,16 @@
     {
       "number": 93,
       "title": "Zombie_Pineapple v1.0.8 Update Fixes",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "Fixed error message when the theme loads. Added support for payload lists.",
       "createdAt": "2026-04-07T01:59:29Z",
-      "updatedAt": "2026-04-07T01:59:29Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-05-14T17:09:09Z",
+      "closedAt": "2026-05-14T17:09:08Z",
+      "mergedAt": "2026-05-14T17:09:08Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/93",
       "repo": "wifipineapplepager-themes",
       "labels": [],
