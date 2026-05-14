@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-13T22:28:20.861Z",
+  "fetchedAt": "2026-05-14T00:42:28.537Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20489,7 +20489,7 @@
       "authorUrl": "https://github.com/rootjunky",
       "body": "the last PR didnt work not sure why just re submitted",
       "createdAt": "2026-05-11T21:05:40Z",
-      "updatedAt": "2026-05-11T21:05:40Z",
+      "updatedAt": "2026-05-14T00:38:41Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/327",
