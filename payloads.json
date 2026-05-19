@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-19T15:06:11.290Z",
+  "fetchedAt": "2026-05-19T17:00:31.750Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20555,7 +20555,7 @@
       "authorUrl": "https://github.com/cncartistsec",
       "body": "\"Space Horror\" is a dark colorful theme optimized for the pager with a space ambience and many unique backgrounds and creatures. The theme is built from \"Zombie UFO\" which is made for FW 1.0.7+, tested on 1.0.9. I hope you have as much fun using my theme as I did creating it.\r\n\r\n\r\n<img width=\"800\" height=\"571\" alt=\"Space_Horror_payloads\" src=\"https://github.com/user-attachments/assets/ae31051f-9407-4763-8e51-1e0505867e56\" />\r\n\r\n<img width=\"800\" height=\"569\" alt=\"Space_Horror_payloads-dash\" src=\"https://github.com/user-attachments/assets/66cdd779-dcb2-475e-9fb7-24f2b1ed9ff5\" />\r\n\r\n<img width=\"800\" height=\"571\" alt=\"Space_Horror_launch-payload\" src=\"https://github.com/user-attachments/assets/5a4eb0d9-bd9d-4754-8ba2-e8e20cd9cc51\" />\r\n\r\n<img width=\"800\" height=\"571\" alt=\"Space_Horror_recon\" src=\"https://github.com/user-attachments/assets/a369eb2a-bf92-4d90-b535-677ce6f11585\" />\r\n\r\n<img width=\"800\" height=\"569\" alt=\"Space_Horror_unlock\" src=\"https://github.com/user-attachments/assets/a3aae6dc-60db-4ebf-90ed-a8735aefb938\" />\r\n\r\n<img width=\"800\" height=\"572\" alt=\"Space_Horror_keyboard\" src=\"https://github.com/user-attachments/assets/02e4c95e-6fc5-4a75-8138-fa1c7735ca64\" />\r\n\r\n\r\nDuring testing with other themes, the pager would run very warm and possibly overheat over a long period of time. \"Space Horror\" is optimized to not overheat the pager while keeping a nice color contrast and full graphics. It has been tested for days running payloads at 50% brightness (in moderate temperature environments) without any issue.\r\n\r\n\r\n<img width=\"1920\" height=\"1776\" alt=\"Space_Horror_full\" src=\"https://github.com/user-attachments/assets/6a21117d-49e9-4717-b287-7ccc4657841d\" />\r\n\r\n\r\nThanks again Zombie Joe!",
       "createdAt": "2026-05-19T03:42:32Z",
-      "updatedAt": "2026-05-19T03:42:32Z",
+      "updatedAt": "2026-05-19T15:16:59Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/102",
