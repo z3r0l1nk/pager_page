@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-20T11:03:04.230Z",
+  "fetchedAt": "2026-05-20T12:54:00.464Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20545,6 +20545,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 339,
+      "title": "Fix payload path resolution in goodportal_configure",
+      "state": "open",
+      "merged": false,
+      "author": "Rapt0rByte",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/256430800?v=4",
+      "authorUrl": "https://github.com/Rapt0rByte",
+      "body": "Fix path resolution in `goodportal_configure/payload.sh` so that required files (`payloads` and `whitelist.sh`) are correctly located in the same directory as the script. This resolves errors where the script previously failed to find these files when executed from different working directories.\r\n\r\n### Before fix (error output)\r\n<img width=\"6144\" height=\"8160\" alt=\"PXL_20260411_234143214\" src=\"https://github.com/user-attachments/assets/986495cf-95a0-41ea-ae17-c567f3e396c3\" />\r\n\r\n### After / context evidence\r\n<img width=\"6144\" height=\"8160\" alt=\"PXL_20260421_061227948\" src=\"https://github.com/user-attachments/assets/bc61455c-28ed-4696-b99a-a67d6518dd9b\" />",
+      "createdAt": "2026-05-20T11:48:05Z",
+      "updatedAt": "2026-05-20T11:48:05Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/339",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 338,
       "title": "Add BluePine - Bluetooth Device Detection & Hunting Suite",
