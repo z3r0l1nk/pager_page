@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-20T20:44:13.421Z",
+  "fetchedAt": "2026-05-20T22:32:01.306Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21395,15 +21395,15 @@
     {
       "number": 91,
       "title": "Zombie_Ceez New Theme",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "Zombie-Joe",
       "authorAvatar": "https://avatars.githubusercontent.com/u/74967945?v=4",
       "authorUrl": "https://github.com/Zombie-Joe",
       "body": "# Zombie Ceez v1.0\r\n\r\nA colorful Hacker Theme for the Hak5 WiFi Pineapple Pager! \r\nKeep up to date with all my latest themes at: https://github.com/Zombie-Joe/zombie-themes\r\n\r\n## Screenshots\r\n<details>\r\n  <summary>⚠️ Spoiler Alert! - Click here to see the screenshots ⚠️</summary>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez1\" src=\"https://github.com/user-attachments/assets/caf7c2b6-d973-4d19-a914-055708b84e96\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez2\" src=\"https://github.com/user-attachments/assets/331f643c-27eb-44df-b9eb-b583cf8ae85e\" /><br>\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez3\" src=\"https://github.com/user-attachments/assets/29e9dd46-3c9a-4bba-b11d-5b9c319c7909\" />\r\n<img width=\"335\" height=\"237\" alt=\"Zombie_Ceez4\" src=\"https://github.com/user-attachments/assets/fcf16d5d-9901-4b26-8c01-ea8d038524d6\" />\r\n</details>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
       "createdAt": "2026-03-19T21:55:29Z",
-      "updatedAt": "2026-04-07T15:09:32Z",
-      "closedAt": null,
+      "updatedAt": "2026-05-20T22:05:14Z",
+      "closedAt": "2026-05-20T22:04:26Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/91",
       "repo": "wifipineapplepager-themes",
