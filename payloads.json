@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-25T00:44:30.066Z",
+  "fetchedAt": "2026-05-25T03:10:19.029Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22075,7 +22075,7 @@
       "authorUrl": "https://github.com/Craftzman7",
       "body": "# wiglebluetooth\r\n\r\nThis payload allows you to scan BLE (Bluetooth Low Energy) devices and upload them to Wigle in a Wigle compatiable CSV file. Bluetooth classic is not supported at this time!\r\n\r\n`wiglebluetooth` also allows you to combine a WiFi CSV produced by the pager and the CSV file produced by this payload to upload them in one go.\r\n\r\nThe way the payload works is by relying on a seperate executable running in the background to act as the CSV writer and device scanner.\r\n\r\nThis allows you to keep using other features of your pager. You can start and stop the background process by using the payload menu. \r\n\r\nThe repo with the executable code is [here](https://github.com/craftzman7/wigle-bluetooth-pager) if you'd like to build it yourself. Otherwise, the payload will download the latest release from Github automatically. \r\n\r\nHuge thank you to the `mobile2gps` payload for the architecture inspiration!",
       "createdAt": "2026-02-16T22:13:33Z",
-      "updatedAt": "2026-02-24T22:13:46Z",
+      "updatedAt": "2026-05-25T02:29:07Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/279",
@@ -22157,7 +22157,7 @@
       "authorUrl": "https://github.com/brainphreak",
       "body": "![Pagergotchi](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/pagergotchi-header.png)\n\n## Summary\n\n- Adds **Pagergotchi**, a port of [Pwnagotchi](https://github.com/jayofelern/pwnagotchi) for the WiFi Pineapple Pager\n- Automated WiFi handshake capture (PMKID + 4-way) with a personality-driven ASCII pet\n- Features: theme system, pause menu, privacy mode, GPS/WiGLE support, whitelist/blacklist, auto-dim, app handoff\n- Only requires Python3 with ctypes (auto-installs if missing)\n\n## Dependencies\n\nRequires the PAGERCTL utilities payload (`user/utilities/PAGERCTL` in this repository) for `libpagerctl.so` + `pagerctl.py`. Compile from source or grab precompiled binaries per the [pagerctl](https://github.com/pineapple-pager-projects/pineapple_pager_pagerctl) project.\n\n`payload.sh` auto-detects PAGERCTL and copies the files locally on first run. No binary files are included in this PR.\n\n## Screenshots\n\n| Main Display | Pause Menu | Themes |\n|:---:|:---:|:---:|\n| ![Main](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/handshake-captured.png) | ![Pause](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/pause-menu.png) | ![Themes](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/themes-cyberpunk.png) |",
       "createdAt": "2026-02-12T12:41:15Z",
-      "updatedAt": "2026-02-24T01:26:17Z",
+      "updatedAt": "2026-05-25T02:30:37Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/276",
@@ -23266,7 +23266,7 @@
       "authorUrl": "https://github.com/Nomaran",
       "body": "This payload is an attempt to grab the latest CSV in the loot/wigle folder and create a report.\r\n\r\nSo far it generates the following:\r\n\r\nNew networks\r\nPreviously seen networks\r\nAuthentication breakdown\r\nEstimated distance traveled\r\n\r\nNow it can take a hot minute for this to run if you have a MASSIVE dataset. I haven't been able to do a long form test due to the current weather event. Once it warms up I plan to collect more data and further tweak it.\r\n\r\nI am looking for improvements to this payload, I have been tweaking it to try and get the data as accurate as possible but it's not quite there yet. It's close enough for a release I feel but definitely could be improved. For the distance calculations (python), I used AI as I was having a heck of a time with the math needed (Haversine formula ftw) and being a general python noob. ",
       "createdAt": "2026-01-25T23:58:17Z",
-      "updatedAt": "2026-02-05T02:11:40Z",
+      "updatedAt": "2026-05-25T02:28:22Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/229",
