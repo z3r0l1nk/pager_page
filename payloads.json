@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-24T22:21:13.346Z",
+  "fetchedAt": "2026-05-25T00:44:30.066Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20555,7 +20555,7 @@
       "authorUrl": "https://github.com/Rapt0rByte",
       "body": "Fix path resolution in `goodportal_configure/payload.sh` so that required files (`payloads` and `whitelist.sh`) are correctly located in the same directory as the script. This resolves errors where the script previously failed to find these files when executed from different working directories.\r\n\r\n### Before fix (error output)\r\n<img width=\"6144\" height=\"8160\" alt=\"PXL_20260411_234143214\" src=\"https://github.com/user-attachments/assets/986495cf-95a0-41ea-ae17-c567f3e396c3\" />\r\n\r\n### After / context evidence\r\n<img width=\"6144\" height=\"8160\" alt=\"PXL_20260421_061227948\" src=\"https://github.com/user-attachments/assets/bc61455c-28ed-4696-b99a-a67d6518dd9b\" />",
       "createdAt": "2026-05-20T11:48:05Z",
-      "updatedAt": "2026-05-20T11:48:05Z",
+      "updatedAt": "2026-05-24T22:24:33Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/339",
@@ -23959,7 +23959,7 @@
       "authorUrl": "https://github.com/spencershepard",
       "body": "HashMaster is a smart alert and analysis payload for your handshake captures.  Backed by a sqlite db, handshakes, networks, and clients are tracked.  Get configurable alerts for handshake captures for new crackable networks, new client connections, and more.  The alert payload is installed automatically when you run the main HashMaster 22000 payload.",
       "createdAt": "2026-01-19T06:09:54Z",
-      "updatedAt": "2026-02-08T01:58:32Z",
+      "updatedAt": "2026-05-24T22:27:14Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/203",
