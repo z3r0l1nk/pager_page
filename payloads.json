@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-26T03:08:58.390Z",
+  "fetchedAt": "2026-05-26T05:22:43.446Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22006,7 +22006,7 @@
       "authorUrl": "https://github.com/sinXne0",
       "body": "## Summary\\n- Add Recon Reporter recon payload\\n- Provides structured JSON/CSV reporting with optional diff and sampling\\n- Added to both recon/access_point and recon/client categories (supports AP and client selection)\\n\\n## Notes\\n- Non-destructive recon-only payload\\n- Filename conforms to \"payload\" naming\\n",
       "createdAt": "2026-02-18T05:41:12Z",
-      "updatedAt": "2026-05-16T23:51:31Z",
+      "updatedAt": "2026-05-26T04:54:00Z",
       "closedAt": "2026-05-16T23:51:31Z",
       "mergedAt": "2026-05-16T23:51:31Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/282",
