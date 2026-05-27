@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-27T18:48:19.346Z",
+  "fetchedAt": "2026-05-27T20:44:22.337Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20545,6 +20545,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 341,
+      "title": "Noise Maker",
+      "state": "open",
+      "merged": false,
+      "author": "spywill",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/71735542?v=4",
+      "authorUrl": "https://github.com/spywill",
+      "body": "This script is a prank-style “Noise Maker” tool that turns pager into a portable chaos machine. It lets you pick from a collection of annoying sounds — like fire alarms, pager beeps, static, car alarms, dentist drills, and endless ringtone loops — then continuously plays them until stopped.\r\n\r\nDesigned for harmless fun and maximum irritation, it transforms quiet spaces into instant confusion with looping electronic noises nobody asked for. Perfect for jokes, testing speakers, or becoming everyone’s least favorite coworker for five minutes.",
+      "createdAt": "2026-05-27T20:00:24Z",
+      "updatedAt": "2026-05-27T20:00:24Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/341",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 339,
       "title": "Fix payload path resolution in goodportal_configure",
