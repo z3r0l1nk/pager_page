@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-30T10:35:32.530Z",
+  "fetchedAt": "2026-05-30T12:27:06.751Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20555,7 +20555,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "This script is a prank-style “Noise Maker” tool that turns pager into a portable chaos machine. It lets you pick from a collection of annoying sounds — like fire alarms, pager beeps, static, car alarms, dentist drills, and endless ringtone loops — then continuously plays them until stopped.\r\n\r\nDesigned for harmless fun and maximum irritation, it transforms quiet spaces into instant confusion with looping electronic noises nobody asked for. Perfect for jokes, testing speakers, or becoming everyone’s least favorite coworker for five minutes.",
       "createdAt": "2026-05-27T20:00:24Z",
-      "updatedAt": "2026-05-27T20:00:24Z",
+      "updatedAt": "2026-05-30T11:26:23Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/341",
