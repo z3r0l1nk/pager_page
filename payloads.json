@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-02T00:49:36.669Z",
+  "fetchedAt": "2026-06-02T03:11:39.990Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20578,6 +20578,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 342,
+      "title": "Noezsolution/master",
+      "state": "open",
+      "merged": false,
+      "author": "Noezsolution",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/249527892?v=4",
+      "authorUrl": "https://github.com/Noezsolution",
+      "body": "Removed the space from the file name & replaced with a - ",
+      "createdAt": "2026-06-02T01:02:35Z",
+      "updatedAt": "2026-06-02T01:02:35Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/342",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 341,
       "title": "Noise Maker",
