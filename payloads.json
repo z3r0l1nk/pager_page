@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-02T22:42:29.770Z",
+  "fetchedAt": "2026-06-03T00:55:03.722Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -21655,15 +21655,15 @@
     {
       "number": 297,
       "title": "Replaced missing files for Responder.py",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "Hackazillarex",
       "authorAvatar": "https://avatars.githubusercontent.com/u/101348059?v=4",
       "authorUrl": "https://github.com/Hackazillarex",
       "body": "Hey Darren, I dont know what happened but I have been getting a lot of reports saying my Responder payload stopped working. After investigating, I noticed it was missing files ( Responder.py  was one of them ) so I just re-uploaded the missing files to fix this issue.\r\n\r\nThank you",
       "createdAt": "2026-03-09T11:23:44Z",
-      "updatedAt": "2026-05-09T21:20:09Z",
-      "closedAt": null,
+      "updatedAt": "2026-06-03T00:23:50Z",
+      "closedAt": "2026-06-03T00:23:50Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/297",
       "repo": "wifipineapplepager-payloads",
