@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-05T13:02:16.760Z",
+  "fetchedAt": "2026-06-05T15:02:39.145Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20835,7 +20835,7 @@
       "authorUrl": "https://github.com/ERR0RW0LF",
       "body": "# P2P Pager\r\n\r\n## Description\r\n\r\nP2P Pager is an implementation of an idea Darren had whilst streaming.\r\n\r\nIt's a pager system for the WiFi Pineapple Pager which uses Access Points to send messages to other pagers in the same \"network\", a so to say pager to pager system. And repeating the messages to have a bigger range.\r\n\r\n> [!IMPORTANT]  \r\n> This is an early access project, it's still in development and may contain bugs. Let me know if you find any issues or have any suggestions for improvements.\r\n\r\n> [!IMPORTANT]  \r\n> More info in the README.md",
       "createdAt": "2026-05-16T23:44:23Z",
-      "updatedAt": "2026-05-16T23:44:23Z",
+      "updatedAt": "2026-06-05T14:26:32Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/329",
