@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-21T22:27:30.115Z",
+  "fetchedAt": "2026-06-22T00:51:08.996Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20578,6 +20578,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 343,
+      "title": "added a youtube video to the readme",
+      "state": "open",
+      "merged": false,
+      "author": "rootjunky",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/23104715?v=4",
+      "authorUrl": "https://github.com/rootjunky",
+      "body": "",
+      "createdAt": "2026-06-22T00:19:24Z",
+      "updatedAt": "2026-06-22T00:19:24Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/343",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 342,
       "title": "Noezsolution/master",
