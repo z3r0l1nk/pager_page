@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-23T15:03:18.286Z",
+  "fetchedAt": "2026-06-23T16:50:23.477Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -20578,6 +20578,25 @@
   ],
   "totalRingtones": 100,
   "pullRequests": [
+    {
+      "number": 344,
+      "title": "Nautilus Version 1.8.6 - Fixed for pager 1.0.9",
+      "state": "open",
+      "merged": false,
+      "author": "JustSomeTrout",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/252352747?v=4",
+      "authorUrl": "https://github.com/JustSomeTrout",
+      "body": "Nautilus is now fixed, there was an issue launching with 1.0.9 firmware.",
+      "createdAt": "2026-06-23T16:39:02Z",
+      "updatedAt": "2026-06-23T16:39:02Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/344",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 343,
       "title": "added a youtube video to the readme",
