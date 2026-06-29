@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T08:55:45.700Z",
+  "fetchedAt": "2026-06-29T14:01:17.597Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22949,7 +22949,7 @@
       "authorUrl": "https://github.com/cribb-it",
       "body": "Anaglyphs is a bold visual theme built around the iconic red and cyan 3D aesthetic, it is designed to create a 3D effect. \r\nWhen viewed through classic red/cyan 3D glasses, each eye sees a different layer and the brain merges them into a single image with depth.\r\n\r\n<details>\r\n  <summary>Spoiler warning</summary>\r\n<img src=\"https://github.com/user-attachments/assets/0066bb74-a695-4e8f-a39a-78f1471407bc\">\r\n</details>\r\n",
       "createdAt": "2026-03-27T17:13:21Z",
-      "updatedAt": "2026-06-28T17:44:54Z",
+      "updatedAt": "2026-06-29T12:05:32Z",
       "closedAt": "2026-06-28T17:44:54Z",
       "mergedAt": "2026-06-28T17:44:54Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/92",
