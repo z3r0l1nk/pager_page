@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-30T18:31:05.864Z",
+  "fetchedAt": "2026-07-30T20:27:00.998Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -1439,13 +1439,13 @@
             },
             {
               "name": "privacy-mode",
-              "title": "toggle privacy mode",
+              "title": "Toggle privacy mode",
               "author": "Rootjunky",
-              "description": "Enables and disables privacy mode by edit the degub.json",
+              "description": "Enables and disables privacy mode by edit the debug.json",
               "version": "2.0",
               "payloadCategory": null,
               "readme": "# WiFi Pineapple Payload\n\n<img width=\"479\" height=\"222\" alt=\"Screenshot 2026-02-01 200448\" src=\"https://github.com/user-attachments/assets/fdb70138-c4cc-4855-9d38-c41acaec6975\" />\n\nThis repository contains a WiFi Pineapple payload.\n\n\n## Video Overview\n\nA short video overview and review of this payload is available on YouTube:\n\n[Watch the payload review on YouTube Shorts](https://youtube.com/shorts/3a9UpTbq8WA?feature=share)\n\n\n\n\n\n\n## Description\n\nPrivacy Mode Payload with censor your mac address and access point names in the Recon menu on the WiFi PineApple Pager.\n",
-              "payloadSource": "#!/bin/bash\n# Title: toggle privacy mode\n# Description: Enables and disables privacy mode by edit the degub.json\n# Author: Rootjunky\n# Version: 2.0\n\nFILE=/usr/debug.json\n\n# create file if missing\n[ -f \"$FILE\" ] || echo '{}' > \"$FILE\"\n\nif grep -q '\"censor\"[[:space:]]*:[[:space:]]*true' \"$FILE\"; then\n    echo '{ \"censor\": false }' > \"$FILE\"\nLOG \"Restarting server in 5 seconds to turn off privacy mode\"\nsleep 5\n/etc/init.d/pineapplepager restart\nelse\n    echo '{ \"censor\": true }' > \"$FILE\"\nLOG \"Restarting server in 5 seconds to enable privacy mode\"\nsleep 5\n/etc/init.d/pineapplepager restart\nfi\n",
+              "payloadSource": "#!/bin/bash\n# Title: Toggle privacy mode\n# Description: Enables and disables privacy mode by edit the debug.json\n# Author: Rootjunky\n# Version: 2.0\n\nFILE=/usr/debug.json\n\n# create file if missing\n[ -f \"$FILE\" ] || echo '{}' > \"$FILE\"\n\nif grep -q '\"censor\"[[:space:]]*:[[:space:]]*true' \"$FILE\"; then\n    echo '{ \"censor\": false }' > \"$FILE\"\nLOG \"Restarting server in 5 seconds to turn off privacy mode\"\nsleep 5\n/etc/init.d/pineapplepager restart\nelse\n    echo '{ \"censor\": true }' > \"$FILE\"\nLOG \"Restarting server in 5 seconds to enable privacy mode\"\nsleep 5\n/etc/init.d/pineapplepager restart\nfi\n",
               "githubUrl": "https://github.com/hak5/wifipineapplepager-payloads/tree/master/library/user/general/privacy-mode"
             },
             {
