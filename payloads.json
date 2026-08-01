@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-01T14:30:57.872Z",
+  "fetchedAt": "2026-08-01T16:21:07.821Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22106,6 +22106,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 346,
+      "title": "Add BashBunny Manager payload",
+      "state": "open",
+      "merged": false,
+      "author": "lab81io",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/262315640?v=4",
+      "authorUrl": "https://github.com/lab81io",
+      "body": "**BashBunny Manager** turns the WiFi Pineapple Pager into a control panel for a docked Hak5 BashBunny (arming mode, switch position 3). From the Pager screen you can:\n\n- Assign / swap / clear the payloads on switch 1 and switch 2 (the current assignment is shown inline, tap to preview)\n- Browse the bunny's payload library with a category filter, and upload new payloads staged on the Pager\n- Download loot to the Pager, list it, or empty it\n- Back up and restore switch config\n- Run a readiness check (verifies a switch's `/tools`/extension deps exist) and fill in any placeholder settings a payload still needs, on-screen\n\nPlaced under `library/user/general/BashBunny_Manager/`.\n\n**Scope:** administration of the operator's own BashBunny only. No target-facing or destructive actions.\n\n**How it works:** in arming mode the bunny exposes its udisk as USB mass storage and a serial console. The payload auto-selects a pure-POSIX-sh mass-storage backend when it can mount the udisk, and falls back to a python3 serial-console backend otherwise (e.g. when a microSD is the exported LUN).\n\n**Requirements:** a BashBunny in arming mode docked to the Pager's USB-A port. No extra software for the mass-storage path; the console fallback uses `python3` at `/mmc/usr/bin/python3`. LED / ringtone / vibrate feedback is used when available and skipped otherwise.\n\nScreenshots and full usage are in the payload's README.\n",
+      "createdAt": "2026-08-01T14:44:56Z",
+      "updatedAt": "2026-08-01T14:44:56Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/346",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 344,
       "title": "Nautilus Version 1.8.6 - Fixed for pager 1.0.9",
