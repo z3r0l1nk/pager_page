@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-06T10:34:38.419Z",
+  "fetchedAt": "2026-08-06T13:57:40.459Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22479,9 +22479,9 @@
       "author": "ERR0RW0LF",
       "authorAvatar": "https://avatars.githubusercontent.com/u/98032358?v=4",
       "authorUrl": "https://github.com/ERR0RW0LF",
-      "body": "# P2P Pager\r\n\r\n## Description\r\n\r\nP2P Pager is an implementation of an idea Darren had whilst streaming.\r\n\r\nIt's a pager system for the WiFi Pineapple Pager which uses Access Points to send messages to other pagers in the same \"network\", a so to say pager to pager system. And repeating the messages to have a bigger range.\r\n\r\n> [!IMPORTANT]  \r\n> This is an early access project, it's still in development and may contain bugs. Let me know if you find any issues or have any suggestions for improvements.\r\n\r\n> [!IMPORTANT]  \r\n> More info in the README.md",
+      "body": "# P2P Pager\r\n\r\n## Description\r\n\r\nP2P Pager is an implementation of an idea Darren had whilst streaming.\r\n\r\nIt's a pager system for the WiFi Pineapple Pager which uses Beacon Frames to send messages to other pagers in the same \"network\", a so to say pager to pager system. And repeating the messages to have a bigger range.\r\n\r\n> [!IMPORTANT]  \r\n> More info in the README.md",
       "createdAt": "2026-05-16T23:44:23Z",
-      "updatedAt": "2026-08-06T10:34:13Z",
+      "updatedAt": "2026-08-06T10:35:03Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/329",
