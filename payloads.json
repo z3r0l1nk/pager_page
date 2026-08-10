@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-10T14:54:06.863Z",
+  "fetchedAt": "2026-08-10T16:50:44.016Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22142,6 +22142,44 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 105,
+      "title": "Update - Pager 98 - 1.1.0",
+      "state": "open",
+      "merged": false,
+      "author": "cribb-it",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/24548670?v=4",
+      "authorUrl": "https://github.com/cribb-it",
+      "body": "",
+      "createdAt": "2026-08-10T16:20:48Z",
+      "updatedAt": "2026-08-10T16:20:48Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/105",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
+      "number": 104,
+      "title": "Update - Anaglyphs - 1.1.0",
+      "state": "open",
+      "merged": false,
+      "author": "cribb-it",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/24548670?v=4",
+      "authorUrl": "https://github.com/cribb-it",
+      "body": "",
+      "createdAt": "2026-08-10T16:19:56Z",
+      "updatedAt": "2026-08-10T16:19:56Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/104",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 103,
       "title": "Fully Updated to 1.1.0 Firmwire",
