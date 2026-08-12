@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-12T18:56:57.756Z",
+  "fetchedAt": "2026-08-12T20:38:28.022Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22142,6 +22142,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 106,
+      "title": "New Theme - DEF CON Jack",
+      "state": "open",
+      "merged": false,
+      "author": "milot",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/116471?v=4",
+      "authorUrl": "https://github.com/milot",
+      "body": "DEF CON inspired theme, black, acid green and red, terminal look.\n\nScreen layouts and coordinates descend from Ser0ka's dedsec theme, and\nthe small functional glyph set is recoloured from it. Everything else is\nnew: all plates, panels, dialogs, the boot sequence, spinner and the Jack\nanimations. Credited in the README.\n\nFramework 0.7, built and tested on firmware 1.1.0. On 1.0.8 and 1.0.9,\nwhich use framework 0.6, the Pager warns about the version mismatch and\nsubstitutes the Pager Portal screens from the default theme.\n\nScreenshots in themes/jack/README.md.\n",
+      "createdAt": "2026-08-12T19:09:45Z",
+      "updatedAt": "2026-08-12T19:09:45Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/106",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 105,
       "title": "Update - Pager 98 - 1.1.0",
