@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T12:35:49.103Z",
+  "fetchedAt": "2026-08-17T14:23:42.585Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22208,25 +22208,6 @@
   "totalRingtones": 101,
   "pullRequests": [
     {
-      "number": 349,
-      "title": "New recon toggle payload",
-      "state": "open",
-      "merged": false,
-      "author": "dtmcnamara1030",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/79665252?v=4",
-      "authorUrl": "https://github.com/dtmcnamara1030",
-      "body": "Payload that toggles on and off recon mode to help save battery when not using.",
-      "createdAt": "2026-08-13T16:09:43Z",
-      "updatedAt": "2026-08-15T20:57:26Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/349",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 107,
       "title": "One of our submarines is missing",
       "state": "closed",
@@ -22241,25 +22222,6 @@
       "mergedAt": "2026-08-13T14:53:24Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/107",
       "repo": "wifipineapplepager-themes",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 348,
-      "title": "Add GPS Dashboard payload",
-      "state": "open",
-      "merged": false,
-      "author": "stratfan",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/395298?v=4",
-      "authorUrl": "https://github.com/stratfan",
-      "body": "## Summary\n- Adds **GPS Dashboard**, a live, auto-refreshing GPS status display (connection/fix state, satellite constellation breakdown by GNSS, position, speed/heading, and UTC time), companion to the existing GPS Checker payload.\n- GPS Checker diagnoses *why* GPS isn't getting a fix; GPS Dashboard assumes GPS may already be working and just displays live state - useful while wardriving or to confirm what the receiver currently sees.\n- Refreshes roughly every 3-4 seconds. Since the payload console has no redraw primitive (LOG only ever appends), each refresh prints as a new scrolling block with an incrementing `SEQ` counter so it's clear the display is actively updating rather than frozen.\n- Displays gpsd-down / no-device / no-fix states distinctly (red/yellow/green) rather than showing stale or misleading data.\n\n## Test plan\n- [x] `bash -n` syntax check\n- [x] Fixture-based unit tests for the formatting/parsing layer (gpsd down, no device attached, satellites visible but no fix, full 3D fix with multi-constellation satellites, non-numeric `gnssid` handling) - all passing\n- [x] Loop-wiring tests confirming the refresh loop and exit-button handling behave correctly, including a guard against ever spinning faster than the intended refresh cadence if the button-press binary is unavailable\n- [x] Live-tested against a physical WiFi Pineapple Pager with a real GPS receiver, including both a no-fix state and a full 3D fix with real coordinates\n- [x] B-button exit confirmed to return cleanly with no error banner\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
-      "createdAt": "2026-08-12T21:31:42Z",
-      "updatedAt": "2026-08-12T21:31:42Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/348",
-      "repo": "wifipineapplepager-payloads",
       "labels": [],
       "comments": 0,
       "draft": false
@@ -22341,25 +22303,6 @@
       "draft": false
     },
     {
-      "number": 346,
-      "title": "Add BashBunny Manager payload",
-      "state": "open",
-      "merged": false,
-      "author": "lab81io",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/262315640?v=4",
-      "authorUrl": "https://github.com/lab81io",
-      "body": "**BashBunny Manager** turns the WiFi Pineapple Pager into a control panel for a docked Hak5 BashBunny (arming mode, switch position 3). From the Pager screen you can:\n\n- Assign / swap / clear the payloads on switch 1 and switch 2 (the current assignment is shown inline, tap to preview)\n- Browse the bunny's payload library with a category filter, and upload new payloads staged on the Pager\n- Download loot to the Pager, list it, or empty it\n- Back up and restore switch config\n- Run a readiness check (verifies a switch's `/tools`/extension deps exist) and fill in any placeholder settings a payload still needs, on-screen\n\nPlaced under `library/user/general/BashBunny_Manager/`.\n\n**Scope:** administration of the operator's own BashBunny only. No target-facing or destructive actions.\n\n**How it works:** in arming mode the bunny exposes its udisk as USB mass storage and a serial console. The payload auto-selects a pure-POSIX-sh mass-storage backend when it can mount the udisk, and falls back to a python3 serial-console backend otherwise (e.g. when a microSD is the exported LUN).\n\n**Requirements:** a BashBunny in arming mode docked to the Pager's USB-A port. No extra software for the mass-storage path; the console fallback uses `python3` at `/mmc/usr/bin/python3`. LED / ringtone / vibrate feedback is used when available and skipped otherwise.\n\nScreenshots and full usage are in the payload's README.\n",
-      "createdAt": "2026-08-01T14:44:56Z",
-      "updatedAt": "2026-08-01T14:44:56Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/346",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 344,
       "title": "Nautilus Version 1.8.6 - Fixed for pager 1.0.9",
       "state": "closed",
@@ -22394,31 +22337,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/343",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 342,
-      "title": "Noezsolution/master",
-      "state": "open",
-      "merged": false,
-      "author": "Noezsolution",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/249527892?v=4",
-      "authorUrl": "https://github.com/Noezsolution",
-      "body": "Removed the space from the file name & replaced with a - ",
-      "createdAt": "2026-06-02T01:02:35Z",
-      "updatedAt": "2026-07-09T17:37:42Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/342",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -22518,101 +22436,6 @@
       "draft": false
     },
     {
-      "number": 335,
-      "title": "Add Bluetooth PineFlipKill - WiFi Pineapple, Flipper, and USB Kill Scanner",
-      "state": "open",
-      "merged": false,
-      "author": "cncartistsec",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
-      "authorUrl": "https://github.com/cncartistsec",
-      "body": "**Bluetooth PineFlipKill - WiFi Pineapple, Flipper, and USB Kill Scanner** (bt-pineflipkill-scan)\r\nWiFi Pineapple BT / Flipper Zero / USB Kill BT Scanner.  Allows scanning with external USB Bluetooth adapter and GPS coordinate logging.\r\n\r\n<img width=\"832\" height=\"1248\" alt=\"pineflip-poster\" src=\"https://github.com/user-attachments/assets/40b7dbf0-08b9-4c0c-b283-08a66f42c262\" />\r\n\r\n",
-      "createdAt": "2026-05-20T06:44:14Z",
-      "updatedAt": "2026-05-20T06:44:14Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/335",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 334,
-      "title": "Add Handshake Cleaner",
-      "state": "open",
-      "merged": false,
-      "author": "cncartistsec",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
-      "authorUrl": "https://github.com/cncartistsec",
-      "body": "**Handshake Cleaner** (handshake-cleaner)\r\nClears/Deletes Handshakes matching SSID, helpful to clean out unwanted SSIDs.\r\n\r\n<img width=\"832\" height=\"1248\" alt=\"handshake-poster\" src=\"https://github.com/user-attachments/assets/49502de0-2bd6-4121-adf0-9f43882b7548\" />\r\n\r\n\r\n<img width=\"1200\" height=\"1168\" alt=\"handshake-cleaner\" src=\"https://github.com/user-attachments/assets/c47a25ce-48a3-44e8-b203-e2c4f55635aa\" />\r\n\r\n\r\nClears/Deletes Handshakes matching SSID, helpful to clean out unwanted SSIDs.",
-      "createdAt": "2026-05-20T06:39:28Z",
-      "updatedAt": "2026-05-20T06:39:28Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/334",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 333,
-      "title": "Add GPS Mgmt AP NMEA UDP Port 9999",
-      "state": "open",
-      "merged": false,
-      "author": "cncartistsec",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
-      "authorUrl": "https://github.com/cncartistsec",
-      "body": "**GPS Mgmt AP NMEA UDP Port 9999** (gps-mgmtap-nmea)\r\n\r\n<img width=\"1200\" height=\"835\" alt=\"gps-mgmtap\" src=\"https://github.com/user-attachments/assets/a0a40bcb-8e58-4eae-85eb-9d3f0b3beeea\" />\r\n\r\nTurn your phone into your GPS for the Pager with minimal effort!  Allows stop/start of UDP Port 9999 NMEA GPS data collection for the Pager.  Can use Android app gpsdRelay, iPhone NMEA Send Location App, C5 Wardriver, or similar GPS relaying apps/devices to relay NMEA information to the gpsd server UDP Port 9999 on the Pagers Management AP.  This allows NMEA information to be passed to the device from any NMEA source on the Pagers Mgmt AP sending UDP NMEA data to UDP Port 9999.  It can take some time until data starts being received, and that relies on the phone/sending devices GPS signal.\r\n\r\n\r\n# gpsdRelay Android app settings\r\n\r\n<img width=\"500\" height=\"1083\" alt=\"gps-mgmtap-nmea_gpsdRelay\" src=\"https://github.com/user-attachments/assets/268ed767-9b1d-465d-9f64-ab6647eaf97b\" />\r\n\r\n\r\n# NMEA Send Location iPhone app settings\r\n\r\n<img width=\"500\" height=\"985\" alt=\"gps-mgmtap-nmea_NMEASendLoc\" src=\"https://github.com/user-attachments/assets/fa210360-8f0d-487f-b422-9492a20ce967\" />\r\n",
-      "createdAt": "2026-05-20T06:34:49Z",
-      "updatedAt": "2026-05-20T06:34:49Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/333",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 332,
-      "title": "Add Theme Config - List Font Size",
-      "state": "open",
-      "merged": false,
-      "author": "cncartistsec",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
-      "authorUrl": "https://github.com/cncartistsec",
-      "body": "Changes files relating to the list picker font size to be smaller, can return back to default.  Theme needs to be reloaded after changing to apply.\r\n\r\n<img width=\"1200\" height=\"719\" alt=\"theme-cfg-list\" src=\"https://github.com/user-attachments/assets/e2173702-eafd-489e-afe6-2a37780d877f\" />\r\n\r\n\r\nComparing font sizes for list picker:\r\n<img width=\"1200\" height=\"531\" alt=\"theme-cfg-list-compare\" src=\"https://github.com/user-attachments/assets/a293876a-f175-421d-825c-92bb8b0cd570\" />\r\n",
-      "createdAt": "2026-05-20T06:29:34Z",
-      "updatedAt": "2026-05-20T06:29:34Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/332",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 331,
-      "title": "Add Bluetooth MAC Address Changer for USB CSR",
-      "state": "open",
-      "merged": false,
-      "author": "cncartistsec",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
-      "authorUrl": "https://github.com/cncartistsec",
-      "body": "**Bluetooth Config MAC USB** (bt-cfg-tool-mac)\r\n\r\nBluetooth MAC Address Changer for USB CSR8510 / CSR v4.0 Bluetooth Adapter. Tool will act on hci1 by default and has been tested to work on various CSR8510 Bluetooth Adapters (range from $5-10). Can also permanently change Alias/Name for specific MAC as an option, or restore the old name before change. Boot the pager first before plugging in USB BT Adapter to ensure it gets hci1 instead of hci0.",
-      "createdAt": "2026-05-20T06:26:14Z",
-      "updatedAt": "2026-05-20T06:26:14Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/331",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 330,
       "title": "Add Bluetooth Discoverable Setting Changer + Bluetooth Hardware Name Changer",
       "state": "closed",
@@ -22646,25 +22469,6 @@
       "mergedAt": "2026-06-28T19:07:03Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/102",
       "repo": "wifipineapplepager-themes",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 329,
-      "title": "Pager2Pager System v1.0",
-      "state": "open",
-      "merged": false,
-      "author": "ERR0RW0LF",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/98032358?v=4",
-      "authorUrl": "https://github.com/ERR0RW0LF",
-      "body": "# P2P Pager\r\n\r\n## Description\r\n\r\nP2P Pager is an implementation of an idea Darren had whilst streaming.\r\n\r\nIt's a pager system for the WiFi Pineapple Pager which uses Beacon Frames to send messages to other pagers in the same \"network\", a so to say pager to pager system. And repeating the messages to have a bigger range.\r\n\r\n> [!IMPORTANT]  \r\n> More info in the README.md",
-      "createdAt": "2026-05-16T23:44:23Z",
-      "updatedAt": "2026-08-06T10:35:03Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/329",
-      "repo": "wifipineapplepager-payloads",
       "labels": [],
       "comments": 0,
       "draft": false
@@ -22847,31 +22651,6 @@
       "draft": false
     },
     {
-      "number": 317,
-      "title": "update mac spoofer to use the new list_picker from 1.0.8",
-      "state": "open",
-      "merged": false,
-      "author": "marcdel",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/693730?v=4",
-      "authorUrl": "https://github.com/marcdel",
-      "body": "cc @StarkweatherNow hope you don't mind! i tried to keep it 1-1 with the original",
-      "createdAt": "2026-04-11T23:01:45Z",
-      "updatedAt": "2026-04-24T19:41:19Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/317",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "waiting for author",
-          "color": "9fb222",
-          "description": ""
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 316,
       "title": "Favorites manager updated to have LIST_PICKER Function",
       "state": "closed",
@@ -22906,31 +22685,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/101",
       "repo": "wifipineapplepager-themes",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 315,
-      "title": "wifi snatcher toolkit",
-      "state": "open",
-      "merged": false,
-      "author": "f3bandit",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/4943324?v=4",
-      "authorUrl": "https://github.com/f3bandit",
-      "body": "what's in the box:\r\nwifi_loot_viewer \"wifi pager payload: payload.sh\"\r\ntemp disable  defender \"using run as and hotkeys: omg_payload\"\r\ndump all windows wifi \"magic.ps1\"\r\nexport all windows wifi \"magic.ps1\"\r\nzip windows wifi dumps \"magic.ps1\"\r\nscp wifi dump zip to wifi  pager \"magic.ps1\"\r\ncover tracks \"magic.ps1\"\r\nre-enable defender using \"using run as and hotkeys: omg_payload\"\r\n",
-      "createdAt": "2026-04-08T17:46:28Z",
-      "updatedAt": "2026-04-24T19:49:46Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/315",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -23125,31 +22879,6 @@
       "draft": false
     },
     {
-      "number": 311,
-      "title": "Adding \"SharkJack Launcher\" & README.md",
-      "state": "open",
-      "merged": false,
-      "author": "InfoSecREDD",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/28995204?v=4",
-      "authorUrl": "https://github.com/InfoSecREDD",
-      "body": "",
-      "createdAt": "2026-04-03T03:05:24Z",
-      "updatedAt": "2026-06-08T18:51:01Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/311",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 310,
       "title": "Added Fuzz_Finder",
       "state": "closed",
@@ -23264,31 +22993,6 @@
       "draft": false
     },
     {
-      "number": 305,
-      "title": "Add FlockAudit — WiFi-based Flock Safety LPR camera detector",
-      "state": "open",
-      "merged": false,
-      "author": "sinXne0",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
-      "authorUrl": "https://github.com/sinXne0",
-      "body": "## FlockAudit\n\nWiFi-based Flock Safety LPR camera detector for the WiFi Pineapple Pager.\n\nScans the airspace in monitor mode for Flock Safety camera management APs by OUI and SSID pattern. Captures probe requests from devices that have previously connected to them. GPS-tags every find and exports a KML file for mapping.\n\nNo internet connection or shared subnet required — works anywhere since Flock cameras connect via cellular LTE, not a local network.\n\n## What it does\n\n- **Beacon scan** — detects camera management APs by OUI (Raspberry Pi, NVIDIA Jetson, Hikvision, Dahua, Axis, etc.) and SSID pattern (`Flock_`, `LPR-`, `PlateReader`, `SafetyCam`, etc.)\n- **Probe request capture** — catches client devices actively searching for Flock SSIDs (previously connected devices)\n- **Watch mode** — loops continuously, good for driving/walking a survey route, deduplicates so you only alert on new finds\n- **Deep probe (optional)** — connects to a discovered camera AP, gets an IP via DHCP, then runs: port scan, HTTP banner, Hikvision ISAPI, Dahua CGI, Axis VAPIX, RTSP check, default credential test\n- **KML export** — GPS-tagged placemarks for every camera found\n\n## Test plan\n\n- [ ] Verify payload launches on Pineapple Pager without errors\n- [ ] Verify monitor mode scan completes and returns to managed mode cleanly\n- [ ] Verify KML file is created at `/root/loot/FlockAudit/`\n- [ ] Verify watch mode loops and deduplicates correctly\n- [ ] Verify deep probe connects/disconnects cleanly without leaving interface in bad state\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
-      "createdAt": "2026-03-26T03:09:50Z",
-      "updatedAt": "2026-04-24T20:07:41Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/305",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "question",
-          "color": "d876e3",
-          "description": "Further information is requested"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 91,
       "title": "Zombie_Ceez New Theme",
       "state": "closed",
@@ -23304,31 +23008,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/91",
       "repo": "wifipineapplepager-themes",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 304,
-      "title": "🚨First Incident response Payload on the Pager! V3.0! 🚨",
-      "state": "open",
-      "merged": false,
-      "author": "curthayman",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/1430023?v=4",
-      "authorUrl": "https://github.com/curthayman",
-      "body": "Features to long to list, This was created for Pen testing, this would be great to run before you start your full initial pen test. This takes away a bunch of the heavy lifting! Check the Readme. Longest Payload I wrote yet!\r\n\r\n🔔NEW!!  *** → I made some changes, I saw how @brainphreak Loki Payload was using the scripts so I wanted to add that to give more juicy information. Added some Wireshark filters for .pcap analysis. Also wanted to use the same method that @OSINTI4L used on Paper Pusher, detecing printers with port 9100 open. Enjoy!",
-      "createdAt": "2026-03-17T17:08:32Z",
-      "updatedAt": "2026-04-24T20:36:25Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/304",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -23352,25 +23031,6 @@
       "draft": false
     },
     {
-      "number": 303,
-      "title": "Add GBC Emulator — browser-based Game Boy Color emulator with pager integration",
-      "state": "open",
-      "merged": false,
-      "author": "sinXne0",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
-      "authorUrl": "https://github.com/sinXne0",
-      "body": "## Summary\n\n- Adds a browser-based Game Boy Color emulator payload (`library/user/games/zelda_gbc/`)\n- A Python HTTP server runs on the pager (port 8080) and serves a self-contained JS GBC emulator\n- Users open the URL shown on the pager screen to play any `.gb` / `.gbc` ROM at full speed in their browser\n- Pager physical buttons (D-pad, Green=A, Red=B) are polled by the browser and forwarded to the emulator\n- Pager screen displays the game title and controls (not raw frames — keeps it lightweight on MIPS)\n\n## Emulator features\n\n- Full SM83 (LR35902) CPU — all opcodes\n- GBC color palettes (BGP/OBP via $FF68–$FF6B)\n- MBC3 cartridge support\n- PPU with background, window, and sprite rendering\n- Timer and Joypad\n- Touch/mouse on-screen gamepad for mobile browsers\n\n## How to use\n\n1. Place one or more `.gb` / `.gbc` ROM files in `/root/payloads/user/games/zelda_gbc/`\n2. Place `libpagerctl.so` in the same directory (from the Hak5 Pager SDK)\n3. Run the payload — pager screen shows the server URL\n4. Open the URL in a browser, pick a ROM, play\n5. Stop: **Stop Server** button in browser, or hold RED on the pager for 1 second\n\n## Test plan\n\n- [ ] Payload appears in Games section on pager\n- [ ] Server starts and pager displays URL\n- [ ] Browser ROM picker loads and lists ROMs\n- [ ] ROM upload works\n- [ ] GBC game runs in browser\n- [ ] Pager buttons control the game\n- [ ] Stop Server button exits cleanly and restarts pineapplepager\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
-      "createdAt": "2026-03-13T00:19:39Z",
-      "updatedAt": "2026-05-16T23:26:31Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/303",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 302,
       "title": "Neon_Bikes",
       "state": "closed",
@@ -23386,56 +23046,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/302",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 301,
-      "title": "Add: VENOM - WPA-Enterprise Credential Harvester (v1.1)",
-      "state": "open",
-      "merged": false,
-      "author": "sinXne0",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
-      "authorUrl": "https://github.com/sinXne0",
-      "body": "### VENOM - WPA-Enterprise Credential Harvester\n\nThis payload deploys a rogue WPA-Enterprise (802.1X) access point to capture EAP identities, cleartext passwords (GTC/PAP), and MSCHAPv2 hashes.\n\n**Author:** sinXneo (v1.1 Update)\n\n### **What was fixed / improved in this version:**\n- **Package Conflict Resolution:** Now uses a safe, **standalone hostapd-openssl** binary fallback extracted to `/tmp`. This prevents conflicts with the Pager's stock `wpad-basic-mbedtls` package and ensures the rogue AP can start even on standard firmware.\n- **Connection Stability:** Added `fragment_size` and other compatibility tweaks to `hostapd.conf` to fix \"Can't connect\" issues on Android/iOS/Windows.\n- **Improved Certificates:** Certificates now include Subject Alternative Names (SAN) and modern extensions to satisfy strict validation on mobile devices.\n- **Stealth & Effectiveness:** Added **BSSID spoofing** (clones the target AP's MAC address), **802.11w (MFP)**, and **SHA256 EAP** support to better mimic modern enterprise environments.\n- **Script Robustness:** Fixed SSID quoting to handle spaces and corrected unsupported EAP types in the configuration.\n- **Virtual Interface Fallback:** Improved the creation of the virtual AP interface with better mode detection.\n\nThis version is significantly more effective and reliable for capturing domain credentials in real-world enterprise environments.",
-      "createdAt": "2026-03-11T19:48:40Z",
-      "updatedAt": "2026-05-09T21:27:46Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/301",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 299,
-      "title": "Add: Sherlock — Username OSINT across 69 platforms",
-      "state": "open",
-      "merged": false,
-      "author": "sinXne0",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
-      "authorUrl": "https://github.com/sinXne0",
-      "body": "## Summary\n\n- Adds **Sherlock**, a username OSINT payload that searches 69 platforms for a given username\n- Results stream live to the pager screen as each platform is checked (green `[+] FOUND` lines)\n- All findings saved to `/root/loot/sherlock/<username>_<timestamp>.txt`\n- Fully sequential execution — no background jobs, no `wait` conflicts with the pager's spinner system\n\n## Platforms\n\nSocial media, gaming, dev/tech, music, forums, security, and messaging — Twitter/X, Instagram, TikTok, GitHub, Steam, HackTheBox, TryHackMe, Telegram, and 61 more.\n\n## Category\n\n`library/user/reconnaissance/sherlock/`\n\n## Test plan\n\n- [ ] Deploy to pager: `scp -r sherlock/ root@<pager-ip>:/root/payloads/user/reconnaissance/`\n- [ ] Run with a known username — confirm `[+] FOUND` lines appear on screen in real time\n- [ ] Run with an unknown username — confirm \"No accounts found\" alert\n- [ ] Verify loot file created at `/root/loot/sherlock/`\n- [ ] Confirm payload exits cleanly after alert is dismissed\n\n## Author\n\nsinXneo\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
-      "createdAt": "2026-03-10T05:35:21Z",
-      "updatedAt": "2026-05-09T21:26:52Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/299",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -23503,81 +23113,6 @@
       "draft": false
     },
     {
-      "number": 296,
-      "title": "The mad possum alert 1",
-      "state": "open",
-      "merged": false,
-      "author": "TheMadPossum",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/83486572?v=4",
-      "authorUrl": "https://github.com/TheMadPossum",
-      "body": "updated files",
-      "createdAt": "2026-03-09T00:07:59Z",
-      "updatedAt": "2026-03-20T23:25:57Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/296",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 295,
-      "title": "In both the Client and AP Hackstats the colons weren't being removed from the BSSID/Mac",
-      "state": "open",
-      "merged": false,
-      "author": "jader242",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/139934223?v=4",
-      "authorUrl": "https://github.com/jader242",
-      "body": "This would cause no handshakes to appear in the payload complete alert, no matter how many were there in /root/loot/handshakes\r\n\r\n(It also seems $_RECON_SELECTED_CLIENT_MAC_ADDRESS also returns the AP BSSID, so idk what's up with that)",
-      "createdAt": "2026-03-08T23:32:30Z",
-      "updatedAt": "2026-04-12T17:35:58Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/295",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "waiting for author",
-          "color": "9fb222",
-          "description": ""
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 294,
-      "title": "Add payload: Chasing Your Tail NG v4.6 - Counter-Surveillance Recon",
-      "state": "open",
-      "merged": false,
-      "author": "tschakram",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/16965219?v=4",
-      "authorUrl": "https://github.com/tschakram",
-      "body": "## Chasing Your Tail NG v4.6\n\nCounter-surveillance payload for the WiFi Pineapple Pager. Detects whether you are being followed by analysing recurring WiFi Probe Requests across multiple scan rounds at different locations.\n\nBased on the original [Chasing Your Tail NG](https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG) concept, fully rewritten as a native Pineapple Pager Framework payload.\n\n## What it does\n\n- **Persistence scoring** – devices seen across multiple rounds at different locations are flagged as suspicious\n- **Bluetooth scanning** – Classic + BLE with device fingerprinting (microphone/camera detection)\n- **GPS tracking** – coordinates per round, zone detection via GPS Haversine / IP geolocation fallback\n- **OUI vendor lookup** – offline IEEE database (~39k entries, auto-update weekly)\n- **WiGLE API** – MAC, Bluetooth and probe SSID geolocation (optional, requires API key)\n- **Hotel-Scan mode** – BLE camera detection, hidden SSID detection, beacon analysis\n- **Watch-List** – static/dynamic device tracking with GPS zones, managed from display\n- **Quick-Start dialog** – 1=Standard (WiFi+BT, 2 rounds) / 2=Manual full configuration\n- **Auto-cleanup** – configurable retention for old reports/PCAPs/logs\n- **OPSEC** – GPS coordinates, MAC lists and API keys are gitignored, never committed\n\n## Scan Modes\n\n| Mode | Description |\n|------|-------------|\n| 0 | WiFi only |\n| 1 | WiFi + GPS |\n| 2 | WiFi + Bluetooth (default) |\n| 3 | All modules (WiFi + GPS + BT) |\n| 4 | Hotel-Scan (BLE camera detection, beacon analysis) |\n\n## Tested on\n\n- WiFi Pineapple Pager (OpenWrt 24.10.1, mipsel_24kc)\n- Python 3.11.14, BlueZ 5.72\n- u-blox GNSS receiver (USB, gpsd 3.25)\n\n## Installation\n\n```bash\ncd /root/payloads/user/reconnaissance/\ngit clone https://github.com/tschakram/chasing-your-tail-pager.git chasing_your_tail\ncd chasing_your_tail\ncp config.example.json config.json\n```\n\nLaunch from Pager Dashboard: `Payloads → User → Reconnaissance → Chasing Your Tail NG`\n\n## Credits\n\n- Original concept: [azmatt/chasing_your_tail](https://github.com/azmatt/chasing_your_tail)\n- NG version: [ArgeliusLabs/Chasing-Your-Tail-NG](https://github.com/ArgeliusLabs/Chasing-Your-Tail-NG) (MIT)\n- Pineapple Pager port: [tschakram](https://github.com/tschakram/chasing-your-tail-pager)",
-      "createdAt": "2026-03-08T16:34:08Z",
-      "updatedAt": "2026-03-20T23:21:28Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/294",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 88,
       "title": "Add PCARS theme — Pineapple Computer Access Retrieval System",
       "state": "closed",
@@ -23618,31 +23153,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/87",
       "repo": "wifipineapplepager-themes",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 293,
-      "title": "Looking Glass smart glasses detector",
-      "state": "open",
-      "merged": false,
-      "author": "Noezsolution",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/249527892?v=4",
-      "authorUrl": "https://github.com/Noezsolution",
-      "body": "Passive BLE scanner payload that detects nearby smart glasses\r\n(Meta Ray-Ban, Snap Spectacles, Bose Frames, etc.) using\r\nBluetooth SIG company IDs. Includes RSSI distance estimation\r\nand real-time LED/haptic feedback.",
-      "createdAt": "2026-03-02T00:00:18Z",
-      "updatedAt": "2026-04-24T19:59:18Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/293",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -23918,75 +23428,6 @@
       "draft": false
     },
     {
-      "number": 281,
-      "title": "Add autocrack payload suite (alert + user tools)",
-      "state": "open",
-      "merged": false,
-      "author": "sinXne0",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/195513254?v=4",
-      "authorUrl": "https://github.com/sinXne0",
-      "body": "## Summary\n- add auto_crack alert payload under library/alerts/handshake_captured/\n- add handshake_cracker user payload under library/user/exfiltration/\n- add wordlist_manager user payload under library/user/general/\n- include README files for usage, configuration, and requirements\n- use placeholder URLs (example.com) for staged wordlist downloads in wordlist_manager\n\n## Notes\n- payload scripts are executable and follow existing repo folder conventions\n- tested for shell syntax and path consistency before submission",
-      "createdAt": "2026-02-18T00:56:07Z",
-      "updatedAt": "2026-02-24T22:17:06Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/281",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 280,
-      "title": "Add The Hacker Culture Trail game payload",
-      "state": "open",
-      "merged": false,
-      "author": "aleff-github",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/58374531?v=4",
-      "authorUrl": "https://github.com/aleff-github",
-      "body": "Introduce a new interactive branching-narrative payload for Hak5 pager devices. Adds payload.sh (game engine), story/story.tsv (story graph), English and Italian locale files (locales/en.lang, locales/it.lang), README with gameplay and technical overview, and a small scriptbug helper for testing/line-ending fixes. The engine uses localized text, paging, simple on-enter hooks, and expects device I/O primitives; files are intended to be moddable and extendable.",
-      "createdAt": "2026-02-17T17:09:55Z",
-      "updatedAt": "2026-05-17T00:30:31Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/280",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 279,
-      "title": "Add `wiglebluetooth` payload",
-      "state": "open",
-      "merged": false,
-      "author": "Craftzman7",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/70068692?v=4",
-      "authorUrl": "https://github.com/Craftzman7",
-      "body": "# wiglebluetooth\r\n\r\nThis payload allows you to scan BLE (Bluetooth Low Energy) devices and upload them to Wigle in a Wigle compatiable CSV file. Bluetooth classic is not supported at this time!\r\n\r\n`wiglebluetooth` also allows you to combine a WiFi CSV produced by the pager and the CSV file produced by this payload to upload them in one go.\r\n\r\nThe way the payload works is by relying on a seperate executable running in the background to act as the CSV writer and device scanner.\r\n\r\nThis allows you to keep using other features of your pager. You can start and stop the background process by using the payload menu. \r\n\r\nThe repo with the executable code is [here](https://github.com/craftzman7/wigle-bluetooth-pager) if you'd like to build it yourself. Otherwise, the payload will download the latest release from Github automatically. \r\n\r\nHuge thank you to the `mobile2gps` payload for the architecture inspiration!",
-      "createdAt": "2026-02-16T22:13:33Z",
-      "updatedAt": "2026-05-25T02:29:07Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/279",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "pending further review",
-          "color": "C665A3",
-          "description": ""
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 278,
       "title": "OSINT-U-Asked",
       "state": "closed",
@@ -24040,56 +23481,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/80",
       "repo": "wifipineapplepager-themes",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 276,
-      "title": "Add Pagergotchi - Pwnagotchi port for WiFi Pineapple Pager",
-      "state": "open",
-      "merged": false,
-      "author": "brainphreak",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
-      "authorUrl": "https://github.com/brainphreak",
-      "body": "![Pagergotchi](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/pagergotchi-header.png)\n\n## Summary\n\n- Adds **Pagergotchi**, a port of [Pwnagotchi](https://github.com/jayofelern/pwnagotchi) for the WiFi Pineapple Pager\n- Automated WiFi handshake capture (PMKID + 4-way) with a personality-driven ASCII pet\n- Features: theme system, pause menu, privacy mode, GPS/WiGLE support, whitelist/blacklist, auto-dim, app handoff\n- Only requires Python3 with ctypes (auto-installs if missing)\n\n## Dependencies\n\nRequires the PAGERCTL utilities payload (`user/utilities/PAGERCTL` in this repository) for `libpagerctl.so` + `pagerctl.py`. Compile from source or grab precompiled binaries per the [pagerctl](https://github.com/pineapple-pager-projects/pineapple_pager_pagerctl) project.\n\n`payload.sh` auto-detects PAGERCTL and copies the files locally on first run. No binary files are included in this PR.\n\n## Screenshots\n\n| Main Display | Pause Menu | Themes |\n|:---:|:---:|:---:|\n| ![Main](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/handshake-captured.png) | ![Pause](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/pause-menu.png) | ![Themes](https://raw.githubusercontent.com/brainphreak/wifipineapplepager-payloads/add-pagergotchi/library/user/reconnaissance/pagergotchi/screenshots/themes-cyberpunk.png) |",
-      "createdAt": "2026-02-12T12:41:15Z",
-      "updatedAt": "2026-05-25T02:30:37Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/276",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "pending further review",
-          "color": "C665A3",
-          "description": ""
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 275,
-      "title": "Add PAGERCTL - Hardware control library with demos",
-      "state": "open",
-      "merged": false,
-      "author": "brainphreak",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
-      "authorUrl": "https://github.com/brainphreak",
-      "body": "## Summary\n\nA comprehensive hardware control library for the Pager providing smooth, flicker-free graphics and complete hardware access through a shared C library with Python bindings.\n\n### Features\n- **Display** - Double-buffered framebuffer rendering (480x222 RGB565)\n- **Text** - TTF font rendering via stb_truetype + built-in bitmap fonts\n- **Images** - Load and draw JPG, PNG, BMP, GIF with alpha blending and rotation\n- **Transparency** - PNG alpha channel support with RGB565 compositing over the framebuffer\n- **Screenshot** - Capture the live display to PNG/BMP by reading /dev/fb0 directly, with rotation support\n- **Input** - Button handling (D-pad, A, B, Power) with thread-safe event queue\n- **LEDs** - RGB D-pad LEDs and A/B button LEDs\n- **Audio** - Buzzer control with RTTTL ringtone support\n- **Vibration** - Haptic feedback motor control\n- **Brightness** - Screen backlight control via sysfs\n\n### Demos\nIncludes Python and C demos that test all hardware features with skippable sections.\n\n### Building\nRequires Docker to cross-compile for MIPS. Instructions in README.\n\nPrecompiled binaries available at: https://github.com/pineapple-pager-projects/pineapple_pager_pagerctl",
-      "createdAt": "2026-02-12T06:31:19Z",
-      "updatedAt": "2026-02-28T05:46:45Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/275",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "pending further review",
-          "color": "C665A3",
-          "description": ""
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -24265,25 +23656,6 @@
       "closedAt": "2026-02-11T22:45:12Z",
       "mergedAt": "2026-02-11T22:45:12Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/266",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 265,
-      "title": "Add Proxmark3 Controller payload",
-      "state": "open",
-      "merged": false,
-      "author": "samxplogs",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/121982000?v=4",
-      "authorUrl": "https://github.com/samxplogs",
-      "body": "## Summary\n- New payload: **Proxmark3 Controller** for the WiFi Pineapple Pager\n- Detects Proxmark3 RDV4 via USB (`/dev/ttyACM*`), provides interactive D-pad menu for standalone mode operations\n- Covers LF (125 kHz) and HF (13.56 MHz): card reading, cloning, sniffing, and key recovery attacks\n- Step-by-step on-screen guides for each standalone mode (EM4100, HID Prox, MIFARE Classic, iCLASS, etc.)\n- Session logging to `/root/loot/proxmark/`\n\n## Files\n- `library/user/general/proxmark3-controller/payload.sh`\n- `library/user/general/proxmark3-controller/README.md`\n- `library/user/general/proxmark3-controller/PM3.png`\n\n## Test plan\n- [x] PM3 RDV4 detected on Pager via `/dev/ttyACM0`\n- [ ] Full menu navigation on hardware\n- [ ] Standalone mode guides validated with real card reads\n- [ ] Disconnect/reconnect handling",
-      "createdAt": "2026-02-08T18:23:00Z",
-      "updatedAt": "2026-04-23T20:43:29Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/265",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
       "comments": 0,
@@ -24486,25 +23858,6 @@
       "draft": false
     },
     {
-      "number": 260,
-      "title": "Add GARMR v4.7.9 - KARMA + Evil Portal Combined Attack",
-      "state": "open",
-      "merged": false,
-      "author": "JesseCHale",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/208289035?v=4",
-      "authorUrl": "https://github.com/JesseCHale",
-      "body": "## **🌶️🔥 Caution Spicy 🔥🌶️**.  \n\n**_⚠️ Known Limitation                                                                 \nThe Pager's single radio cannot run all four interfaces simultaneously                   (Client Mode).  ****\n****Management AP + Open AP + Evil WPA).****_**                                                                                                                           \nRecommended Setup:                                                                 \n1. USB-C for management instead of Management AP                                \n2. Or use USB/Ethernet for WAN instead of Client Mode This ensures stable operation with GARMR.        \n\n\n\n**GARMR combines SKOLL (KARMA SSID luring) with LOKI (Evil Portal credential harvesting) into a single automated payload.** Targets connect to a familiar SSID, get redirected to a convincing login portal, and credentials are captured with optional NTFY push notifications to your phone.\n\n---\n\n### ⚠️ IMPORTANT - SSID and Portal MUST Match\n\n**If you choose Option 0 (Keep Current SSID), your existing Open AP SSID will be used.** This means the portal shown to the target may NOT match the network name — for example, a \"Microsoft\" login page on a network called \"MyHomeWiFi\" looks suspicious and will reduce success rates.\n\n**For best results:** Choose a matching SSID + Portal combination (e.g., Option 1 \"Microsoft Guest\" with the Microsoft portal, or Option 5 \"Starbucks WiFi\" with the Starbucks portal).\n\nYour broadcast SSID is configured in **PineAP → Open AP Settings** on the Pager.\n\n---\n\n### Features\n\n- **9 Portal Options** — Microsoft, Google, WiFi Captive + Starbucks, McDonald's, Airport, Hotel, Xfinity, AT&T\n- **10 SSID Options** — Including \"Keep Current SSID\" and 9 pre-configured options\n- **NTFY Push Notifications** — Real-time credential alerts to your phone (optional)\n- **Captive Portal Detection** — Automatic redirect for Android (`generate_204`) and iOS (`hotspot-detect`)\n- **nftables Traffic Redirection** — DNS + HTTP DNAT with tagged rules for clean teardown\n- **Clean Deactivation** — Removes only GARMR rules, restores DNS, stops portal cleanly\n\n### Prerequisites\n\n1. **Evil Portal module** must be installed on the Pager\n2. **PineAP** must be enabled with **Open AP** active\n3. **NTFY app** (optional) — Install from App Store/Play Store, subscribe to your topic before launching\n\n### Usage\n\n1. Install payload to `library/user/evil_portal/garmr/`\n2. Launch from Payloads menu\n3. Select portal type → Select SSID → Configure NTFY (optional)\n4. GARMR activates portal, sets SSID, redirects traffic\n5. Credentials saved to `/root/loot/garmr/credentials.txt`\n6. Deactivate cleanly through the payload menu\n\n**Full documentation including step-by-step activation/deactivation instructions available in the [README](library/user/evil_portal/garmr/README.md).**\n\n---\n\n*Payload by HaleHound — v4.7.10*",
-      "createdAt": "2026-02-04T21:29:03Z",
-      "updatedAt": "2026-02-20T00:55:44Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/260",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 259,
       "title": "added some videos to the payloads",
       "state": "closed",
@@ -24520,31 +23873,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/259",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 258,
-      "title": "mod: append AP/SSID to Hackstats",
-      "state": "open",
-      "merged": false,
-      "author": "lukeswitz",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/10099969?v=4",
-      "authorUrl": "https://github.com/lukeswitz",
-      "body": "**Use Case**: View the AP/SSID of `.pcap` files without cross-referencing MAC \r\n\r\n- Adds a line with `pcap | SSID/AP` \r\n- Unifies loot dir variable",
-      "createdAt": "2026-02-04T18:31:34Z",
-      "updatedAt": "2026-02-26T11:12:21Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/258",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "waiting for author",
-          "color": "9fb222",
-          "description": ""
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -24581,25 +23909,6 @@
       "closedAt": "2026-02-02T08:06:03Z",
       "mergedAt": "2026-02-02T08:06:03Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/256",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 254,
-      "title": "Add NullSec QuickScan and HandshakeHunter payloads",
-      "state": "open",
-      "merged": false,
-      "author": "bad-antics",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/160459796?v=4",
-      "authorUrl": "https://github.com/bad-antics",
-      "body": "## New Payloads\n\n### NullSec-QuickScan\nFast 30-second WiFi environment scan with security analysis.\n- Network count\n- Security breakdown (WPA3/WPA2/WEP/Open)\n- Clean Pager UI integration\n\n### NullSec-HandshakeHunter\nAutomated WPA/WPA2 handshake capture with deauthentication.\n- Auto target scanning\n- Automated deauth bursts\n- Saves captures to /mmc/nullsec/handshakes/\n\n## Requirements\nBoth payloads require **aircrack-ng** suite:\n```bash\nopkg update\nopkg install aircrack-ng\n```\n\n## Part of NullSec Pineapple Suite\n\nThese are from the [NullSec Pineapple Suite](https://github.com/bad-antics/nullsec-pineapple-suite) - a collection of 58 professional WiFi security payloads.\n\n## Testing\n- Tested on WiFi Pineapple Pager firmware 1.0.6\n- All payloads verified working with aircrack-ng suite\n\n## Author\n[bad-antics](https://github.com/bad-antics)\n\n---\n*For authorized security testing and educational purposes only.*",
-      "createdAt": "2026-02-01T20:28:00Z",
-      "updatedAt": "2026-02-09T16:31:42Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/254",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
       "comments": 0,
@@ -24802,31 +24111,6 @@
       "draft": false
     },
     {
-      "number": 245,
-      "title": "PullPR_Manager - Allows to pull themes, payloads and ringtones PR's",
-      "state": "open",
-      "merged": false,
-      "author": "z3r0l1nk",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/31653632?v=4",
-      "authorUrl": "https://github.com/z3r0l1nk",
-      "body": "Allows to pull themes, payloads and ringtones PR's **_(Theme PR Pull is broken at this time )_**\r\n# PullPR_Manager\r\n<img width=\"477\" height=\"218\" alt=\"image\" src=\"https://github.com/user-attachments/assets/0fa7da21-5d5f-4d0d-915e-f4e763a9e891\" />\r\n<img width=\"475\" height=\"217\" alt=\"image\" src=\"https://github.com/user-attachments/assets/eda697f1-19f0-43f9-8cfa-62ccfacb4217\" />\r\n<img width=\"476\" height=\"218\" alt=\"image\" src=\"https://github.com/user-attachments/assets/7acf4120-7d61-440d-aa39-2031ee4522c2\" />\r\n<img width=\"484\" height=\"221\" alt=\"image\" src=\"https://github.com/user-attachments/assets/54ba2942-082b-4d9f-9ddb-4bfbdebd2bf6\" />",
-      "createdAt": "2026-01-29T15:57:00Z",
-      "updatedAt": "2026-02-23T21:26:01Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/245",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "waiting for author",
-          "color": "9fb222",
-          "description": ""
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 244,
       "title": "Resource_Manager",
       "state": "closed",
@@ -24939,56 +24223,6 @@
       "draft": false
     },
     {
-      "number": 239,
-      "title": "Add Tetris puzzle game",
-      "state": "open",
-      "merged": false,
-      "author": "brainphreak",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
-      "authorUrl": "https://github.com/brainphreak",
-      "body": "## Summary\n\nAdds Tetris, a classic block-stacking puzzle game for the WiFi Pineapple Pager.\n\n## Features\n\n- **Two play modes** - Left-handed and Right-handed portrait orientations\n- **Mode selector** - Animated launcher with falling pieces\n- **Classic gameplay** - All 7 tetrominoes with SRS-style rotation\n- **Ghost piece** - Shows where your piece will land\n- **Scoring system** - Points for lines, soft drops, and hard drops\n- **Leveling** - Speed increases as you clear more lines\n- **High score persistence** (saved to `/root/loot/tetris_highscore`)\n- **Background music** - Korobeiniki (Tetris theme) via RTTTL\n- **Sound effects** - Line clears, level ups, game over\n- **LED effects** - Visual feedback on D-pad and buttons\n\n## Controls\n\nHold the Pager sideways (landscape orientation).\n\n| Button | Left-Handed | Right-Handed |\n|--------|-------------|--------------|\n| UP | Move RIGHT | Move LEFT |\n| DOWN | Move LEFT | Move RIGHT |\n| LEFT | Rotate | Soft drop |\n| RIGHT | Soft drop | Rotate |\n| GREEN | Hard drop | Hard drop |\n| RED | Pause | Pause |\n\n## Scoring\n\n| Action | Points |\n|--------|--------|\n| Single line | 100 x level |\n| Double | 300 x level |\n| Triple | 500 x level |\n| Tetris (4 lines) | 800 x level |\n\n## Author\n\n- **brAinphreAk** - [www.brainphreak.net](https://www.brainphreak.net)\n\n## Test Plan\n\n- [x] Tested on WiFi Pineapple Pager hardware\n- [x] Both left and right handed modes working\n- [x] All tetrominoes and rotations correct\n- [x] Scoring and leveling functional\n- [x] High score saves and loads\n- [x] Music and sound effects working",
-      "createdAt": "2026-01-29T12:36:29Z",
-      "updatedAt": "2026-02-11T22:59:08Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/239",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 238,
-      "title": "Add Space Invaders arcade game",
-      "state": "open",
-      "merged": false,
-      "author": "brainphreak",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
-      "authorUrl": "https://github.com/brainphreak",
-      "body": "## Summary\n\nAdds Space Invaders, a classic arcade game for the WiFi Pineapple Pager.\n\n## Features\n\n- **55 aliens** - 5 rows x 11 columns with 3 alien types\n- **4 destructible shields** - pixel-by-pixel erosion from bullets and alien contact\n- **Mystery UFO** - appears periodically for bonus points (100-300 pts)\n- **Progressive difficulty** - aliens speed up as you destroy them, start lower each level\n- **High score persistence** (saved to `/root/loot/invaders_highscore`)\n- **Sound effects** via RTTTL buzzer\n- **LED effects** for firing, kills, and game events\n- **Smooth 20 FPS gameplay**\n\n## Controls\n\n- LEFT/RIGHT - Move ship\n- GREEN - Fire\n- RED - Pause menu\n\n## Scoring\n\n- Top row aliens (cyan): 30 points\n- Middle row aliens (magenta): 20 points\n- Bottom row aliens (green): 10 points\n- UFO (red): 100-300 points (random)\n\n## Author\n\n- **brAinphreAk** - [www.brainphreak.net](https://www.brainphreak.net)\n\n## Test Plan\n\n- [x] Tested on WiFi Pineapple Pager hardware\n- [x] All game mechanics working (shooting, shields, UFO, level progression)\n- [x] High score saves and loads\n- [x] Sound and LED effects functional",
-      "createdAt": "2026-01-29T12:33:42Z",
-      "updatedAt": "2026-02-11T22:58:32Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/238",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 237,
       "title": "Add Space Invaders arcade game",
       "state": "closed",
@@ -25004,31 +24238,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/237",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 236,
-      "title": "Add Hakanoid brick breaker game",
-      "state": "open",
-      "merged": false,
-      "author": "brainphreak",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/237749443?v=4",
-      "authorUrl": "https://github.com/brainphreak",
-      "body": "## Summary\n\nAdds Hakanoid, a classic brick breaker arcade game for the WiFi Pineapple Pager.\n\n## Features\n\n- **14x8 brick grid** with colorful patterns\n- **Multiple brick types** - Normal, Silver (2 hits), Gold (3 hits), Metal (indestructible), Invisible\n- **8 power-ups** - Laser, Catch, Expand, Tiny, Slow, Fast, Extra Life, Random\n- **Custom level editor** - create your own levels with simple text files\n- **Level set support** - includes DEFAULT and HAK5 themed level packs\n- **3 difficulty levels** - NOOB, PRO, L33T\n- **High score persistence**\n- **Sound effects** via RTTTL buzzer\n- **LED effects** for game events\n\n## Controls\n\n- LEFT/RIGHT - Move paddle\n- GREEN - Launch ball / Fire laser\n- RED - Pause menu\n- UP/DOWN - Menu navigation\n\n## Author\n\n- **brAinphreAk** - [www.brainphreak.net](https://www.brainphreak.net)\n\n## Test Plan\n\n- [x] Tested on WiFi Pineapple Pager hardware\n- [x] All 5 levels in both level sets playable\n- [x] Power-ups working correctly\n- [x] High score saves and loads\n- [x] Custom level sets detected automatically",
-      "createdAt": "2026-01-29T12:18:47Z",
-      "updatedAt": "2026-02-11T22:57:14Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/236",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -25096,25 +24305,6 @@
       "draft": false
     },
     {
-      "number": 231,
-      "title": "Add Payload Manager payload",
-      "state": "open",
-      "merged": false,
-      "author": "billyjbryant",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/3013565?v=4",
-      "authorUrl": "https://github.com/billyjbryant",
-      "body": "## Summary\r\n\r\n- Adds a new **Payload Manager** payload for managing payloads directly on the WiFi Pineapple Pager\r\n- Browse, install, update, enable/disable payloads without needing a computer\r\n- Compare installed payloads against the GitHub repository with status indicators (`[NEW]`, `[OK]`, `[UPD]`, `[DIS]`, `[LOC]`)\r\n- Persistent settings via the Pager's config system (survives firmware upgrades)\r\n- First-run setup wizard for initial configuration\r\n\r\n## Features\r\n\r\n- **Browse & Compare** - Navigate payloads by category with real-time status indicators\r\n- **Check for Updates** - Summary view with interactive or batch update modes\r\n- **Manage Installed/Disabled** - Enable, disable, or uninstall payloads (works offline)\r\n- **Settings** - Configure update mode, custom repository/branch, display options\r\n- **Self-update protection** - Queues own updates to apply on exit\r\n\r\n## Settings\r\n\r\n| Setting | Description |\r\n|---------|-------------|\r\n| Update mode | `ask`, `interactive`, or `batch` |\r\n| Repository | Use official Hak5 repo or custom `user/repo` |\r\n| Branch | Which branch to pull from |\r\n| Show local payloads | Whether to display `[LOC]` payloads |\r\n",
-      "createdAt": "2026-01-26T09:40:36Z",
-      "updatedAt": "2026-01-26T18:10:13Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/231",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": true
-    },
-    {
       "number": 69,
       "title": "Zombie Industrial - New Theme",
       "state": "closed",
@@ -25147,50 +24337,6 @@
       "closedAt": "2026-02-11T22:53:56Z",
       "mergedAt": "2026-02-11T22:53:56Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/230",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 229,
-      "title": "wigle_stats",
-      "state": "open",
-      "merged": false,
-      "author": "Nomaran",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/9385343?v=4",
-      "authorUrl": "https://github.com/Nomaran",
-      "body": "This payload is an attempt to grab the latest CSV in the loot/wigle folder and create a report.\r\n\r\nSo far it generates the following:\r\n\r\nNew networks\r\nPreviously seen networks\r\nAuthentication breakdown\r\nEstimated distance traveled\r\n\r\nNow it can take a hot minute for this to run if you have a MASSIVE dataset. I haven't been able to do a long form test due to the current weather event. Once it warms up I plan to collect more data and further tweak it.\r\n\r\nI am looking for improvements to this payload, I have been tweaking it to try and get the data as accurate as possible but it's not quite there yet. It's close enough for a release I feel but definitely could be improved. For the distance calculations (python), I used AI as I was having a heck of a time with the math needed (Haversine formula ftw) and being a general python noob. ",
-      "createdAt": "2026-01-25T23:58:17Z",
-      "updatedAt": "2026-05-25T02:28:22Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/229",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 228,
-      "title": "Enisetup",
-      "state": "open",
-      "merged": false,
-      "author": "Notorious-Squirrel",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/221180056?v=4",
-      "authorUrl": "https://github.com/Notorious-Squirrel",
-      "body": "Sets up external network interface for supported chipset which dont auto mount on connect. ",
-      "createdAt": "2026-01-25T21:55:14Z",
-      "updatedAt": "2026-01-25T21:58:15Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/228",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
       "comments": 0,
@@ -25406,31 +24552,6 @@
       "draft": false
     },
     {
-      "number": 220,
-      "title": "Mad Possum Rogue Auth Watch",
-      "state": "open",
-      "merged": false,
-      "author": "TheMadPossum",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/83486572?v=4",
-      "authorUrl": "https://github.com/TheMadPossum",
-      "body": "Detects rogue Wi‑Fi access points and suspicious authentications in real time, logging events and sending instant pager alerts.",
-      "createdAt": "2026-01-22T17:49:38Z",
-      "updatedAt": "2026-03-10T05:46:11Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/220",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 64,
       "title": "Still WIP!",
       "state": "closed",
@@ -25597,55 +24718,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/215",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 214,
-      "title": "Adds text_menu example payload",
-      "state": "open",
-      "merged": false,
-      "author": "marcdel",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/693730?v=4",
-      "authorUrl": "https://github.com/marcdel",
-      "body": "I'm not sure if y'all are trying to keep the examples limited to usage of duckyscript commands. Feel free to close if that's the case.\r\n\r\nI saw this pattern in RocketGod's Device Hunter payload and thought it was a clever workaround for not having a proper option picker yet. I wanted to use it in my payload, but I wanted to extract it from the surrounding context so I could understand it. Hopefully it's useful to someone else as well!\r\n\r\n<img width=\"748\" height=\"533\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a81c315f-3878-4f40-a1e0-99202bb5ee1a\" />\r\n\r\n<img width=\"742\" height=\"528\" alt=\"image\" src=\"https://github.com/user-attachments/assets/41c695a0-7b94-4f5a-82e8-5ce7268a2ece\" />\r\n",
-      "createdAt": "2026-01-21T06:12:10Z",
-      "updatedAt": "2026-01-21T06:12:10Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/214",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 213,
-      "title": "Add switch_evil_portal payload and support",
-      "state": "open",
-      "merged": false,
-      "author": "knight-scott",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/148942757?v=4",
-      "authorUrl": "https://github.com/knight-scott",
-      "body": "# Summary\r\n\r\nThis PR updates the `payload.sh` for  `evil_portal_install` and `default_portal` to support symlink-based portal switching via `/root/portals/current`, and integrates the `switch_evil_portal` payload.\r\n\r\nThe goal is to provide a simple way to switch between installed captive portals at runtime.\r\n\r\n## What Changed\r\n\r\n### Symlink-Based Portal Selection\r\n\r\n- Portal activation is now controlled by: `/root/portals/current → /root/portals/<portal-name>`\r\n- Evil Portal assets reference `current` instead of a hardcoded portal directory.\r\n- Switching portals is an atomic operation (`ln -sfn`) and does not require restarting Evil Portal or the device.\r\n\r\n### `switch_evil_portal` Payload Integration\r\n\r\n- Adds a user-facing payload that:\r\n\r\n    - Enumerates available portals\r\n    - Uses NUMBER_PICKER for selection\r\n    - Updates the current symlink\r\n    \r\n- No init script patching required.\r\n\r\n### Updated Install Flow\r\n\r\nInstall script now:\r\n- Ensures the current symlink exists\r\n- Sets Default as the initial active portal\r\n- Installs the switch payload alongside existing Evil Portal payloads\r\n\r\n### Default Portal Compatibility\r\n\r\nThe Default Portal payload now activates itself by:\r\n\r\n- Updating the current symlink\r\n- Remaining compatible with both isolated and bridged network configurations\r\n\r\n## Backward Compatibility\r\n\r\n- Existing portals continue to function unchanged\r\n- Users who do not use switch_evil_portal are unaffected\r\n- No breaking changes to Evil Portal behavior\r\n\r\n## Tested On\r\n\r\n- WiFi Pineapple Pager v 1.0.6 (OpenWrt 24.10.1)\r\n- Evil Portal v 1.9\r\n- Multiple community portals in `/root/portals/`\r\n\r\n## Attribution\r\n\r\n- Evil Portal originally by newbi3\r\n- Pager adaptation by PentestPlaybook\r\n- Symlink switch payload & integration by 0x4B",
-      "createdAt": "2026-01-21T03:19:15Z",
-      "updatedAt": "2026-04-25T00:19:45Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/213",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        },
-        {
-          "name": "waiting for author",
-          "color": "9fb222",
-          "description": ""
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -25905,31 +24977,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/59",
       "repo": "wifipineapplepager-themes",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 202,
-      "title": "Captive Portal Cloner for Evil Twin",
-      "state": "open",
-      "merged": false,
-      "author": "mr-pmillz",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/58376398?v=4",
-      "authorUrl": "https://github.com/mr-pmillz",
-      "body": "I haven't tested this payload out yet. Am working on setting up some captive portals on separate device to see if this payload works. \r\nFurther testing required.",
-      "createdAt": "2026-01-19T02:17:17Z",
-      "updatedAt": "2026-04-03T05:01:33Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/202",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "help wanted",
-          "color": "008672",
-          "description": "Extra attention is needed"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -27604,31 +26651,6 @@
       "draft": false
     },
     {
-      "number": 142,
-      "title": "Add script to turn on B+A button LEDs",
-      "state": "open",
-      "merged": false,
-      "author": "thinktankbs",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/149844843?v=4",
-      "authorUrl": "https://github.com/thinktankbs",
-      "body": "This script turns on the B+A button LEDs by setting the value of their brightness files to 1.",
-      "createdAt": "2026-01-06T19:25:49Z",
-      "updatedAt": "2026-01-07T13:23:20Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/142",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 140,
       "title": "MAC Spoofer - Set hostname using OpenWrt Native UCI",
       "state": "closed",
@@ -27897,36 +26919,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-ringtones/pull/17",
       "repo": "wifipineapplepager-ringtones",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 130,
-      "title": "games: DOOM & DOOM Deathmatch",
-      "state": "open",
-      "merged": false,
-      "author": "lmacken",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/9980?v=4",
-      "authorUrl": "https://github.com/lmacken",
-      "body": "Build script and patches can be found here:\r\nhttps://github.com/lmacken/doom-pager\r\n\r\nThis script downloads all of the source code needed, applies our patch and builds it. https://github.com/lmacken/doom-pager/blob/main/build.sh\r\n\r\n![doom2](https://github.com/user-attachments/assets/b3751def-0651-400d-9df7-88e28c1eced4)\r\n",
-      "createdAt": "2026-01-05T22:47:07Z",
-      "updatedAt": "2026-02-12T20:00:58Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/130",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "on hold",
-          "color": "65b5ab",
-          "description": "pending review  often for larger or more complex payloads"
-        },
-        {
-          "name": "pending further review",
-          "color": "C665A3",
-          "description": ""
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -28452,31 +27444,6 @@
       "draft": false
     },
     {
-      "number": 111,
-      "title": "LED-Buttons-Off",
-      "state": "open",
-      "merged": false,
-      "author": "thinktankbs",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/149844843?v=4",
-      "authorUrl": "https://github.com/thinktankbs",
-      "body": "This script turns off LED's the D-pad LED's and the B+A buttons.",
-      "createdAt": "2026-01-04T02:25:47Z",
-      "updatedAt": "2026-02-13T18:58:24Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/111",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
-      "comments": 0,
-      "draft": false
-    },
-    {
       "number": 110,
       "title": "move goodportal out of purgatory",
       "state": "closed",
@@ -28492,31 +27459,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/110",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 109,
-      "title": "MetaPayload Framework",
-      "state": "open",
-      "merged": false,
-      "author": "spencershepard",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/25210766?v=4",
-      "authorUrl": "https://github.com/spencershepard",
-      "body": "# The Swiss Army Knife of Payloads for the Wifi Pineapple Pager! 🍍\r\n\r\n👉**Includes more than 25 payloads out of the box!** See the [Included Payload Packs](#included-payload-packs-📦) section below for details.\r\n\r\nRun payloads, keep track of results, export logs to Discord and more - all from the Pager interface!\r\n\r\n## Video Review\r\n\r\n[![Watch the video](https://i.ytimg.com/an_webp/45Wbnfh4HXc/mqdefault_6s.webp?du=3000&sqp=CJPBissG&rs=AOn4CLDxPLvPQ4tKHUSEZS-_4ZE2TRZ38g)](https://www.youtube.com/live/45Wbnfh4HXc?si=1Txkxtf60HLsgV7v&t=10148)\r\n\r\nWatch Hak5's Darren Kitchen review MetaPayload and demonstrate its features on the Wifi Pineapple Pager: https://www.youtube.com/live/45Wbnfh4HXc?si=1Txkxtf60HLsgV7v&t=10148\r\n\r\n\r\n## Get Started Easily 🚀\r\n1. Install the metapayload directory as /root/payloads/user/metapayload\r\n2. On the pager, Payloads > metapayload > Generate Payloads\r\n3. Find generated payloads under Payloads > metapayload_recon\r\n\r\n## Included Payload Packs\r\n\r\n### 🔭 MetaPayload Recon \r\nmetapayload_recon.json includes a variety of reconnaissance-focused payloads powered by nmap and arp-scan.  These payloads provide everything from quick network discovery to comprehensive port scanning and service detection.\r\n\r\n- **Quick Hosts Scan**: [TARGET_SUBNET]\r\n- **ARP Network Scan**: [TARGET_SUBNET]\r\n- **Top Ports Scan**: [TARGET_IP]\r\n- **Full Port Scan**: [TARGET_IP]\r\n- **UDP Port Scan**: [TARGET_IP]\r\n- **Network Port Sweep**: [TARGET_SUBNET]\r\n- **Network Web Sweep**: [TARGET_SUBNET]\r\n- **Service Version Detection**: [TARGET_IP]\r\n- **OS Detection**: [TARGET_IP]\r\n\r\n###  🛠 MetaPayload Sys Utils\r\nmetapayload_sysutils.json includes a set of essential system utility payloads for gathering system information, monitoring processes, managing files, etc\r\n\r\n- **System Information**\r\n- **Disk Usage (df)**\r\n- **Process List (ps)**\r\n- **Top Processes (top)**\r\n- **Process Grep (pgrep)**\r\n- **Network Connections (netstat)**\r\n- **Find Files by Name (find)**\r\n- **Find File Content (grep -r)**\r\n- **Install Package (opkg)**\r\n\r\n### 👊 MetaPayload Wifi Attacks\r\nmetapayload_wifi_attacks.json includes a set of targeted Wifi Pineapple-focused attack payloads for authorized penetration testing engagements.\r\n\r\n- **MP-WPS Brute Force (Reaver)**: Brute force WPS PIN attack (reaver) [Targets selected AP via Recon]\r\n- **MP-WPS Pixie Dust (Reaver)**: Fast WPS Pixie Dust attack (reaver) [Targets selected AP via Recon]\r\n- **MP-AP Deauth (aireplay-ng)**: Deauth Clients (aircrack-ng) [Targets selected AP via Recon]\r\n- **MP-PMKID Capture (hcxdumptool)**: Aggressive PMKID capture using hcxdumptool [Targets selected AP via Recon]",
-      "createdAt": "2026-01-03T20:23:41Z",
-      "updatedAt": "2026-01-24T04:03:39Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/109",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
@@ -29439,31 +28381,6 @@
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/77",
       "repo": "wifipineapplepager-payloads",
       "labels": [],
-      "comments": 0,
-      "draft": false
-    },
-    {
-      "number": 76,
-      "title": "feat: Add WPA-SEC integration for distributed WPA/WPA2 cracking",
-      "state": "open",
-      "merged": false,
-      "author": "Aitema-gmbh",
-      "authorAvatar": "https://avatars.githubusercontent.com/u/243383470?v=4",
-      "authorUrl": "https://github.com/Aitema-gmbh",
-      "body": "## Summary\n\nThis PR adds two new payloads for integrating with [wpa-sec.stanev.org](https://wpa-sec.stanev.org), a free community-driven distributed WPA/WPA2 password cracking service.\n\n### New Payloads\n\n**1. Alert Payload: `alerts/handshake_captured/wpa-sec-upload/`**\n- Automatically uploads handshakes to wpa-sec when captured\n- Triggers on every handshake capture event\n- Zero user interaction required after setup\n\n**2. User Payload: `user/exfiltration/wpa-sec-tools/`**\n- Interactive menu with 3 options:\n  - Bulk Upload: Upload all existing handshakes at once\n  - Check Results: View cracked passwords on Pager screen\n  - Setup: Configure API key via Pager UI\n\n### Features\n\n- ✅ **BusyBox/OpenWrt Compatible**: No `grep -P` or GNU-specific flags\n- ✅ **Smart Directory Scanning**: Finds handshakes in `/root/loot/handshakes/`, `/root/loot/dragonblood/`, and `/root/loot/archive/*/handshakes/`\n- ✅ **PCAP Format Only**: Correctly handles wpa-sec's requirement for .pcap/.pcapng/.cap files (skips .22000)\n- ✅ **Proper Response Parsing**: Detects success via hcxpcapngtool output patterns\n- ✅ **Rate Limiting**: 0.5s delay between uploads to prevent server overload\n- ✅ **Duplicate Detection**: Skips already-uploaded handshakes\n- ✅ **Upload History**: CSV tracking with timestamps\n- ✅ **Failed Upload Queue**: Saves failed uploads for retry\n- ✅ **LED States**: Visual feedback (yellow=uploading, green=success, red=fail)\n- ✅ **Vibration & Alerts**: Optional haptic and visual notifications\n- ✅ **Global Config**: Shared config between alert and user payloads\n\n### Files Added\n\n```\nlibrary/\n├── alerts/\n│   └── handshake_captured/\n│       └── wpa-sec-upload/\n│           ├── payload.sh    # Auto-upload on capture\n│           ├── config.sh     # API key configuration\n│           └── README.md     # Documentation\n└── user/\n    └── exfiltration/\n        └── wpa-sec-tools/\n            ├── payload.sh    # Interactive menu\n            ├── config.sh     # API key configuration\n            └── README.md     # Documentation\n```\n\n### Testing\n\nTested on WiFi Pineapple Pager with:\n- ✅ Bulk upload of 36 handshakes\n- ✅ Successfully retrieved cracked passwords\n- ✅ BusyBox grep compatibility verified\n- ✅ Archive directory scanning working\n- ✅ Rate limiting functional\n\n### What is wpa-sec.stanev.org?\n\n[wpa-sec.stanev.org](https://wpa-sec.stanev.org) is a **free** distributed WPA/WPA2 cracking service where:\n- Thousands of volunteer GPUs work together to crack passwords\n- Massive wordlists and advanced rule-based attacks are used\n- Users get notified when passwords are cracked\n- No cost, community-driven\n\n### Screenshots\n\nThe payloads display progress and results directly on the Pager screen:\n\n```\n==========================================\n  WPA-SEC BULK UPLOAD\n==========================================\n\nFound: 15 PCAP files\n\n[1/15] handshake_001.pcap\n  OK\n[2/15] handshake_002.pcap\n  Skip (already uploaded)\n...\n\n==========================================\n  UPLOAD COMPLETE\n==========================================\nSuccess: 12\nSkipped: 2\nFailed:  1\n```\n\n### Documentation\n\nComprehensive README.md files included with:\n- Installation instructions\n- Configuration guide\n- Usage examples\n- Workflow diagrams\n- Troubleshooting guide\n- API documentation\n- Security & legal notes\n\n---\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
-      "createdAt": "2026-01-02T00:42:08Z",
-      "updatedAt": "2026-01-12T20:25:44Z",
-      "closedAt": null,
-      "mergedAt": null,
-      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/76",
-      "repo": "wifipineapplepager-payloads",
-      "labels": [
-        {
-          "name": "Pending requested changes",
-          "color": "0e5bd2",
-          "description": "Awaiting changes from author"
-        }
-      ],
       "comments": 0,
       "draft": false
     },
