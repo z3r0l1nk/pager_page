@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-19T20:22:05.281Z",
+  "fetchedAt": "2026-08-19T22:19:52.578Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22207,6 +22207,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 350,
+      "title": "Add Flock WiFi OUI Detector: passive Recon ingestion",
+      "state": "open",
+      "merged": false,
+      "author": "Liminal626",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/126946697?v=4",
+      "authorUrl": "https://github.com/Liminal626",
+      "body": "## Summary\r\n\r\nPassive WiFi reconnaissance payload that scores nearby devices against a\r\nconfigurable MAC-OUI/SSID signature list to identify suspected Flock Safety\r\nhardware, with a 0–100 weighted confidence score, GPS-tagged CSV logging,\r\nand LED/tone alerts on confirmed detections above a tunable threshold.\r\n\r\n## How this differs from the existing `Flock_Detect` (\"Flock You\") payload\r\n\r\nGiven the naming proximity, worth being explicit up front: this is not a\r\nduplicate or a fork of that payload. `Flock_Detect` is a BLE scanner\r\n(`hcitool lescan`, matching advertised device names). This payload works\r\nover WiFi instead — passive 802.11 management frame analysis (OUI + SSID +\r\nRSSI + sustained-presence scoring), ingested natively through the Pineapple\r\nRecon engine's own `recon.db` rather than running an independent capture\r\nprocess. Different radio, different signature basis, complementary rather\r\nthan overlapping coverage.\r\n\r\n## Notable implementation details\r\n\r\n- No separate `tcpdump`/monitor-mode capture — polls `recon.db` on an\r\n  interval and reuses whatever Recon is already hopping, so there's no\r\n  duplicate radio activity.\r\n- Weighted scoring engine (OUI base score + frame-origin + SSID match +\r\n  RSSI + sustained-presence bonuses) rather than a binary match/no-match,\r\n  with independently-tunable cooldowns for logging vs. operator alerts.\r\n- Below-threshold candidates are logged separately from confirmed\r\n  detections, intended for tuning signatures against real-world data\r\n  rather than guessing thresholds blind.\r\n- Per-device state persists across payload restarts.\r\n- GPS-tagged when a receiver is present; degrades gracefully without one.\r\n\r\n## Testing\r\n\r\nTested end-to-end on physical Pager hardware against a known-MAC test\r\ndevice, including verifying detection at the intended signature/threshold\r\ncombination.\r\n\r\n## Files added\r\n\r\n- `payload.sh` — the payload\r\n- `flock_signatures.conf` — example MAC-prefix/score/description signature\r\n  list; users should extend this with their own researched signatures\r\n- `README.md` — full configuration, usage, and architecture documentation",
+      "createdAt": "2026-08-19T21:54:08Z",
+      "updatedAt": "2026-08-19T21:54:08Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/350",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 349,
       "title": "New recon toggle payload",
