@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-27T07:03:54.963Z",
+  "fetchedAt": "2026-08-27T18:47:26.144Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22571,6 +22571,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 108,
+      "title": "New Theme - HakOS",
+      "state": "open",
+      "merged": false,
+      "author": "cribb-it",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/24548670?v=4",
+      "authorUrl": "https://github.com/cribb-it",
+      "body": "HakOS is built around a dropdown menu. Once you reach the Home screen press the A/Green button and the menu will appear.\r\nFrom there you can navigate to the section you need.",
+      "createdAt": "2026-08-27T16:07:22Z",
+      "updatedAt": "2026-08-27T16:07:22Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/108",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 351,
       "title": "Flock_Detect: GPS-tag BLE detections (v9.16) and fix payload not showing under Reconnaissance",
