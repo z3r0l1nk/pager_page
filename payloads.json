@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-29T01:25:26.833Z",
+  "fetchedAt": "2026-08-29T08:35:09.840Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22600,12 +22600,18 @@
       "authorUrl": "https://github.com/stratfan",
       "body": "## Summary\n\nTwo changes to the **Flock_Detect** (\"Flock You\") reconnaissance payload:\n\n1. **GPS tagging (v9.15 → v9.16).** Each BLE detection is now tagged with a live GPS fix from `gpsd`, and a machine-readable CSV is written alongside the existing log.\n2. **Visibility fix.** Flock_Detect currently does not appear under **Reconnaissance** on the Pager because it contains a nested subdirectory. This flattens the payload folder so it renders.\n\n## Visibility fix — root cause\n\nThe Pager's payload scanner treats any directory that contains a **subdirectory** as a *category* (to recurse into) rather than a *payload*, and lists a folder as a payload only when it's a flat leaf containing `payload.sh`.\n\nUpstream, `Flock_Detect/` contains a `flock_lab_sim/` subfolder (the ESP32 companion simulator), so the scanner classifies `Flock_Detect` as a category, ignores its own `payload.sh`, and — since `flock_lab_sim/` has no `payload.sh` — nothing is listed. The payload is effectively invisible in the UI.\n\n**Fix:** move the ESP32 lab simulator out of the deployable payload folder to `docs/flock-lab-sim/` (outside the `library/` tree). `Flock_Detect/` becomes a flat leaf and renders correctly. Verified on-device: after flattening, \"Flock You\" appears under Reconnaissance. The flat-folder requirement is now documented in the payload README.\n\nThe simulator runs on separate Arduino/ESP32 hardware, not the Pager, so it does not belong in the deployable payload directory.\n\n## GPS tagging details (v9.16)\n\n- Reads one fix per scan cycle via `gpspipe -w` + `jq` (the same pattern used by `gps-checker`) — position doesn't change meaningfully within a ~12s scan window, and this avoids multiplying GPS delay across multiple detections.\n- Appends `lat,lon` to each on-screen detection line and to the log file.\n- Falls back to `NO_GPS` when there's no 2D/3D fix (no receiver / no lock yet), so the scanner still runs normally without GPS.\n- Writes a companion `flock_gps_<timestamp>.csv` (`time,mac,name,lat,lon`) for map-ready output.\n\n## Testing\n\n- `bash -n` clean.\n- Both tag branches (fix / no-fix) unit-tested.\n- `get_gps_fix()` exercised against a live `gpsd` on a WiFi Pineapple Pager — correctly returned `NO_GPS` at `mode:1` (no lock) and correct `lat,lon` on a valid fix.\n- Full payload run on-device (timeout-bounded): starts cleanly, survives scan cycles, creates both `.txt` and `.csv` outputs, no crash.\n- Confirmed the flattened folder now lists under Reconnaissance on the device.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
       "createdAt": "2026-08-22T04:05:35Z",
-      "updatedAt": "2026-08-28T02:19:05Z",
+      "updatedAt": "2026-08-29T05:22:54Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/351",
       "repo": "wifipineapplepager-payloads",
-      "labels": [],
+      "labels": [
+        {
+          "name": "Pending requested changes",
+          "color": "0e5bd2",
+          "description": "Awaiting changes from author"
+        }
+      ],
       "comments": 0,
       "draft": false
     },
