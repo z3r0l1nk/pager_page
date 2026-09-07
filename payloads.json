@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-07T02:41:28.752Z",
+  "fetchedAt": "2026-09-07T08:52:58.802Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22924,6 +22924,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 109,
+      "title": "Update - Space Horror - 1.1.0",
+      "state": "open",
+      "merged": false,
+      "author": "cncartistsec",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
+      "authorUrl": "https://github.com/cncartistsec",
+      "body": "Updated theme for FW 1.1.0",
+      "createdAt": "2026-09-07T08:31:15Z",
+      "updatedAt": "2026-09-07T08:31:15Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/109",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 353,
       "title": "fix(SkimmerScanner): load signature file when launched from the Pager UI (/tmp copy)",
