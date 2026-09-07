@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-06T23:35:32.291Z",
+  "fetchedAt": "2026-09-07T02:41:28.752Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22934,7 +22934,7 @@
       "authorUrl": "https://github.com/stratfan",
       "body": "## Problem\n\n`SkimmerScanner` reports **\"No signature file found, using built-in patterns only\"** on every launch from the Pager UI, silently skipping the entire user-editable `skimmer_signatures.txt` database.\n\n**Root cause:** the Pager UI runs payloads from a copy at `/tmp/payload-<id>.sh`. The script resolves its data directory from its own location:\n\n```sh\nWORK_DIR=\"$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )\" && pwd )\"\nSIGNATURES_FILE=\"$WORK_DIR/skimmer_signatures.txt\"\n```\n\nWhen launched from the UI, `WORK_DIR` is `/tmp`, where `skimmer_signatures.txt` does not exist — so the signature database is never loaded. (It only works if you run `payload.sh` directly over SSH from the install folder.)\n\n## Fix\n\nResolve the install directory by finding the directory that actually contains `skimmer_signatures.txt` — the script's own dir first (direct runs), then the standard install path — falling back to the script dir if not found:\n\n```sh\n_SELF_DIR=\"$( cd \"$( dirname \"${BASH_SOURCE[0]}\" )\" && pwd )\"\nINSTALL_DIR=\"\"\nfor _d in \"$_SELF_DIR\" \\\n          \"/root/payloads/user/general/SkimmerScanner\" \\\n          \"/sd/payloads/user/general/SkimmerScanner\"; do\n    if [ -f \"$_d/skimmer_signatures.txt\" ]; then INSTALL_DIR=\"$_d\"; break; fi\ndone\n[ -n \"$INSTALL_DIR\" ] || INSTALL_DIR=\"$_SELF_DIR\"\n```\n\nTwo small related hardening changes in the same block:\n- **Detections log** anchored to the install dir (was `/tmp` when launched from the copy, so logs vanished).\n- **BT scan cache** moved to a per-PID `/tmp` file (`/tmp/skimmer_bt_scan.$$.tmp`) so concurrent/leftover runs can't clobber each other's cache.\n\nNo behavior change when run directly from the install folder.\n\n## Testing\n\nVerified on a WiFi Pineapple Pager: with the fixed payload deployed, a simulated UI launch (running a copy from `/tmp`) resolves `INSTALL_DIR=/root/payloads/user/general/SkimmerScanner` and loads all **15** signature patterns — the UI now shows *\"Loaded signature database\"* instead of the \"no signature file\" warning. `bash -n` clean on-device.\n\nOnly `library/user/general/SkimmerScanner/payload.sh` is touched.\n",
       "createdAt": "2026-09-06T23:33:16Z",
-      "updatedAt": "2026-09-06T23:33:16Z",
+      "updatedAt": "2026-09-07T00:30:54Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/353",
