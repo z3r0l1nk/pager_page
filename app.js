@@ -1051,6 +1051,10 @@
     function simpleMarkdown(md, baseUrl, stripImages) {
         if (!md) return '';
 
+        // Sanitize a safe HTML tag by removing event handlers and javascript: URLs
+        const sanitizeTag = (tag) => tag
+            .replace(/\s+on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>\/]*)/gi, '')
+            .replace(/((?:href|src|action)\s*=\s*["'])javascript:[^"']*/gi, '$1#');
         // Preserve safe HTML tags and entities through escaping
         const preserved = [];
         const safeTags = /^\/?(img|br|hr|p|h[1-6]|em|strong|b|i|a|div|span|pre|code|ul|ol|li|table|thead|tbody|tr|td|th|blockquote|details|summary|sub|sup)$/i;
@@ -1074,7 +1078,7 @@
                 match = match.replace(/<img/i, '<img style="max-width:100%;border-radius:8px;margin:8px 0"');
             }
             const idx = preserved.length;
-            preserved.push(match);
+            preserved.push(sanitizeTag(match));
             return `\x00SAFE${idx}\x00`;
         });
         // Preserve HTML entities
