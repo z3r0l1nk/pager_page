@@ -36,7 +36,7 @@
     // ================================================================
     async function init() {
         try {
-            const res = await fetch('payloads.json');
+        const res = await fetch('payloads.json', { credentials: 'same-origin' });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             payloadData = await res.json();
 
