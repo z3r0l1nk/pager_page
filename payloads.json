@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-08T14:05:13.409Z",
+  "fetchedAt": "2026-09-08T19:14:08.742Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22924,6 +22924,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 354,
+      "title": "Fix stdout hijack causing device hang on exit",
+      "state": "open",
+      "merged": false,
+      "author": "0xD1g5",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/123759190?v=4",
+      "authorUrl": "https://github.com/0xD1g5",
+      "body": "Removed exec-based stdout redirect (exec 1>$RF ... exec 1>&3) that\r\ncould leave the START_SPINNER background child holding the\r\nframework's stdout channel open past script exit, causing the\r\ndevice to hang and require a hard reboot. Report body is now\r\nwritten via a grouped redirect ({ ... } > \"$RF\") so the process\r\nstdout is never reassigned. Added a trap to guarantee STOP_SPINNER\r\nruns on any exit path.\r\n\r\nVersion bumped 3.6 -> 3.7.",
+      "createdAt": "2026-09-08T16:36:06Z",
+      "updatedAt": "2026-09-08T16:36:06Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/354",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 109,
       "title": "Update - Space Horror - 1.1.0",
