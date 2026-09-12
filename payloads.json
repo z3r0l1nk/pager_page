@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-12T02:57:06.196Z",
+  "fetchedAt": "2026-09-12T08:19:51.899Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22934,7 +22934,7 @@
       "authorUrl": "https://github.com/cncartistsec",
       "body": "BluePine v1.6 includes GPS Management, Node Support, AirTag Detection, and multiple fixes/optimizations.\r\n\r\n\r\n<img width=\"1600\" height=\"923\" alt=\"BT-bluepine-nodes\" src=\"https://github.com/user-attachments/assets/b3c879d3-11ae-4313-9bbf-482c671c702f\" />\r\n\r\nNodes provide extra support data for Bluetooth scans, widen Bluetooth coverage, reveal more devices per scan, and accurately detect AirTags and Meshtastic/MeshCore. Nodes can be used with the pager or AArch64/ARM64/Debian and are currently tested running on XIAO_ESP32-C5's.",
       "createdAt": "2026-09-09T12:52:14Z",
-      "updatedAt": "2026-09-09T12:52:14Z",
+      "updatedAt": "2026-09-12T03:09:29Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/355",
