@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T22:37:04.215Z",
+  "fetchedAt": "2026-09-17T03:13:28.571Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22938,6 +22938,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 110,
+      "title": "Update - Space Horror - 1.1.2",
+      "state": "open",
+      "merged": false,
+      "author": "cncartistsec",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
+      "authorUrl": "https://github.com/cncartistsec",
+      "body": "Add Censor Mode option to Recon Settings Menu.",
+      "createdAt": "2026-09-17T00:57:04Z",
+      "updatedAt": "2026-09-17T00:57:04Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/110",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 355,
       "title": "Update BluePine to v1.6 - GPS Management, Node Support, AirTag Detection, Fixes",
