@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-20T20:15:27.992Z",
+  "fetchedAt": "2026-09-20T23:49:17.858Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22938,6 +22938,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 356,
+      "title": "Add O.MG Controller Payload",
+      "state": "open",
+      "merged": false,
+      "author": "GasStationWeenie",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/162852247?v=4",
+      "authorUrl": "https://github.com/GasStationWeenie",
+      "body": "- Author: Gas Station Hot Dog\r\n- Payload Name: O.MG Controller\r\n- Purpose: Control an O.MG Plug or Cable from the Pager.  Connect the pager to the O.MG device's wireless AP and use the pager's payload to execute/view/import/modify/backup/restore payloads, edit USB Descriptors, clear slots, enable mouse jiggler, etc.\r\n- Tested with O.MG Plug on latest v3 firmware",
+      "createdAt": "2026-09-20T22:58:38Z",
+      "updatedAt": "2026-09-20T22:58:38Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/356",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 110,
       "title": "Update - Space Horror - 1.1.2",
