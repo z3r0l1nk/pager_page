@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T09:33:26.147Z",
+  "fetchedAt": "2026-09-21T16:10:27.846Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22948,7 +22948,7 @@
       "authorUrl": "https://github.com/GasStationWeenie",
       "body": "- Author: Gas Station Hot Dog\r\n- Payload Name: O.MG Controller\r\n- Purpose: Control an O.MG Plug or Cable from the Pager.  Connect the pager to the O.MG device's wireless AP and use the pager's payload to execute/view/import/modify/backup/restore payloads, edit USB Descriptors, clear slots, enable mouse jiggler, etc.\r\n- Tested with O.MG Plug on latest v3 firmware",
       "createdAt": "2026-09-20T22:58:38Z",
-      "updatedAt": "2026-09-20T22:58:38Z",
+      "updatedAt": "2026-09-21T14:51:45Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/356",
@@ -23062,7 +23062,7 @@
       "authorUrl": "https://github.com/turkkat284-ui",
       "body": "- Payload Name: Wi-Fi Beacon Bomb\r\n- Author: turkkat284\r\n- Description: Broadcasts 1,000 fake 802.11 Access Points using Scapy raw packet injection (For educational and authorized testing purposes only.) .",
       "createdAt": "2026-08-29T19:44:44Z",
-      "updatedAt": "2026-09-16T16:39:34Z",
+      "updatedAt": "2026-09-21T14:53:50Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/352",
