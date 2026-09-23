@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T16:00:59.491Z",
+  "fetchedAt": "2026-09-23T21:01:15.649Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23062,7 +23062,7 @@
       "authorUrl": "https://github.com/turkkat284-ui",
       "body": "- Payload Name: Wi-Fi Beacon Bomb\r\n- Author: turkkat284\r\n- Description: Broadcasts 1,000 fake 802.11 Access Points using Scapy raw packet injection (For educational and authorized testing purposes only.) .",
       "createdAt": "2026-08-29T19:44:44Z",
-      "updatedAt": "2026-09-21T14:53:50Z",
+      "updatedAt": "2026-09-23T17:28:10Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/352",
