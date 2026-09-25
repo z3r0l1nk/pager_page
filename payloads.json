@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T22:58:48.754Z",
+  "fetchedAt": "2026-09-25T03:15:12.235Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22938,6 +22938,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 111,
+      "title": "Add Dockside theme",
+      "state": "open",
+      "merged": false,
+      "author": "TheJenk",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1393294?v=4",
+      "authorUrl": "https://github.com/TheJenk",
+      "body": "A light, desktop-computer style theme for the WiFi Pineapple Pager (built from the stock wargames theme).\r\n\r\n- Desktop dashboard: wallpaper, menu bar and a dock of six custom app icons (magnify, indicator dot and tooltip on selection)\r\n- Payload browsing as file-browser windows with sidebar, Name/Kind list and a path bar; launch prompt as a sheet with a blinking cursor icon\r\n- Settings and PineAP as a system-settings app; Pager Portal as an app store; recon lists as tables and an activity-monitor style graph\r\n- Push buttons, selection bars, scroll bars and redrawn keyboards, alerts, update, lock and QR screens",
+      "createdAt": "2026-09-25T02:06:45Z",
+      "updatedAt": "2026-09-25T02:06:45Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/111",
+      "repo": "wifipineapplepager-themes",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 356,
       "title": "Add O.MG Controller Payload",
