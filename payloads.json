@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T19:29:47.309Z",
+  "fetchedAt": "2026-09-27T22:47:02.866Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22938,6 +22938,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 358,
+      "title": "Pager_quack update",
+      "state": "open",
+      "merged": false,
+      "author": "spywill",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/71735542?v=4",
+      "authorUrl": "https://github.com/spywill",
+      "body": "moved Pager_keystrokes to Pager_quack  update to a new menu system",
+      "createdAt": "2026-09-27T20:52:32Z",
+      "updatedAt": "2026-09-27T20:52:32Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/358",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 111,
       "title": "Add Dockside theme",
