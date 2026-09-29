@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-29T14:34:23.602Z",
+  "fetchedAt": "2026-09-29T20:25:19.978Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22948,7 +22948,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "moved Pager_keystrokes to Pager_quack  update to a new menu system",
       "createdAt": "2026-09-27T20:52:32Z",
-      "updatedAt": "2026-09-27T20:52:32Z",
+      "updatedAt": "2026-09-29T19:50:23Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/358",
