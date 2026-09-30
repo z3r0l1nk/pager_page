@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-30T14:33:44.692Z",
+  "fetchedAt": "2026-09-30T20:29:58.574Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22956,7 +22956,7 @@
       "authorUrl": "https://github.com/TheJenk",
       "body": "Two themes for the WiFi Pineapple Pager (built from the stock wargames theme): **Dockside**, a light, desktop-computer style theme, and **Dockside Dark**, the same design in dark mode.\n\n- Desktop dashboard: wallpaper, menu bar and a dock of six custom app icons (magnify, indicator dot and tooltip on selection)\n- Payload browsing as file-browser windows with sidebar, Name/Kind list and a path bar; launch prompt as a sheet with a blinking cursor icon\n- Settings and PineAP as a system-settings app; Pager Portal as an app store; recon lists as tables and an activity-monitor style graph\n- Push buttons, selection bars, scroll bars and redrawn keyboards, alerts, update, lock and QR screens\n- D-pad directions follow the layout (side-by-side buttons use left/right)\n- Assets are shared and cropped, and compressed like `tools/compress_theme_assets.sh`, to stay under the stock theme's decoded image size\n",
       "createdAt": "2026-09-25T02:06:45Z",
-      "updatedAt": "2026-09-29T22:40:14Z",
+      "updatedAt": "2026-09-30T17:59:59Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/111",
