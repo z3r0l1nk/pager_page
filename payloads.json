@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03T07:32:06.373Z",
+  "fetchedAt": "2026-10-03T13:00:16.550Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22927,6 +22927,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 359,
+      "title": "Add DEFCON-DEFENSE and RF-BUDDY defensive Pager payloads (+ alert hooks)",
+      "state": "open",
+      "merged": false,
+      "author": "ninedter",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/19329382?v=4",
+      "authorUrl": "https://github.com/ninedter",
+      "body": "## Summary\n\nTwo passive, **defensive** full-screen payloads for the WiFi Pineapple Pager, plus the two alert hooks they integrate with. Everything here only observes RF you can already hear (and your own inbound traffic / your own decoy AP). **Nothing transmits an attack** — no deauth, no rogue AP, no interference. Purely for authorized monitoring and incident evidence.\n\n| Path | Category | What it does |\n|---|---|---|\n| `library/user/reconnaissance/DEFCON-DEFENSE` | reconnaissance | Passive 2.4/5 GHz monitor. Correlates live Recon against your trusted/watched networks, alerts on mismatches, and makes bounded PCAP evidence captures with SHA-256 verification. Mirrors its screen to the Virtual Pager. |\n| `library/user/reconnaissance/RF-BUDDY` | reconnaissance | Office interference finder. Channel airtime/retry/overlap/Bluetooth scoring, a one-second lock-on meter, a BLE brand→type→device browser with a proximity meter, and a survey log. |\n| `library/alerts/deauth_flood_detected/defcon_sentry` | alerts | Warns loudly only when the **same** attacker sustains a deauth/disassoc flood (dedups, cooldown). |\n| `library/alerts/pineapple_client_connected/defcon_honeypot` | alerts | Warns when a client joins your own intentional decoy AP. |\n\n## Notes for reviewers\n\n- **Compiled UI, but ships ready to run.** Each full-screen payload drives a small native UI compiled for the Pager's MIPS32 userspace (mipsle, softfloat, static, stripped). The prebuilt `defcon-ui` / `rf-buddy-ui` binaries are included so the payload runs with **no on-device compilation**, and the full Go source + `build.sh` are included alongside so the binary stays auditable and reproducible (`CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -mod=vendor`). Go deps are vendored for offline builds.\n- **Self-contained.** Shared shell libraries (`pager_alert_lib.sh`, `pcap_evidence_lib.sh`) are copied into each payload directory that needs them, so every directory stands alone.\n- **No spaces in names; each payload in its own directory** under an existing category — no new categories created.\n- **Placeholders only.** `trusted_aps.conf` contains documented example lines and an explicit \"no secrets\" note; no personal SSIDs/BSSIDs, URLs, keys, or tokens. Nothing points at a live service.\n- **Not staged code.** No code is fetched from this (or any) repo at runtime.\n- **Attribution.** Both payloads are developed together at the author's project repo, cited in each payload header and README: https://github.com/ninedter/DEFCON-DEFENSE\n\n## Testing\n\n- Both MIPS binaries cross-compile cleanly from the included source.\n- Go unit test suites for both UIs pass.\n- All shell scripts pass `bash -n` syntax checks.\n\nAuthor: Henry Hu\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)",
+      "createdAt": "2026-10-03T09:42:32Z",
+      "updatedAt": "2026-10-03T09:42:32Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/359",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 358,
       "title": "Pager_quack update",
