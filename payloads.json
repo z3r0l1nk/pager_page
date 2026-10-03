@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03T13:00:16.550Z",
+  "fetchedAt": "2026-10-03T17:44:06.259Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22927,6 +22927,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 360,
+      "title": "Add Power Aware Display with battery and USB timeout profiles",
+      "state": "open",
+      "merged": false,
+      "author": "gevrey",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1197465?v=4",
+      "authorUrl": "https://github.com/gevrey",
+      "body": "Adds a General payload with separate battery and USB display timeouts, defaulting to 60 seconds on battery and Never on external power. Owners can edit both timeouts, inspect Status and Recent events, calibrate power detection, and enable or disable an independent OpenWrt service from the native Pager menu.\n\nThe worker uses native wake/sleep API calls and a non-exclusive physical-button observer. It does not change firmware preferences, synthesize keys, or restart the Pager UI or PineAP. Enable installs the bundled init script and enables startup; Disable restores native display control. The package includes the static MIPS observer, C source, reproducible build command, dependency notices and tests.\n\nValidation:\n- Local tests pass for power calibration, settings validation, idle boundaries, observer failure, fresh init installation and overwrite protection.\n- Shell syntax checks pass; the included observer rebuilds byte for byte with the documented Zig command.\n- On one physical Pager, Never stayed bright beyond 80 seconds and a temporary 60-second external timeout slept at its deadline. A physical green press opened Status normally, incremented the observer count and reset inactivity.\n- Both native editors saved their defaults. Stop/start and boot links were checked. The community installer was also checked in temporary storage on the device, without changing the running service.\n\nKnown limits are documented prominently: virtual buttons while already awake do not reset the timer; the tested firmware requires current-based power calibration because no separate USB online sensor was found; game handling detects UI suspension/absence; a full reboot and other firmware versions have not been acceptance-tested. This is a community contribution for maintainer review, not a claim of universal firmware support.\n",
+      "createdAt": "2026-10-03T13:06:04Z",
+      "updatedAt": "2026-10-03T13:06:04Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/360",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 359,
       "title": "Add DEFCON-DEFENSE and RF-BUDDY defensive Pager payloads (+ alert hooks)",
