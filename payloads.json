@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-04T21:00:10.466Z",
+  "fetchedAt": "2026-10-05T00:24:39.424Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -22929,6 +22929,25 @@
   "totalRingtones": 101,
   "pullRequests": [
     {
+      "number": 361,
+      "title": "Add Loot Browser payload",
+      "state": "open",
+      "merged": false,
+      "author": "TheJenk",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/1393294?v=4",
+      "authorUrl": "https://github.com/TheJenk",
+      "body": "**Loot Browser** — browse `/root/loot` right on the Pager screen.\n\n- **Folder view** — subfolders first, then files with sizes; scrollbar when needed.\n- **Text reader** — opens `.txt/.log/.csv/.tsv/.md/.conf/.json` and anything that sniffs as text, word-wrapped with a line counter (first 128 KB of huge files).\n- **Info card** — for non-text loot (pcap, handshakes, images, archives…) it shows the type/size and the exact `scp` path + web-UI address to copy it off.\n\n**Works on every theme** — ships with its own clean dark look that runs on any Pager theme, plus a **custom look for Dockside and Dockside Dark**: it detects the active theme at launch and, on Dockside, draws a matching light Finder window (traffic lights, Favorites sidebar, Name/Size columns, live path bar); Dockside Dark gets the same in dark. The path bar and folder name are real and update as you browse.\n\n**Read-only & safe** — only ever reads from `/root/loot`; never writes, moves, renames or deletes, and can't browse above `/root/loot`. Uses the official `UI_TAKEOVER` / `UI_RELEASE` handoff.\n\n**Native binary** — `lootbrowser` is a small freestanding MIPS program (raw syscalls, integer-only for the FPU-less MT7628, draws at 20 fps). Source (`lootbrowser.c`) and `build.sh` are included, and the build is reproducible: `mipsel-unknown-linux-gnu-gcc` (GCC 15.2.0) with the flags in `build.sh` produces a byte-for-byte identical binary (SHA-256 `279467079a4b7b7ca368fde1d2e3ecfb2b90a66a98b0a56ffdbc8bb19cabe280`). The prebuilt binary is included so it runs on install, per the repo's \"include all resources required.\"\n\n- **Author:** Jenx · **Category:** general · **Version:** 1.1\n- Controls, file list and build/verify steps are in the payload's `README.md`.\n",
+      "createdAt": "2026-10-04T22:48:36Z",
+      "updatedAt": "2026-10-04T22:48:36Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/361",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
+    {
       "number": 360,
       "title": "Add Power Aware Display with battery and USB timeout profiles",
       "state": "open",
@@ -22987,15 +23006,15 @@
     },
     {
       "number": 111,
-      "title": "Add Dockside and Dockside Dark themes",
+      "title": "Add Dockside and Dockside Dark themes (firmware 1.1.3)",
       "state": "open",
       "merged": false,
       "author": "TheJenk",
       "authorAvatar": "https://avatars.githubusercontent.com/u/1393294?v=4",
       "authorUrl": "https://github.com/TheJenk",
-      "body": "Two themes for the WiFi Pineapple Pager (built from the stock wargames theme): **Dockside**, a light, desktop-computer style theme, and **Dockside Dark**, the same design in dark mode.\n\n- Desktop dashboard: wallpaper, menu bar and a dock of six custom app icons (magnify, indicator dot and tooltip on selection)\n- Payload browsing as file-browser windows with sidebar, Name/Kind list and a path bar; launch prompt as a sheet with a blinking cursor icon\n- Settings and PineAP as a system-settings app; Pager Portal as an app store; recon lists as tables and an activity-monitor style graph\n- Push buttons, selection bars, scroll bars and redrawn keyboards, alerts, update, lock and QR screens\n- D-pad directions follow the layout (side-by-side buttons use left/right)\n- Assets are shared and cropped, and compressed like `tools/compress_theme_assets.sh`, to stay under the stock theme's decoded image size\n",
+      "body": "> **Ready for Pager firmware 1.1.3** (updated to theme framework **0.8**). Also loads on earlier firmware.\n\nTwo themes for the WiFi Pineapple Pager (built from the stock wargames theme): **Dockside**, a light, desktop-computer style theme, and **Dockside Dark**, the same design in dark mode.\n\n- Desktop dashboard: wallpaper, menu bar and a dock of six custom app icons (magnify, indicator dot and tooltip on selection)\n- Payload browsing as file-browser windows with sidebar, Name/Kind list and a path bar; launch prompt as a sheet with a blinking cursor icon\n- Settings and PineAP as a system-settings app; Pager Portal as an app store; recon lists as tables and an activity-monitor style graph\n- Push buttons, selection bars, scroll bars and redrawn keyboards, alerts, update, lock and QR screens\n- D-pad directions follow the layout (side-by-side buttons use left/right)\n- Assets are shared and cropped, and compressed like `tools/compress_theme_assets.sh`, to stay under the stock theme's decoded image size\n\n### Firmware 1.1.3 update\n- `theme_framework_version` bumped to **0.8** (0.7 errors on 1.1.3)\n- Added the new **WiFi client-mode** status icon (connected / disconnected / off) that 1.1.3 introduced, and split vibrate into distinct on/off glyphs\n- Refreshed the status-bar icons to a consistent macOS-style size and respaced the cluster so the clock clears the right edge\n- Power menu: **Check for Updates…** (launches the firmware update) in place of Pager Portal\n",
       "createdAt": "2026-09-25T02:06:45Z",
-      "updatedAt": "2026-10-02T17:34:59Z",
+      "updatedAt": "2026-10-04T22:09:51Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/111",
