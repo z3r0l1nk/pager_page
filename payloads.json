@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T19:01:48.287Z",
+  "fetchedAt": "2026-10-06T01:07:43.869Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -5988,12 +5988,13 @@
       "name": "Space_Horror",
       "title": "Space Horror",
       "author": "cncartist",
-      "description": "\"Space Horror\" is a dark colorful theme optimized for the pager with a space ambience and many unique backgrounds and creatures.  The theme is tested on 1.1.0 and originally built from \"Zombie UFO\".  I hope you have as much fun using my theme as I did creating it. ![Space Horror Payloads Dashboard](",
-      "readme": "# Space Horror\n\"Space Horror\" is a dark colorful theme optimized for the pager with a space ambience and many unique backgrounds and creatures.  The theme is tested on 1.1.0 and originally built from \"Zombie UFO\".  I hope you have as much fun using my theme as I did creating it.\n\n\n![Space Horror Payloads Dashboard](Space_Horror_payloads.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_payloads-dash.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_launch-payload.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_recon.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_unlock.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_keyboard.png)\n\n\nDuring testing with other themes, the pager would run very warm and possibly overheat over a long period of time.  \"Space Horror\" is optimized to not overheat the pager while keeping a nice color contrast and full graphics.  It has been tested for days running payloads at 50% brightness (in moderate temperature environments) without any issue.  \n\n\n# Space Horror Theme Screenshots\n![Space Horror Theme Screenshots](Space_Horror_full.jpg)\n\n\nThanks again Zombie Joe!\n",
+      "description": "\"Space Horror\" is a dark colorful theme optimized for the pager with a space ambience and many unique backgrounds and creatures.  The theme is originally built from \"Zombie UFO\" and I hope you have as much fun using my theme as I did creating it. ![Space Horror Payloads Dashboard](Space_Horror_paylo",
+      "readme": "# Space Horror\n\"Space Horror\" is a dark colorful theme optimized for the pager with a space ambience and many unique backgrounds and creatures.  The theme is originally built from \"Zombie UFO\" and I hope you have as much fun using my theme as I did creating it.\n\n\n![Space Horror Payloads Dashboard](Space_Horror_payloads.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_payloads-dash.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_launch-payload.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_recon.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_unlock.png)\n\n![Space Horror Payloads Dashboard](Space_Horror_keyboard.png)\n\n\nDuring testing with other themes, the pager would run very warm and possibly overheat over a long period of time.  \"Space Horror\" is optimized to not overheat the pager while keeping a nice color contrast and full graphics.  It has been tested for days running payloads at 50% brightness (in moderate temperature environments) without any issue.  \n\n\n# Space Horror Theme Screenshots\n![Space Horror Theme Screenshots](Space_Horror_full.jpg)\n\n\nThanks again Zombie Joe!\n",
       "themeJson": {
         "author": "cncartist",
         "theme_version": "1.1.0",
-        "theme_framework_version": "0.7",
+        "theme_framework_version": "0.8",
+        "fallback_menu": "components/fallback_menu.json",
         "status_bars": {
           "default": "components/status_bars/status_bar.json",
           "horror": "components/status_bars/status_bar2.json",
@@ -6009,6 +6010,7 @@
           "client_mode_wizard": "components/client_mode_wizard.json",
           "evilwpa_wizard": "components/pineap/evilwpa_wizard.json",
           "power_menu": "components/dashboards/power_menu.json",
+          "quick_settings": "components/dashboards/quick_settings.json",
           "regulatory": "components/settings/regulatory.json",
           "dashboard_path": "components/dashboards/wargames_dashboard.json",
           "wardriving_dashboard": "components/dashboards/dashboard_wardriving.json",
@@ -12943,6 +12945,724 @@
         "theme.json"
       ],
       "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/dedsec"
+    },
+    {
+      "name": "dockside",
+      "title": "Dockside",
+      "author": "Jenx",
+      "description": "- Author: Jenx - Version: 0.1.0 - Theme framework: 0.7 (built from the stock `wargames` theme)",
+      "readme": "# Dockside\n\n- Author: Jenx\n- Version: 0.1.0\n- Theme framework: 0.7 (built from the stock `wargames` theme)\n\n## Description\n\nA light, desktop-computer look for the WiFi Pineapple Pager.\n\n- **Desktop:** the main screen is a desktop with a wallpaper, a menu bar (the Pager's status icons\n  sit in it like menu bar extras), desktop icons and a dock of six custom app icons. The selected\n  icon magnifies, gets an indicator dot, and shows its name in a tooltip above it.\n- **Menu bar:** press up (or B) from the dock to reach the pineapple, then left/right along the\n  menu bar. The pineapple opens the power menu; **Pager** opens About, and **Display**, **Sound**\n  and **Network** open those settings pages. The power menu also has **Settings...** and\n  **Pager Portal...** shortcuts. A divider in the dock sets Settings apart.\n- **Windows everywhere:** every screen is a window with a title bar and red/yellow/green window\n  buttons. Selected rows get a blue highlight bar with white text, dialogs use rounded push\n  buttons (the focused one is blue), toggles are green switches, and longer lists and pages show\n  a classic scroll bar.\n- **Payloads:** browsing user, recon and alert payloads looks like a file browser, with a\n  Favorites sidebar, a Name/Kind list and a path bar showing where you are\n  (`Pager HD > payloads > user`). Launching a payload drops a sheet from that\n  window, where the Terminal icon's cursor blinks.\n- **Settings and PineAP:** styled like a system-settings app, with a sidebar of colored category\n  icons and grouped rows showing switches, current values and chevrons, previewed live as you\n  move through the sidebar. About lists the device info with a scroll bar and a Developer Tools\n  row.\n- **Pager Portal:** styled like an app store, with Discover tiles, section rows, GET/UPDATE pills\n  and payload pages. Its icon shows the Pager itself, drawn like Hak5's Pager character.\n- **Recon:** an activity-monitor style graph, results and clients as tables with column headers,\n  and access point / client details with an info grid beside an actions card.\n- **Everything else:** the power menu drops down from the pineapple, the payload log is a\n  Terminal window, confirmations and option/edit dialogs are sheets, alerts slide in as\n  notification cards, setup has a sidebar of steps, the lock screen is a login window,\n  locked buttons show a small overlay, the keyboards are redrawn as keycaps, and the boot, update,\n  battery, heat, license and QR screens all match the look.\n\n## Installation\n\n1. Copy the `dockside` folder to `/root/themes/` (or `/mmc/root/themes/`) on your Pager\n2. Go to **Settings > General > Theme**\n3. Select **dockside**\n\n## Known limitations\n\n- Status icons and some small glyphs are recolored stock art, not redrawn.\n- Text drawn by the firmware uses the Pager's system font, so on-screen labels are monospaced.\n",
+      "themeJson": {
+        "theme_version": "0.2.0",
+        "theme_framework_version": "0.8",
+        "status_bars": {
+          "default": "components/status_bars/status_bar.json",
+          "network": "components/status_bars/status_bar_network.json",
+          "recon": "components/status_bars/status_bar_recon.json",
+          "min": "components/status_bars/status_bar_min.json",
+          "gps": "components/status_bars/status_bar_gps.json"
+        },
+        "generic_menus": {
+          "tutorial": "components/tutorial.json",
+          "os_licenses": "components/os_licenses.json",
+          "management_ap_wizard": "components/management_ap_wizard.json",
+          "client_mode_wizard": "components/client_mode_wizard.json",
+          "evilwpa_wizard": "components/pineap/evilwpa_wizard.json",
+          "power_menu": "components/dashboards/power_menu.json",
+          "regulatory": "components/settings/regulatory.json",
+          "dashboard_path": "components/dashboards/dockside_dashboard.json",
+          "alerts_dashboard": "components/dashboards/dashboard_alerts.json",
+          "pineap_pineap_submenu": "components/pineap/submenu_pineap_pineap.json",
+          "pineap_evilwpa_submenu": "components/pineap/submenu_pineap_evilwpa.json",
+          "pineap_filters_submenu": "components/pineap/submenu_pineap_filters.json",
+          "pineap_openap_submenu": "components/pineap/submenu_pineap_openap.json",
+          "pineap_ssidpool_submenu": "components/pineap/submenu_pineap_ssidpool.json",
+          "settings_general_submenu": "components/settings/submenu_settings_general.json",
+          "settings_display_submenu": "components/settings/submenu_settings_display.json",
+          "settings_ringtone_submenu": "components/settings/submenu_settings_ringtone.json",
+          "settings_network_submenu": "components/settings/submenu_settings_network.json",
+          "settings_system_submenu": "components/settings/submenu_settings_system.json",
+          "settings_datetime_submenu": "components/settings/submenu_settings_datetime.json",
+          "settings_gps_submenu": "components/settings/submenu_settings_gps.json",
+          "settings_updates_submenu": "components/settings/submenu_settings_updates.json",
+          "settings_help_submenu": "components/settings/submenu_settings_help.json",
+          "settings_about_submenu": "components/settings/submenu_settings_about.json",
+          "recon_settings": "components/recon/recon_settings.json",
+          "recon_band_settings": "components/recon/recon_band_settings.json",
+          "recon_selected_ap_menu": "components/recon/recon_selected_ap_menu.json",
+          "recon_selected_ap_client_menu": "components/recon/recon_selected_ap_client_menu.json",
+          "pineap_menu": "components/dashboards/dashboard_pineap.json",
+          "settings_menu": "components/dashboards/dashboard_settings.json",
+          "pager_portal_dashboard": "components/dashboards/dashboard_pager_portal.json",
+          "pager_portal_update_payloads_dashboard": "components/pager_portal/dashboard_pager_portal_update_payloads.json",
+          "pager_portal_themes_dashboard": "components/pager_portal/dashboard_pager_portal_themes.json",
+          "pager_portal_get_payloads_dashboard": "components/pager_portal/pager_portal_get_payloads_dashboard.json",
+          "pager_portal_view_payload_details": "components/pager_portal/pager_portal_view_payload_info.json",
+          "pager_portal_view_updatable_payload_details": "components/pager_portal/pager_portal_view_updatable_payload_info.json",
+          "pager_portal_view_installed_payload_details": "components/pager_portal/pager_portal_view_installed_payload_info.json"
+        },
+        "pager_portal_payloads_dashboard": "components/pager_portal/dashboard_pager_portal_payloads.json",
+        "pager_portal_alert_payload_categories": "components/pager_portal/pager_portal_get_alert_payloads.json",
+        "pager_portal_user_payload_categories": "components/pager_portal/pager_portal_get_user_payloads.json",
+        "pager_portal_recon_payload_categories": "components/pager_portal/pager_portal_get_recon_payloads.json",
+        "pager_portal_installed_payloads_list": "components/pager_portal/pager_portal_installed_payloads_list.json",
+        "pager_portal_update_payloads_list": "components/pager_portal/pager_portal_update_payloads_list.json",
+        "pager_portal_get_payloads_for_category_list": "components/pager_portal/pager_portal_get_payloads_for_category_list.json",
+        "option_dialogs": {
+          "option_dialog": "components/dialogs/ui_option_dialog.json",
+          "option_dialog_recon": "components/dialogs/ui_option_dialog_recon.json",
+          "option_dialog_alerts": "components/dialogs/ui_option_dialog_alerts.json",
+          "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
+          "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
+        },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
+        "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
+        "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
+        "payloads_for_category_list_path": "components/payloads_for_category_list.json",
+        "payload_log_path": "components/payload_log.json",
+        "filter_list_path": "components/filter_list.json",
+        "pineap_ssid_pool_list_path": "components/pineap_ssid_pool_list.json",
+        "pineap_clients_list_path": "components/pineap/submenu_pineap_clients.json",
+        "alerts_dialog_submenu_path": "components/alert_payloads_for_category_list.json",
+        "low_battery_alert_path": "components/alerts/low_battery_alert.json",
+        "critical_battery_alert_path": "components/alerts/critical_battery_alert.json",
+        "error_dialog_path": "components/alerts/alert_error_dialog.json",
+        "alert_dialog_path": "components/alerts/alert_info_dialog.json",
+        "warning_dialog_path": "components/alerts/alert_warning_dialog.json",
+        "spinner_path": "components/spinner.json",
+        "boot_spinner_path": "components/boot_animation.json",
+        "keyboard_path": "components/keyboards/ui_keyboard.json",
+        "number_keyboard_path": "components/keyboards/ui_keyboard_numeric.json",
+        "ip_keyboard_path": "components/keyboards/ui_keyboard_ip.json",
+        "mac_keyboard_path": "components/keyboards/ui_keyboard_hex.json",
+        "recon_payloads_dashboard_path": "components/dashboards/dashboard_recon_payloads.json",
+        "recon_payloads_for_category_list_path": "components/recon_payloads_for_category_list.json",
+        "recon_dashboard_path": "components/dashboards/dashboard_recon.json",
+        "recon_lists": {
+          "recon_list": "components/recon/recon_results_list.json"
+        },
+        "recon_ap_clients_list_path": "components/recon/recon_ap_clients_list.json",
+        "edit_string_dialog_path": "components/dialogs/edit_string_dialog.json",
+        "edit_ip_dialog_path": "components/dialogs/edit_ip_dialog.json",
+        "edit_mac_dialog_path": "components/dialogs/edit_mac_dialog.json",
+        "edit_number_dialog_path": "components/dialogs/edit_number_dialog.json",
+        "confirmation_dialog_path": "components/dialogs/confirmation_dialog.json",
+        "setup_wizard_path": "components/setup_wizard.json",
+        "checking_for_updates_path": "components/check_for_updates.json",
+        "developer_menu_path": "components/developer_menu.json",
+        "lock_screen_path": "components/lock_screen.json",
+        "buttons_locked_screen_path": "components/buttons_locked_screen.json",
+        "device_too_hot_warning_path": "assets/warn_device_too_hot.png",
+        "device_dimming_screen_path": "assets/warn_device_dimming_screen.png",
+        "help_info_path": "assets/help_qr.png",
+        "license_info_path": "assets/license_qr.png",
+        "virtual_pager_info_path": "assets/virt_qr.png",
+        "toggle_templates": {
+          "toggle": "components/templates/toggle.json",
+          "green_toggle": "components/templates/green_toggle.json",
+          "disabled_toggle": "components/templates/disabled_toggle.json",
+          "checkbox": "components/templates/checkbox.json",
+          "pineap_filter_mode": "components/templates/pineap_filter_mode.json",
+          "disabled_pineap_filter_mode": "components/templates/disabled_pineap_filter_mode.json"
+        },
+        "string_templates": {
+          "recon_payload_title": "components/templates/recon_payload_title.json",
+          "recon_payload_title_selected": "components/templates/recon_payload_title_selected.json",
+          "alert_payload_title": "components/templates/alert_payload_title.json",
+          "alert_payload_title_selected": "components/templates/alert_payload_title_selected.json",
+          "client_ssid": "components/templates/client_ssid.json",
+          "client_ssid_selected": "components/templates/client_ssid_selected.json",
+          "client_mac": "components/templates/client_mac.json",
+          "client_mac_selected": "components/templates/client_mac_selected.json",
+          "timestamp": "components/templates/timestamp.json",
+          "spinner_text": "components/templates/spinner_text.json",
+          "string": "components/templates/string.json",
+          "payload_name": "components/templates/payload_name_in_list.json",
+          "payload_name_selected": "components/templates/payload_name_in_list_selected.json",
+          "alert_info_dialog_text": "components/templates/alert_info_dialog_text.json",
+          "string_title": "components/templates/string_title.json",
+          "selected_string": "components/templates/selected_string.json",
+          "error_text": "components/templates/error_text.json",
+          "confirmation_dialog_text": "components/templates/confirmation_dialog_text.json",
+          "option_dialog_string": "components/templates/option_dialog_string.json",
+          "option_dialog_string_selected": "components/templates/option_dialog_string_selected.json",
+          "ssid_pool_string": "components/templates/ssid_pool_string.json",
+          "ssid_pool_string_selected": "components/templates/ssid_pool_string_selected.json",
+          "network_filter_string": "components/templates/network_filter_string.json",
+          "network_filter_string_selected": "components/templates/network_filter_string_selected.json",
+          "payload_title": "components/templates/payload_title.json",
+          "list_count": "components/templates/list_count.json",
+          "list_page_total": "components/templates/list_page_total.json",
+          "list_page_current": "components/templates/list_page_total.json",
+          "list_pagination_label": "components/templates/list_pagination_label.json",
+          "string_bar": "components/templates/string_bar.json",
+          "option_dialog_string_selected_bar": "components/templates/option_dialog_string_selected_bar.json",
+          "ssid_pool_string_selected_bar": "components/templates/ssid_pool_string_selected_bar.json"
+        },
+        "radio_templates": {
+          "radio": "components/templates/radio.json",
+          "selected_radio": "components/templates/selected_radio.json",
+          "selected_radio_bar": "components/templates/selected_radio_bar.json"
+        },
+        "signal_templates": {
+          "signal": "components/templates/signal.json",
+          "selected_signal": "components/templates/selected_signal.json"
+        },
+        "color_palette": {
+          "black": {
+            "r": 29,
+            "g": 29,
+            "b": 31
+          },
+          "blue": {
+            "r": 29,
+            "g": 29,
+            "b": 31
+          },
+          "yellow": {
+            "r": 10,
+            "g": 100,
+            "b": 216
+          },
+          "red": {
+            "r": 215,
+            "g": 0,
+            "b": 21
+          },
+          "dark_red": {
+            "r": 138,
+            "g": 0,
+            "b": 16
+          },
+          "gray": {
+            "r": 110,
+            "g": 110,
+            "b": 115
+          },
+          "medium_gray": {
+            "r": 142,
+            "g": 142,
+            "b": 147
+          },
+          "disabled_light_gray": {
+            "r": 174,
+            "g": 174,
+            "b": 178
+          },
+          "disabled_dark_gray": {
+            "r": 209,
+            "g": 209,
+            "b": 214
+          },
+          "green": {
+            "r": 31,
+            "g": 143,
+            "b": 58
+          },
+          "dark_green": {
+            "r": 15,
+            "g": 92,
+            "b": 36
+          },
+          "orange": {
+            "r": 196,
+            "g": 90,
+            "b": 0
+          },
+          "dark_orange": {
+            "r": 138,
+            "g": 63,
+            "b": 0
+          },
+          "light_blue": {
+            "r": 10,
+            "g": 100,
+            "b": 216
+          },
+          "cyan": {
+            "r": 0,
+            "g": 122,
+            "b": 138
+          },
+          "dark_cyan": {
+            "r": 0,
+            "g": 85,
+            "b": 96
+          },
+          "purple": {
+            "r": 125,
+            "g": 60,
+            "b": 200
+          },
+          "dark_purple": {
+            "r": 75,
+            "g": 35,
+            "b": 128
+          },
+          "magenta": {
+            "r": 184,
+            "g": 50,
+            "b": 143
+          },
+          "dark_magenta": {
+            "r": 122,
+            "g": 31,
+            "b": 94
+          },
+          "light_green": {
+            "r": 36,
+            "g": 138,
+            "b": 61
+          },
+          "olive": {
+            "r": 107,
+            "g": 107,
+            "b": 42
+          },
+          "dark_olive": {
+            "r": 63,
+            "g": 63,
+            "b": 24
+          },
+          "brown": {
+            "r": 138,
+            "g": 90,
+            "b": 43
+          },
+          "tan": {
+            "r": 160,
+            "g": 124,
+            "b": 74
+          },
+          "teal": {
+            "r": 11,
+            "g": 138,
+            "b": 122
+          },
+          "dark_teal": {
+            "r": 7,
+            "g": 92,
+            "b": 82
+          },
+          "navy": {
+            "r": 27,
+            "g": 58,
+            "b": 138
+          },
+          "light_yellow": {
+            "r": 184,
+            "g": 134,
+            "b": 0
+          },
+          "soft_white": {
+            "r": 58,
+            "g": 58,
+            "b": 60
+          },
+          "white": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          },
+          "accent": {
+            "r": 10,
+            "g": 100,
+            "b": 216
+          },
+          "switch_on": {
+            "r": 52,
+            "g": 199,
+            "b": 89
+          },
+          "graph": {
+            "r": 50,
+            "g": 215,
+            "b": 75
+          }
+        },
+        "_unused": {
+          "commands": {
+            "restart_pineapd": "service pineapd restart",
+            "restart_networking": "service network restart",
+            "reboot": "reboot",
+            "log_temps": "/root/battest.sh > /tmp/temps.log",
+            "restart_go": "service pineapplepager restart"
+          },
+          "payload_shortcuts": {
+            "test1": "/root/payloads/user/cat1/test1",
+            "test2": "/root/payloads/user/cat1/test2"
+          },
+          "simple_images": {}
+        },
+        "author": "Jenx"
+      },
+      "files": [
+        "README.md",
+        "assets",
+        "color_palette_preview.html",
+        "components",
+        "theme.json"
+      ],
+      "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/dockside"
+    },
+    {
+      "name": "dockside-dark",
+      "title": "Dockside Dark",
+      "author": "Jenx",
+      "description": "- Author: Jenx - Version: 0.1.0 - Theme framework: 0.7 (built from the stock `wargames` theme)",
+      "readme": "# Dockside Dark\n\n- Author: Jenx\n- Version: 0.1.0\n- Theme framework: 0.7 (built from the stock `wargames` theme)\n\n## Description\n\nThe dark-mode version of Dockside: a desktop-computer look for the WiFi Pineapple Pager in\ngraphite windows with light text and a bright blue accent.\n\n- **Desktop:** the main screen is a desktop with a night wallpaper, a dark translucent menu bar\n  (the Pager's status icons sit in it like menu bar extras), desktop icons and a dock of six\n  custom app icons. The selected icon magnifies, gets an indicator dot, and shows its name in a\n  tooltip above it.\n- **Menu bar:** press up (or B) from the dock to reach the pineapple, then left/right along the\n  menu bar. The pineapple opens the power menu; **Pager** opens About, and **Display**, **Sound**\n  and **Network** open those settings pages. The power menu also has **Settings...** and\n  **Pager Portal...** shortcuts. A divider in the dock sets Settings apart.\n- **Windows everywhere:** every screen is a dark window with a title bar and red/yellow/green\n  window buttons. Selected rows get a blue highlight bar, dialogs use rounded push buttons (the\n  focused one is blue), toggles are green switches, and longer lists and pages show a classic\n  scroll bar.\n- **Payloads:** browsing user, recon and alert payloads looks like a file browser, with a\n  Favorites sidebar, a Name/Kind list and a path bar showing where you are\n  (`Pager HD > payloads > user`). Launching a payload drops a sheet from that\n  window, where the Terminal icon's cursor blinks.\n- **Settings and PineAP:** styled like a system-settings app, with a sidebar of colored category\n  icons and grouped rows showing switches, current values and chevrons, previewed live as you\n  move through the sidebar. About lists the device info with a scroll bar and a Developer Tools\n  row.\n- **Pager Portal:** styled like an app store, with Discover tiles, section rows, GET/UPDATE pills\n  and payload pages. Its icon shows the Pager itself, drawn like Hak5's Pager character.\n- **Recon:** an activity-monitor style graph, results and clients as tables with column headers,\n  and access point / client details with an info grid beside an actions card.\n- **Everything else:** the power menu drops down from the pineapple, the payload log is a\n  Terminal window, confirmations and option/edit dialogs are sheets, alerts slide in as\n  notification cards, setup has a sidebar of steps, the lock screen is a login window,\n  locked buttons show a small overlay, the keyboards are redrawn as keycaps, and the boot, update,\n  battery, heat, license and QR screens all match the look.\n\n## Installation\n\n1. Copy the `dockside-dark` folder to `/root/themes/` (or `/mmc/root/themes/`) on your Pager\n2. Go to **Settings > General > Theme**\n3. Select **dockside-dark**\n\n## Known limitations\n\n- Status icons and some small glyphs are recolored stock art, not redrawn.\n- Text drawn by the firmware uses the Pager's system font, so on-screen labels are monospaced.\n",
+      "themeJson": {
+        "theme_version": "0.2.0",
+        "theme_framework_version": "0.8",
+        "status_bars": {
+          "default": "components/status_bars/status_bar.json",
+          "network": "components/status_bars/status_bar_network.json",
+          "recon": "components/status_bars/status_bar_recon.json",
+          "min": "components/status_bars/status_bar_min.json",
+          "gps": "components/status_bars/status_bar_gps.json"
+        },
+        "generic_menus": {
+          "tutorial": "components/tutorial.json",
+          "os_licenses": "components/os_licenses.json",
+          "management_ap_wizard": "components/management_ap_wizard.json",
+          "client_mode_wizard": "components/client_mode_wizard.json",
+          "evilwpa_wizard": "components/pineap/evilwpa_wizard.json",
+          "power_menu": "components/dashboards/power_menu.json",
+          "regulatory": "components/settings/regulatory.json",
+          "dashboard_path": "components/dashboards/dockside_dashboard.json",
+          "alerts_dashboard": "components/dashboards/dashboard_alerts.json",
+          "pineap_pineap_submenu": "components/pineap/submenu_pineap_pineap.json",
+          "pineap_evilwpa_submenu": "components/pineap/submenu_pineap_evilwpa.json",
+          "pineap_filters_submenu": "components/pineap/submenu_pineap_filters.json",
+          "pineap_openap_submenu": "components/pineap/submenu_pineap_openap.json",
+          "pineap_ssidpool_submenu": "components/pineap/submenu_pineap_ssidpool.json",
+          "settings_general_submenu": "components/settings/submenu_settings_general.json",
+          "settings_display_submenu": "components/settings/submenu_settings_display.json",
+          "settings_ringtone_submenu": "components/settings/submenu_settings_ringtone.json",
+          "settings_network_submenu": "components/settings/submenu_settings_network.json",
+          "settings_system_submenu": "components/settings/submenu_settings_system.json",
+          "settings_datetime_submenu": "components/settings/submenu_settings_datetime.json",
+          "settings_gps_submenu": "components/settings/submenu_settings_gps.json",
+          "settings_updates_submenu": "components/settings/submenu_settings_updates.json",
+          "settings_help_submenu": "components/settings/submenu_settings_help.json",
+          "settings_about_submenu": "components/settings/submenu_settings_about.json",
+          "recon_settings": "components/recon/recon_settings.json",
+          "recon_band_settings": "components/recon/recon_band_settings.json",
+          "recon_selected_ap_menu": "components/recon/recon_selected_ap_menu.json",
+          "recon_selected_ap_client_menu": "components/recon/recon_selected_ap_client_menu.json",
+          "pineap_menu": "components/dashboards/dashboard_pineap.json",
+          "settings_menu": "components/dashboards/dashboard_settings.json",
+          "pager_portal_dashboard": "components/dashboards/dashboard_pager_portal.json",
+          "pager_portal_update_payloads_dashboard": "components/pager_portal/dashboard_pager_portal_update_payloads.json",
+          "pager_portal_themes_dashboard": "components/pager_portal/dashboard_pager_portal_themes.json",
+          "pager_portal_get_payloads_dashboard": "components/pager_portal/pager_portal_get_payloads_dashboard.json",
+          "pager_portal_view_payload_details": "components/pager_portal/pager_portal_view_payload_info.json",
+          "pager_portal_view_updatable_payload_details": "components/pager_portal/pager_portal_view_updatable_payload_info.json",
+          "pager_portal_view_installed_payload_details": "components/pager_portal/pager_portal_view_installed_payload_info.json"
+        },
+        "pager_portal_payloads_dashboard": "components/pager_portal/dashboard_pager_portal_payloads.json",
+        "pager_portal_alert_payload_categories": "components/pager_portal/pager_portal_get_alert_payloads.json",
+        "pager_portal_user_payload_categories": "components/pager_portal/pager_portal_get_user_payloads.json",
+        "pager_portal_recon_payload_categories": "components/pager_portal/pager_portal_get_recon_payloads.json",
+        "pager_portal_installed_payloads_list": "components/pager_portal/pager_portal_installed_payloads_list.json",
+        "pager_portal_update_payloads_list": "components/pager_portal/pager_portal_update_payloads_list.json",
+        "pager_portal_get_payloads_for_category_list": "components/pager_portal/pager_portal_get_payloads_for_category_list.json",
+        "option_dialogs": {
+          "option_dialog": "components/dialogs/ui_option_dialog.json",
+          "option_dialog_recon": "components/dialogs/ui_option_dialog_recon.json",
+          "option_dialog_alerts": "components/dialogs/ui_option_dialog_alerts.json",
+          "option_dialog_payloads": "components/dialogs/ui_option_dialog_payloads.json",
+          "option_dialog_narrow": "components/dialogs/ui_option_dialog_narrow.json"
+        },
+        "duckyscript_list_picker": "components/dialogs/duckyscript_list_picker.json",
+        "launch_payload_dialog_path": "components/dialogs/launch_payload_dialog.json",
+        "payloads_dashboard_path": "components/dashboards/dashboard_payloads.json",
+        "payloads_for_category_list_path": "components/payloads_for_category_list.json",
+        "payload_log_path": "components/payload_log.json",
+        "filter_list_path": "components/filter_list.json",
+        "pineap_ssid_pool_list_path": "components/pineap_ssid_pool_list.json",
+        "pineap_clients_list_path": "components/pineap/submenu_pineap_clients.json",
+        "alerts_dialog_submenu_path": "components/alert_payloads_for_category_list.json",
+        "low_battery_alert_path": "components/alerts/low_battery_alert.json",
+        "critical_battery_alert_path": "components/alerts/critical_battery_alert.json",
+        "error_dialog_path": "components/alerts/alert_error_dialog.json",
+        "alert_dialog_path": "components/alerts/alert_info_dialog.json",
+        "warning_dialog_path": "components/alerts/alert_warning_dialog.json",
+        "spinner_path": "components/spinner.json",
+        "boot_spinner_path": "components/boot_animation.json",
+        "keyboard_path": "components/keyboards/ui_keyboard.json",
+        "number_keyboard_path": "components/keyboards/ui_keyboard_numeric.json",
+        "ip_keyboard_path": "components/keyboards/ui_keyboard_ip.json",
+        "mac_keyboard_path": "components/keyboards/ui_keyboard_hex.json",
+        "recon_payloads_dashboard_path": "components/dashboards/dashboard_recon_payloads.json",
+        "recon_payloads_for_category_list_path": "components/recon_payloads_for_category_list.json",
+        "recon_dashboard_path": "components/dashboards/dashboard_recon.json",
+        "recon_lists": {
+          "recon_list": "components/recon/recon_results_list.json"
+        },
+        "recon_ap_clients_list_path": "components/recon/recon_ap_clients_list.json",
+        "edit_string_dialog_path": "components/dialogs/edit_string_dialog.json",
+        "edit_ip_dialog_path": "components/dialogs/edit_ip_dialog.json",
+        "edit_mac_dialog_path": "components/dialogs/edit_mac_dialog.json",
+        "edit_number_dialog_path": "components/dialogs/edit_number_dialog.json",
+        "confirmation_dialog_path": "components/dialogs/confirmation_dialog.json",
+        "setup_wizard_path": "components/setup_wizard.json",
+        "checking_for_updates_path": "components/check_for_updates.json",
+        "developer_menu_path": "components/developer_menu.json",
+        "lock_screen_path": "components/lock_screen.json",
+        "buttons_locked_screen_path": "components/buttons_locked_screen.json",
+        "device_too_hot_warning_path": "assets/warn_device_too_hot.png",
+        "device_dimming_screen_path": "assets/warn_device_dimming_screen.png",
+        "help_info_path": "assets/help_qr.png",
+        "license_info_path": "assets/license_qr.png",
+        "virtual_pager_info_path": "assets/virt_qr.png",
+        "toggle_templates": {
+          "toggle": "components/templates/toggle.json",
+          "green_toggle": "components/templates/green_toggle.json",
+          "disabled_toggle": "components/templates/disabled_toggle.json",
+          "checkbox": "components/templates/checkbox.json",
+          "pineap_filter_mode": "components/templates/pineap_filter_mode.json",
+          "disabled_pineap_filter_mode": "components/templates/disabled_pineap_filter_mode.json"
+        },
+        "string_templates": {
+          "recon_payload_title": "components/templates/recon_payload_title.json",
+          "recon_payload_title_selected": "components/templates/recon_payload_title_selected.json",
+          "alert_payload_title": "components/templates/alert_payload_title.json",
+          "alert_payload_title_selected": "components/templates/alert_payload_title_selected.json",
+          "client_ssid": "components/templates/client_ssid.json",
+          "client_ssid_selected": "components/templates/client_ssid_selected.json",
+          "client_mac": "components/templates/client_mac.json",
+          "client_mac_selected": "components/templates/client_mac_selected.json",
+          "timestamp": "components/templates/timestamp.json",
+          "spinner_text": "components/templates/spinner_text.json",
+          "string": "components/templates/string.json",
+          "payload_name": "components/templates/payload_name_in_list.json",
+          "payload_name_selected": "components/templates/payload_name_in_list_selected.json",
+          "alert_info_dialog_text": "components/templates/alert_info_dialog_text.json",
+          "string_title": "components/templates/string_title.json",
+          "selected_string": "components/templates/selected_string.json",
+          "error_text": "components/templates/error_text.json",
+          "confirmation_dialog_text": "components/templates/confirmation_dialog_text.json",
+          "option_dialog_string": "components/templates/option_dialog_string.json",
+          "option_dialog_string_selected": "components/templates/option_dialog_string_selected.json",
+          "ssid_pool_string": "components/templates/ssid_pool_string.json",
+          "ssid_pool_string_selected": "components/templates/ssid_pool_string_selected.json",
+          "network_filter_string": "components/templates/network_filter_string.json",
+          "network_filter_string_selected": "components/templates/network_filter_string_selected.json",
+          "payload_title": "components/templates/payload_title.json",
+          "list_count": "components/templates/list_count.json",
+          "list_page_total": "components/templates/list_page_total.json",
+          "list_page_current": "components/templates/list_page_total.json",
+          "list_pagination_label": "components/templates/list_pagination_label.json",
+          "string_bar": "components/templates/string_bar.json",
+          "option_dialog_string_selected_bar": "components/templates/option_dialog_string_selected_bar.json",
+          "ssid_pool_string_selected_bar": "components/templates/ssid_pool_string_selected_bar.json"
+        },
+        "radio_templates": {
+          "radio": "components/templates/radio.json",
+          "selected_radio": "components/templates/selected_radio.json",
+          "selected_radio_bar": "components/templates/selected_radio_bar.json"
+        },
+        "signal_templates": {
+          "signal": "components/templates/signal.json",
+          "selected_signal": "components/templates/selected_signal.json"
+        },
+        "color_palette": {
+          "black": {
+            "r": 245,
+            "g": 245,
+            "b": 247
+          },
+          "blue": {
+            "r": 245,
+            "g": 245,
+            "b": 247
+          },
+          "yellow": {
+            "r": 10,
+            "g": 132,
+            "b": 255
+          },
+          "red": {
+            "r": 255,
+            "g": 69,
+            "b": 58
+          },
+          "dark_red": {
+            "r": 255,
+            "g": 105,
+            "b": 97
+          },
+          "gray": {
+            "r": 152,
+            "g": 152,
+            "b": 157
+          },
+          "medium_gray": {
+            "r": 142,
+            "g": 142,
+            "b": 147
+          },
+          "disabled_light_gray": {
+            "r": 99,
+            "g": 99,
+            "b": 102
+          },
+          "disabled_dark_gray": {
+            "r": 72,
+            "g": 72,
+            "b": 74
+          },
+          "green": {
+            "r": 48,
+            "g": 209,
+            "b": 88
+          },
+          "dark_green": {
+            "r": 36,
+            "g": 138,
+            "b": 61
+          },
+          "orange": {
+            "r": 255,
+            "g": 159,
+            "b": 10
+          },
+          "dark_orange": {
+            "r": 201,
+            "g": 111,
+            "b": 0
+          },
+          "light_blue": {
+            "r": 10,
+            "g": 132,
+            "b": 255
+          },
+          "cyan": {
+            "r": 100,
+            "g": 210,
+            "b": 255
+          },
+          "dark_cyan": {
+            "r": 64,
+            "g": 168,
+            "b": 196
+          },
+          "purple": {
+            "r": 191,
+            "g": 90,
+            "b": 242
+          },
+          "dark_purple": {
+            "r": 154,
+            "g": 68,
+            "b": 201
+          },
+          "magenta": {
+            "r": 255,
+            "g": 111,
+            "b": 216
+          },
+          "dark_magenta": {
+            "r": 211,
+            "g": 88,
+            "b": 176
+          },
+          "light_green": {
+            "r": 48,
+            "g": 209,
+            "b": 88
+          },
+          "olive": {
+            "r": 181,
+            "g": 181,
+            "b": 106
+          },
+          "dark_olive": {
+            "r": 138,
+            "g": 138,
+            "b": 74
+          },
+          "brown": {
+            "r": 196,
+            "g": 154,
+            "b": 108
+          },
+          "tan": {
+            "r": 210,
+            "g": 180,
+            "b": 140
+          },
+          "teal": {
+            "r": 64,
+            "g": 200,
+            "b": 224
+          },
+          "dark_teal": {
+            "r": 42,
+            "g": 159,
+            "b": 179
+          },
+          "navy": {
+            "r": 94,
+            "g": 139,
+            "b": 255
+          },
+          "light_yellow": {
+            "r": 255,
+            "g": 214,
+            "b": 10
+          },
+          "soft_white": {
+            "r": 209,
+            "g": 209,
+            "b": 214
+          },
+          "white": {
+            "r": 255,
+            "g": 255,
+            "b": 255
+          },
+          "accent": {
+            "r": 10,
+            "g": 132,
+            "b": 255
+          },
+          "switch_on": {
+            "r": 48,
+            "g": 209,
+            "b": 88
+          },
+          "graph": {
+            "r": 50,
+            "g": 215,
+            "b": 75
+          }
+        },
+        "_unused": {
+          "commands": {
+            "restart_pineapd": "service pineapd restart",
+            "restart_networking": "service network restart",
+            "reboot": "reboot",
+            "log_temps": "/root/battest.sh > /tmp/temps.log",
+            "restart_go": "service pineapplepager restart"
+          },
+          "payload_shortcuts": {
+            "test1": "/root/payloads/user/cat1/test1",
+            "test2": "/root/payloads/user/cat1/test2"
+          },
+          "simple_images": {}
+        },
+        "author": "Jenx"
+      },
+      "files": [
+        "README.md",
+        "assets",
+        "color_palette_preview.html",
+        "components",
+        "theme.json"
+      ],
+      "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/dockside-dark"
     },
     {
       "name": "duck_hunt",
@@ -21812,7 +22532,7 @@
       "githubUrl": "https://github.com/hak5/wifipineapplepager-themes/tree/master/themes/wargames"
     }
   ],
-  "totalThemes": 52,
+  "totalThemes": 54,
   "ringtones": [
     {
       "name": "Achievement",
@@ -23045,16 +23765,16 @@
     {
       "number": 111,
       "title": "Add Dockside and Dockside Dark themes (firmware 1.1.3)",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "TheJenk",
       "authorAvatar": "https://avatars.githubusercontent.com/u/1393294?v=4",
       "authorUrl": "https://github.com/TheJenk",
       "body": "> **Ready for Pager firmware 1.1.3** (updated to theme framework **0.8**). Also loads on earlier firmware.\n\nTwo themes for the WiFi Pineapple Pager (built from the stock wargames theme): **Dockside**, a light, desktop-computer style theme, and **Dockside Dark**, the same design in dark mode.\n\n- Desktop dashboard: wallpaper, menu bar and a dock of six custom app icons (magnify, indicator dot and tooltip on selection)\n- Payload browsing as file-browser windows with sidebar, Name/Kind list and a path bar; launch prompt as a sheet with a blinking cursor icon\n- Settings and PineAP as a system-settings app; Pager Portal as an app store; recon lists as tables and an activity-monitor style graph\n- Push buttons, selection bars, scroll bars and redrawn keyboards, alerts, update, lock and QR screens\n- D-pad directions follow the layout (side-by-side buttons use left/right)\n- Assets are shared and cropped, and compressed like `tools/compress_theme_assets.sh`, to stay under the stock theme's decoded image size\n\n### Firmware 1.1.3 update\n- `theme_framework_version` bumped to **0.8** (0.7 errors on 1.1.3)\n- Added the new **WiFi client-mode** status icon (connected / disconnected / off) that 1.1.3 introduced, and split vibrate into distinct on/off glyphs\n- Refreshed the status-bar icons to a consistent macOS-style size and respaced the cluster so the clock clears the right edge\n- Power menu: **Check for Updates…** (launches the firmware update) in place of Pager Portal\n",
       "createdAt": "2026-09-25T02:06:45Z",
-      "updatedAt": "2026-10-04T22:09:51Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-10-05T19:32:02Z",
+      "closedAt": "2026-10-05T19:32:02Z",
+      "mergedAt": "2026-10-05T19:32:02Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/111",
       "repo": "wifipineapplepager-themes",
       "labels": [],
@@ -23083,16 +23803,16 @@
     {
       "number": 110,
       "title": "Update - Space Horror - 1.1.3",
-      "state": "open",
-      "merged": false,
+      "state": "closed",
+      "merged": true,
       "author": "cncartistsec",
       "authorAvatar": "https://avatars.githubusercontent.com/u/272505248?v=4",
       "authorUrl": "https://github.com/cncartistsec",
       "body": "Add Censor Mode option to Recon Settings Menu.  Add Wifi icon to Status Bars and Update Power Menu Settings Menu.",
       "createdAt": "2026-09-17T00:57:04Z",
-      "updatedAt": "2026-10-05T02:11:03Z",
-      "closedAt": null,
-      "mergedAt": null,
+      "updatedAt": "2026-10-05T19:32:40Z",
+      "closedAt": "2026-10-05T19:32:40Z",
+      "mergedAt": "2026-10-05T19:32:40Z",
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-themes/pull/110",
       "repo": "wifipineapplepager-themes",
       "labels": [],
