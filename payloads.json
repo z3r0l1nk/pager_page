@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-06T22:15:41.028Z",
+  "fetchedAt": "2026-10-07T04:06:04.310Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23648,6 +23648,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 364,
+      "title": "Add O.MG Flasher Payload",
+      "state": "open",
+      "merged": false,
+      "author": "GasStationWeenie",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/162852247?v=4",
+      "authorUrl": "https://github.com/GasStationWeenie",
+      "body": "- Author: Gas Station Hot Dog\r\n- Payload Name: O.MG Flasher\r\n- Purpose: Flash and reflash your O.MG devices natively via the Pager while on the go.  Recover your self-destructed devices. Connect via the pager's USB-A port to your O.MG Programmer and choose between v3 and v4 (alpha - elite only) firmware.  Locally caches, allows full erase, keeps 5 recent logs in case of issue.\r\n- Tested with O.MG Plug Elite on latest v3 and v4 firmware",
+      "createdAt": "2026-10-07T02:26:13Z",
+      "updatedAt": "2026-10-07T02:26:13Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/364",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 114,
       "title": "Update Ninety Eight for 1.1.3",
