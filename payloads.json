@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T12:44:29.273Z",
+  "fetchedAt": "2026-10-08T19:38:24.792Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23648,6 +23648,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 365,
+      "title": "Add Glytch Mod Loader 0.4.0",
+      "state": "open",
+      "merged": false,
+      "author": "glytchtech",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/6943735?v=4",
+      "authorUrl": "https://github.com/glytchtech",
+      "body": "Adds a Pager menu for browsing the GlytchModPayloads repo and installing selected payloads with their supporting files. Existing installations prompt before updating; installed payloads are not launched automatically.\n\nBased on AirNab by Hak5Darren.\n",
+      "createdAt": "2026-10-08T17:59:53Z",
+      "updatedAt": "2026-10-08T17:59:53Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/365",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 364,
       "title": "Add O.MG Flasher Payload",
