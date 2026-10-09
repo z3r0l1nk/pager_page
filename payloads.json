@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T19:38:24.792Z",
+  "fetchedAt": "2026-10-09T00:07:15.488Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23651,15 +23651,15 @@
     {
       "number": 365,
       "title": "Add Glytch Mod Loader 0.4.0",
-      "state": "open",
+      "state": "closed",
       "merged": false,
       "author": "glytchtech",
       "authorAvatar": "https://avatars.githubusercontent.com/u/6943735?v=4",
       "authorUrl": "https://github.com/glytchtech",
       "body": "Adds a Pager menu for browsing the GlytchModPayloads repo and installing selected payloads with their supporting files. Existing installations prompt before updating; installed payloads are not launched automatically.\n\nBased on AirNab by Hak5Darren.\n",
       "createdAt": "2026-10-08T17:59:53Z",
-      "updatedAt": "2026-10-08T17:59:53Z",
-      "closedAt": null,
+      "updatedAt": "2026-10-08T21:14:35Z",
+      "closedAt": "2026-10-08T21:14:35Z",
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/365",
       "repo": "wifipineapplepager-payloads",
