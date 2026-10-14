@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-14T03:22:28.079Z",
+  "fetchedAt": "2026-10-14T09:15:06.460Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23648,6 +23648,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 372,
+      "title": "iPager Payload Submission",
+      "state": "open",
+      "merged": false,
+      "author": "bleednoevil",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/155607938?v=4",
+      "authorUrl": "https://github.com/bleednoevil",
+      "body": "iPager turns a Hak5 WiFi Pineapple Pager into a live iMessage terminal. It reads Apple's local message database on macOS and relays incoming text to the Pager over SSH in real time and lets you compose and send replies directly from the Pager's keypad, routed back through Messages.app on the Mac.\n\nMacBook (sensor + sender)\n  ~/Library/Messages/chat.db\n        │  read (poll)\n        ▼\n  iPager.py\n    ├── polls chat.db every 3s\n    ├── decodes text / attributedBody (NSKeyedArchiver)\n    ├── relays incoming text over SSH → /tmp/pager_msg, /tmp/msg_new\n    └── listens for outgoing compose requests from the Pager\n        │\n        ▼  SSH (bidirectional)\nWiFi Pineapple Pager\n  payload.sh\n    ├── watches /tmp/msg_new → CLEAR → SHOW → LOG\n    └── double-tap UP → opens compose mode\n          ├── recipient from auto-built contact list (LIST_PICKER)\n          ├── or manual phone/email entry\n          └── message sent back to Mac → osascript → Messages.app\n\niPager demonstrates a trust-model gap in Apple's Continuity architecture: iMessage encryption protects content in transit, but once delivered, content sits in plaintext on the Mac endpoint with no at-rest encryption or access monitoring. The database path and schema have been stable since iMessage launched on macOS, and this affects any Mac with an authenticated Apple ID. The two-way send path reuses the same trust Messages.app already has via `osascript`; it doesn't bypass or escalate anything.",
+      "createdAt": "2026-10-14T09:04:18Z",
+      "updatedAt": "2026-10-14T09:04:18Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/372",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 371,
       "title": "Feat/rf baseline sentinel",
