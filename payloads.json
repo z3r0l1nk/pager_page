@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T22:15:03.239Z",
+  "fetchedAt": "2026-10-14T03:22:28.079Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23648,6 +23648,25 @@
   ],
   "totalRingtones": 101,
   "pullRequests": [
+    {
+      "number": 371,
+      "title": "Feat/rf baseline sentinel",
+      "state": "open",
+      "merged": false,
+      "author": "D-L3aN",
+      "authorAvatar": "https://avatars.githubusercontent.com/u/199456998?v=4",
+      "authorUrl": "https://github.com/D-L3aN",
+      "body": "Passive RF behavioral baseline & anomaly correlation engine for the WiFi Pineapple Pager. Learns what \"normal\" looks like in an RF environment over time, then alerts on statistically significant deviations. Detects surveillance, rogue infrastructure, and RF anomalies without transmitting or interacting with observed devices.",
+      "createdAt": "2026-10-14T02:12:22Z",
+      "updatedAt": "2026-10-14T02:12:22Z",
+      "closedAt": null,
+      "mergedAt": null,
+      "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/371",
+      "repo": "wifipineapplepager-payloads",
+      "labels": [],
+      "comments": 0,
+      "draft": false
+    },
     {
       "number": 369,
       "title": "Add Starchorus: a strictly passive view of the Wi-Fi around you",
