@@ -10,7 +10,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
 import { join, basename, relative } from 'path';
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 
 const OUTPUT_FILE = 'payloads.json';
 const REPO_OWNER = 'hak5';
@@ -151,7 +151,7 @@ function cloneOrUpdateRepo(repo) {
     if (!existsSync(join(repo.clonePath, checkDir))) {
         console.log(`📡 Cloning ${repo.name} to ${repo.clonePath}...`);
         try {
-            execSync(`git clone --depth 1 ${repo.url} ${repo.clonePath}`, { stdio: 'inherit' });
+            execFileSync('git', ['clone', '--depth', '1', repo.url, repo.clonePath], { stdio: 'inherit' });
         } catch (err) {
             console.error(`❌ Failed to clone ${repo.name}.`);
             return false;
@@ -159,8 +159,8 @@ function cloneOrUpdateRepo(repo) {
     } else {
         console.log(`📂 Updating ${repo.name} at ${repo.clonePath}...`);
         try {
-            execSync(`git -C ${repo.clonePath} fetch --depth 1 origin ${BRANCH}`, { stdio: 'inherit' });
-            execSync(`git -C ${repo.clonePath} reset --hard origin/${BRANCH}`, { stdio: 'inherit' });
+            execFileSync('git', ['-C', repo.clonePath, 'fetch', '--depth', '1', 'origin', BRANCH], { stdio: 'inherit' });
+            execFileSync('git', ['-C', repo.clonePath, 'reset', '--hard', `origin/${BRANCH}`], { stdio: 'inherit' });
         } catch (err) {
             console.error(`⚠️  Failed to update ${repo.name}, using existing data.`);
         }
