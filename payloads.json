@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-17T08:13:44.586Z",
+  "fetchedAt": "2026-10-17T13:25:51.878Z",
   "categories": {
     "alerts": {
       "name": "alerts",
@@ -23753,7 +23753,7 @@
       "authorUrl": "https://github.com/spywill",
       "body": "**Updated Pager QUACK Payload**\n\nUpdated the Pager QUACK payload with new KeyCroc features and improved functionality, including:\n\n- **KeyCroc Status:** Check the connection status and retrieve system information from the KeyCroc.\n- **Reboot KeyCroc:** Remotely reboot the KeyCroc device.\n- **Attackmode HID:** Access and control the KeyCroc HID attack mode.\n- **Custom Commands:** Execute custom commands remotely on the KeyCroc.\n- **Single QUACK Commands:** Added more individual QUACK commands for easier and faster execution.\n- **Run Installed Payloads:** Browse, view, and execute payloads installed on the KeyCroc directly from the Pager menu.\n- **Improved Menu Navigation:** Expanded menu options for easier access to KeyCroc features and commands.\n- **Additional Features:** Added more tools and functionality to improve remote control, payload management, and overall usability.",
       "createdAt": "2026-10-11T08:19:57Z",
-      "updatedAt": "2026-10-11T08:19:57Z",
+      "updatedAt": "2026-10-17T13:09:26Z",
       "closedAt": null,
       "mergedAt": null,
       "htmlUrl": "https://github.com/hak5/wifipineapplepager-payloads/pull/366",
